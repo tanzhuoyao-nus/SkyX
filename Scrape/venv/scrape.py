@@ -12,14 +12,17 @@ chromedriver_path = '/Users/tanzhuoyao/Code/Scrape/venv/chromedriver'
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
 
+
 # Closing the popup
 def close_popup():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
     driver.find_elements_by_xpath(xp_popup_close)[8].click()
 
+
 def close_popup_secondary():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
     driver.find_elements_by_xpath(xp_popup_close)[9].click()
+
 
 # Load more results to maximize the scraping
 def load_more():
@@ -31,8 +34,10 @@ def load_more():
     except:
         pass
 
+
 def run_kayak_return(origin, destination, start_date, end_date):
-    kayak = 'https://www.kayak.com/flights/' + origin + '-' + destination + '/' + start_date + '/' + end_date + '?sort=price_a'
+    kayak = 'https://www.kayak.com/flights/' + origin + '-' + destination + \
+            '/' + start_date + '/' + end_date + '?sort=price_a'
     driver.get(kayak)
     sleep(randint(10,20))
     try:
@@ -48,7 +53,9 @@ def run_kayak_return(origin, destination, start_date, end_date):
         else:
             print("Price to " + destination + " is " + price.text)
 
-def run_kayak_one_way(destination, date, price_list, departure_time_list, arrival_time_list, flight_duration_list):
+
+def run_kayak_one_way(destination, date, price_list, departure_time_list,
+                      arrival_time_list, flight_duration_list, url_list):
     kayak = 'https://www.kayak.com/flights/SIN-' + destination + '/' + date + '?sort=price_a'
     driver.get(kayak)
     sleep(randint(10,20))
@@ -61,9 +68,10 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list, arriva
     except:
         pass
     sleep(randint(10,20))
-    scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list)
+    scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list, url_list)
 
-def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list):
+
+def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list, url_list):
     xp_price = '//span[contains(@id,"price-text") and contains(@class,"price-text")]'
     price_arr = driver.find_elements_by_xpath(xp_price)
     for price in price_arr:
@@ -85,6 +93,11 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     flight_duration_arr = driver.find_elements_by_xpath(xp_flight_duration)
     flight_duration_list.append(flight_duration_arr[0].text)
 
+    xp_url = '//div[contains(@id,"best")]/div/a'
+    url_arr = driver.find_elements_by_xpath(xp_url)
+    url_list.append(url_arr[0].get_attribute('href'))
+
+
 def search_city_one_way(destination):
     price_list = []
     departure_time_list = []
@@ -93,19 +106,20 @@ def search_city_one_way(destination):
     origin_list = []
     destination_list = []
     date_list = []
+    url_list = []
     current_date = datetime.date.today()
     start_date = current_date + datetime.timedelta(days=29)
 
-    for x in range(5):
+    for x in range(14):
         origin_list.append('SIN')
         destination_list.append(destination)
         start_date = start_date + datetime.timedelta(days=1)
         date_list.append(start_date.strftime("%Y-%m-%d"))
 
-    for y in range(5):
+    for y in range(14):
         run_kayak_one_way(destination, date_list[y], price_list,
                           departure_time_list, arrival_time_list,
-                          flight_duration_list)
+                          flight_duration_list, url_list)
 
     flights_df = pd.DataFrame({
         'Date': date_list,
@@ -114,11 +128,19 @@ def search_city_one_way(destination):
         'Price': price_list,
         'Departure Time': departure_time_list,
         'Arrival Time': arrival_time_list,
+        'Flight duration': flight_duration_list,
+        'URL': url_list
     })
+
     print(flights_df)
+    file_date = current_date + datetime.timedelta(days=30)
+    file_date_string = file_date.strftime("%Y-%m-%d")
+    flights_df.to_csv('/Users/tanzhuoyao/Code/Scrape/venv/out/' + file_date_string
+                      + "_" + destination + '.csv')
+    flights_df.to_json('/Users/tanzhuoyao/Code/Scrape/venv/out/' + file_date_string
+                      + "-" + destination + '.json', orient='index')
 
 
-
-search_city_one_way('HKG')
-search_city_one_way('TYO')
+city = input('Where do you want to scrape?')
+search_city_one_way(city)
 driver.close()
