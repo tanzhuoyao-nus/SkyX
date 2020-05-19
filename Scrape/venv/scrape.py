@@ -7,7 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 import datetime
 
-chromedriver_path = '/Users/tanzhuoyao/Code/Scrape/venv/chromedriver'
+chromedriver_path = '/Users/tanzhuoyao/GitHub/SkyX/Scrape/venv/chromedriver'
 
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
@@ -135,9 +135,9 @@ def search_city_one_way(destination):
     print(flights_df)
     file_date = current_date + datetime.timedelta(days=30)
     file_date_string = file_date.strftime("%Y-%m-%d")
-    flights_df.to_csv('/Users/tanzhuoyao/Code/Scrape/venv/out/' + file_date_string
+    flights_df.to_csv('/Users/tanzhuoyao/GitHub/SkyX/Scrape/venv/out/' + file_date_string
                       + "_" + destination + '.csv')
-    flights_df.to_json('/Users/tanzhuoyao/Code/Scrape/venv/out/' + file_date_string
+    flights_df.to_json('/Users/tanzhuoyao/GitHub/SkyX/Scrape/venv/out/' + file_date_string
                       + "-" + destination + '.json', orient='index')
 
 
