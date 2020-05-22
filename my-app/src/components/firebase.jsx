@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
+require("firebase/firestore");
 
 const firebaseConfig = {
     apiKey: "AIzaSyCXszezP_a4hYHnCkmvKY-_NgTTwwJNXko",
@@ -15,7 +16,13 @@ const firebaseConfig = {
 
   const storage = firebase.storage();
   var storageRef = storage.ref();
-
+  var db = firebase.firestore();
+  db.collection('flight_price_KUL').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => Price: ${doc.get("Price")}`);
+      console.log(`${doc.id} => Flight Duration: ${doc.get("Flight Duration")}`)
+    });
+  });
 
 
   export default storageRef;

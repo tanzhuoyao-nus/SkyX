@@ -74,7 +74,7 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     price_arr = driver.find_elements_by_xpath(xp_price)
     if len(price_arr) == 0:
         print("Not ready...")
-        sleep(10)
+        sleep(20)
         price_arr = driver.find_elements_by_xpath(xp_price)
     print(price_arr)
     for price in price_arr:
@@ -88,7 +88,7 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     departure_time_arr = driver.find_elements_by_xpath(xp_departure_time)
     if len(departure_time_arr) == 0:
         print("Not ready...")
-        sleep(10)
+        sleep(20)
         departure_time_arr = driver.find_elements_by_xpath(xp_departure_time)
     print(departure_time_arr[0].text)
     departure_time_list.append(departure_time_arr[0].text)
@@ -97,7 +97,7 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     arrival_time_arr = driver.find_elements_by_xpath(xp_arrival_time)
     if len(arrival_time_arr) == 0:
         print("Not ready...")
-        sleep(10)
+        sleep(20)
         arrival_time_arr = driver.find_elements_by_xpath(xp_arrival_time)
     print(arrival_time_arr[0].text)
     arrival_time_list.append(arrival_time_arr[0].text)
@@ -106,7 +106,7 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     flight_duration_arr = driver.find_elements_by_xpath(xp_flight_duration)
     if len(flight_duration_arr) == 0:
         print("Not ready...")
-        sleep(10)
+        sleep(20)
         flight_duration_arr = driver.find_elements_by_xpath(xp_flight_duration)
     print(flight_duration_arr[0].text)
     flight_duration_list.append(flight_duration_arr[0].text)
@@ -115,7 +115,7 @@ def scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_du
     url_arr = driver.find_elements_by_xpath(xp_url)
     if len(url_arr) == 0:
         print("Not ready...")
-        sleep(10)
+        sleep(20)
         url_arr = driver.find_elements_by_xpath(xp_url)
     url_list.append(url_arr[0].get_attribute('href'))
 
@@ -150,9 +150,11 @@ def search_city_one_way(destination):
             u'Departure Time': departure_time_list[y],
             u'Arrival Time': arrival_time_list[y],
             u'Flight Duration': flight_duration_list[y],
-            u'URL': url_list[y]
+            u'URL': url_list[y],
+            u'Scrape Date': current_date.strftime("%Y-%m-%d")
         }
-        doc_ref = db.collection(u'flight_price_' + destination).document(date_list[y])
+        doc_ref = db.collection(u'flight_price_' + destination).document(date_list[y])\
+            .collection(current_date.strftime("%Y-%m-%d")).document('Data')
         doc_ref.set(dataset)
 
     flights_df = pd.DataFrame({
@@ -178,16 +180,16 @@ chromedriver_path = '/Users/tanzhuoyao/GitHub/SkyX/FlightScraper/chromedriver'
 
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
-#search_city_one_way('DPS')
-#sleep(30)
-#search_city_one_way('HKG')
-#sleep(30)
+search_city_one_way('DPS')
+sleep(30)
 search_city_one_way('KUL')
 sleep(30)
-#search_city_one_way('LON')
-#sleep(30)
-#search_city_one_way('TYO')
-#sleep(30)
+search_city_one_way('HKG')
+sleep(30)
+search_city_one_way('LON')
+sleep(30)
+search_city_one_way('TYO')
+sleep(30)
 
 driver.close()
 

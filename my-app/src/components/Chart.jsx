@@ -29,7 +29,7 @@ const state = {
 
 class Chart extends React.Component {
     render() { 
-      var jsonRef = storageRef.child('KUL/2020-06-17-KUL.json')
+      storageRef.child('KUL/2020-06-17-KUL.json')
       .getDownloadURL().then(x => console.log(x));
         return (
             <div>
