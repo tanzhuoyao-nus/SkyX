@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
-require("firebase/firestore");
+import 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCXszezP_a4hYHnCkmvKY-_NgTTwwJNXko",
@@ -17,12 +17,16 @@ const firebaseConfig = {
   const storage = firebase.storage();
   var storageRef = storage.ref();
   var db = firebase.firestore();
-  db.collection('flight_price_KUL').get().then((querySnapshot) => {
+
+  // Formatted as [Destination] >> [Flight Date] >> [Scrape Date] >> get()
+  db.collection('flight_price_KUL').doc("2020-06-21")
+  .collection('2020-05-22').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => Price: ${doc.get("Price")}`);
-      console.log(`${doc.id} => Flight Duration: ${doc.get("Flight Duration")}`)
+      // Gets the name of the document and the price of the flight
+      console.log(`${doc.id} => ${doc.get("Price")}`);
     });
   });
+
 
 
   export default storageRef;
