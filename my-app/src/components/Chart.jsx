@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import flight_data from '../datasets/2020-06-17-TYO.json';
+import storageRef from './firebase';
 
 var date_arr = [];
 var price_arr = [];
@@ -28,6 +29,8 @@ const state = {
 
 class Chart extends React.Component {
     render() { 
+      var jsonRef = storageRef.child('KUL/2020-06-17-KUL.json')
+      .getDownloadURL().then(x => console.log(x));
         return (
             <div>
               <Line

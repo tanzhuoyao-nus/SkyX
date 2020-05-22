@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d3b13a44-3adb-4a50-bc53-9180a1819fe4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/Scrape/venv/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17-DPS.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17-KUL.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17-TYO.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17_DPS.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17_HKG.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17_KUL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-17_TYO.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18-DPS.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18-HKG.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18-KUL.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18-LON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18-TYO.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18_DPS.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18_HKG.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18_KUL.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18_LON.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/out/2020-06-18_TYO.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scrape/venv/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scrape/venv/scrape.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Chart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/components/Chart.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cE9cDQtRurrjCQQZI89LOPesBQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3b13a44-3adb-4a50-bc53-9180a1819fe4" name="Default Changelist" comment="" />
+      <created>1590082962230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590082962230</updated>
+    </task>
+    <servers />
+  </component>
+</project>

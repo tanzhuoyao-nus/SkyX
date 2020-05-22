@@ -1,0 +1,142 @@
+{
+    "0": {
+        "Date": "2020-06-17",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQHCEBja9u.iBqML61eBNE.4312.1873d115c23461900862d1bb80e67bc7&h=b400a2d1dd9d&sub=E-192ab6a0d1e"
+    },
+    "1": {
+        "Date": "2020-06-18",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQGCO_BS3N.iBqML61eBNE.4312.8b82f49b4fd124dc13e07bca956ecd16&h=17569427f20d&sub=E-192ab6a0d1e"
+    },
+    "2": {
+        "Date": "2020-06-19",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQHCJrkxqy.iBqML61eBNE.4312.ae42baf6fc939be3367aaee6583e1144&h=4aed2037e645&sub=E-192ab6a0d1e"
+    },
+    "3": {
+        "Date": "2020-06-20",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQHCN4K_dk.iBqML61eBNE.4312.1d7dc81bc6c2b94c4ea4ceb21971f197&h=0d137aee1ecc&sub=E-192ab6a0d1e"
+    },
+    "4": {
+        "Date": "2020-06-21",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQECOwXWNV.iBqML61eBNE.4312.54e65791c6c900b909d75b53daa49397&h=3624a7a86562&sub=E-192ab6a0d1e"
+    },
+    "5": {
+        "Date": "2020-06-22",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQFCLI2d_-.iBqML61eBNE.4312.f2fa082792b1d9ed776379823102e9da&h=09d25d704baf&sub=E-192ab6a0d1e"
+    },
+    "6": {
+        "Date": "2020-06-23",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQGiHeS_SR.iBqML61eBNE.4312.7330b8331b1be47a9e11cd15f765b963&h=9c3f7c98dbdf&sub=E-192ab6a0d1e"
+    },
+    "7": {
+        "Date": "2020-06-24",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQFiTs_lbi.iBqML61eBNE.4312.f3f4778007bb06f1f874fee7b55d5b1e&h=6f7e23a16d7a&sub=E-192ab6a0d1e"
+    },
+    "8": {
+        "Date": "2020-06-25",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQHiFzHyXF.iBqML61eBNE.4312.5ca59a964236a87be1b68901def4d1af&h=ed0d7da71a6c&sub=E-192ab6a0d1e"
+    },
+    "9": {
+        "Date": "2020-06-26",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQECKpJZx0.iBqML61eBNE.4312.23471f9f839fec3c7392a0dd20666239&h=fba1852e62a1&sub=E-192ab6a0d1e"
+    },
+    "10": {
+        "Date": "2020-06-27",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQECI21mkI.iBqML61eBNE.4312.200593a2e5a87628609db8af0d220b35&h=4d30be1a07c6&sub=E-192ab6a0d1e"
+    },
+    "11": {
+        "Date": "2020-06-28",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQEiMCqtfL.iBqML61eBNE.4312.20f1078b5315daed95cb363bcabe7b99&h=474f17a2933c&sub=E-192ab6a0d1e"
+    },
+    "12": {
+        "Date": "2020-06-29",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "5:10",
+        "Arrival Time": "7:50",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQGiIaWW3J.iBqML61eBNE.4312.a6baed1cc5b4f0430df514ef4af64c02&h=f7ba530acd3b&sub=E-192ab6a0d1e"
+    },
+    "13": {
+        "Date": "2020-06-30",
+        "Origin": "SIN",
+        "Destination": "DPS",
+        "Price": "$44",
+        "Departure Time": "9:05",
+        "Arrival Time": "11:45",
+        "Flight duration": "2h 40m",
+        "URL": "https:\/\/www.kayak.com\/book\/flight?code=GQFCL82EXl.iBqML61eBNE.4312.0e7f949f246e3b58682ea5d2758c4983&h=936b4819b868&sub=E-192ab6a0d1e"
+    }
+}
