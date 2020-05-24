@@ -6,8 +6,8 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -144,11 +144,12 @@ body {
     margin: 30px; 
     display: inline-block; 
     border-spacing: 10px;
+   
 }
 
-.MuiCard-root {
-    align:center;  
-    border: 30px; 
-    color:red; 
-
+.dates {
+    padding: 300px; 
+    margin: 300px; 
+    display:inline-flex; 
+    border-spacing: 10px; 
 }
