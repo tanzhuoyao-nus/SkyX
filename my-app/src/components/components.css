@@ -138,8 +138,10 @@ body {
 }
 
 
-.cards { 
+#Cards { 
+    margin: 25px 0; 
     padding: 20px; 
+    margin-bottom:30px; 
 }
 
 .dates {
@@ -156,4 +158,9 @@ body {
 
 #line { 
     margin-bottom: 30px;  
+}
+
+#card2 { 
+    margin: 0 2% !important; 
+    
 }
