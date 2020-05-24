@@ -14,10 +14,14 @@ function App() {
       <Navbar/>
       {/* Logo */}
       <Logo /> 
+
+      
       {/* Cards */}
       <Cards />
 
       {/* Departure and Arrival */}
+      <h1 className="sections"> User Input </h1>
+      <hr></hr>
       <div>
       <p>Departure </p>
       <Date /> 
@@ -29,7 +33,8 @@ function App() {
       
 
       {/* Chart */}
-      
+      <h1 className="sections"> Chart</h1>
+      <hr></hr>
       <Chart />
     
 

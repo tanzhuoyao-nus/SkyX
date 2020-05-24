@@ -134,17 +134,12 @@ body {
 .logo { 
     padding: 10px; 
     margin: 10px; 
-    margin-bottom: 100px; 
+    margin-bottom: 20px; 
 }
 
 
 .cards { 
-    align-content: center; 
-    padding: 30px; 
-    margin: 30px; 
-    display: inline-block; 
-    border-spacing: 10px;
-   
+    padding: 20px; 
 }
 
 .dates {
@@ -152,4 +147,13 @@ body {
     margin: 300px; 
     display:inline-flex; 
     border-spacing: 10px; 
+}
+
+#recommendations {
+    text-align: left;
+    margin-left: 30px;
+}
+
+#line { 
+    margin-bottom: 30px;  
 }

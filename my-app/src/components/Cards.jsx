@@ -24,38 +24,43 @@ export default function MediaCard() {
 
   return (
     <div>
+    <h1 id="recommendations"> Recommendations </h1>
+    <hr id="line"></hr>
+    
     {/* Card 1 */}
-    <Grid className ="Cards" container spacing ={3} justify='center' remove="space">
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Italy_banner_3_Florence.jpg/2560px-Italy_banner_3_Florence.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Italy
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          Italy is famous for its delicious cuisine, trendy fashions, luxury sports cars and motorcycles, diverse regional cultures and dialects, as well as for its various landscapes from the seas to the Alps and Apennines, which makes reason for its nickname Il Bel Paese (the Beautiful Country).
-          </Typography>
-        </CardContent>
-      
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Buy tickets
-        </Button>
-        <Button size="small" color="primary">
-          Price Chart
-        </Button>
-      </CardActions>
-    </Card>
-    </Grid>
+
+    <Grid id ="Cards" container spacing ={3} justify="center">
+      <Grid className="cards" item component ={Card}>
+        <Card className={classes.root}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Italy_banner_3_Florence.jpg/2560px-Italy_banner_3_Florence.jpg"
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Italy
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+              Italy is famous for its delicious cuisine, trendy fashions, luxury sports cars and motorcycles, diverse regional cultures and dialects, as well as for its various landscapes from the seas to the Alps and Apennines. 
+              </Typography>
+            </CardContent>
+          
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              Buy tickets
+            </Button>
+            <Button size="small" color="primary">
+              Price Chart
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
 
     {/* Card 2 */}
-    <Grid className="cards" container spacing ={3} justify='center'>
+    <Grid className="cards" item component ={Card}>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -85,7 +90,7 @@ export default function MediaCard() {
     </Grid>
 
     {/* Card 3 */}
-    <Grid className ="cards" container spacing ={3} justify='center'>
+    <Grid className ="cards" item component ={Card}>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -95,7 +100,7 @@ export default function MediaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Tokyo, Japan
+            New York City 
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
           One of the world's greatest cities, New York (known as "The Big Apple", "NYC," and often called "New York City") is a global center for media, entertainment, art, fashion, research, finance, and trade. 
@@ -113,7 +118,9 @@ export default function MediaCard() {
       </CardActions>
     </Card>
     </Grid>
-    </div>
+
+  </Grid>
+  </div>
 
     
   );
