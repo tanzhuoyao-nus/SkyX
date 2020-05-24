@@ -142,12 +142,12 @@ body {
     align-content: center; 
     padding: 30px; 
     margin: 30px; 
-    display: inline; 
+    display: inline-block; 
     border-spacing: 10px;
 }
 
 .MuiCard-root {
-    align:center !important; 
+    align:center;  
     border: 30px; 
     color:red; 
 

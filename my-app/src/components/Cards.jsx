@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import styles from './components.css'; 
+import {Grid} from '@material-ui/core'; 
 
 const useStyles = makeStyles({
   root: {
@@ -22,8 +23,9 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
-    <span>
+    <div>
     {/* Card 1 */}
+    <Grid className ="Cards" container spacing ={3} justify='center' remove="space">
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -50,8 +52,10 @@ export default function MediaCard() {
         </Button>
       </CardActions>
     </Card>
+    </Grid>
 
     {/* Card 2 */}
+    <Grid className="cards" container spacing ={3} justify='center'>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -78,8 +82,10 @@ export default function MediaCard() {
         </Button>
       </CardActions>
     </Card>
+    </Grid>
 
     {/* Card 3 */}
+    <Grid className ="cards" container spacing ={3} justify='center'>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -106,7 +112,8 @@ export default function MediaCard() {
         </Button>
       </CardActions>
     </Card>
-    </span>
+    </Grid>
+    </div>
 
     
   );
