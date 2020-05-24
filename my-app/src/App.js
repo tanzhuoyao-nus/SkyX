@@ -26,6 +26,7 @@ function App() {
       <p>Arrival </p>
       <Date /> 
       </div> 
+      
 
       {/* Chart */}
       
