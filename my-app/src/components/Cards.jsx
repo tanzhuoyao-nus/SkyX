@@ -30,7 +30,7 @@ export default function MediaCard() {
     {/* Card 1 */}
 
     <Grid id ="Cards" container spacing ={3} justify="center">
-      <Grid className="cards" item component ={Card}>
+      
         <Card className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -57,10 +57,10 @@ export default function MediaCard() {
             </Button>
           </CardActions>
         </Card>
-      </Grid>
+     
 
     {/* Card 2 */}
-    <Grid className="cards" item component ={Card}>
+    
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -87,10 +87,10 @@ export default function MediaCard() {
         </Button>
       </CardActions>
     </Card>
-    </Grid>
+    
 
     {/* Card 3 */}
-    <Grid className ="cards" item component ={Card}>
+    
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -117,7 +117,7 @@ export default function MediaCard() {
         </Button>
       </CardActions>
     </Card>
-    </Grid>
+    
 
   </Grid>
   </div>
