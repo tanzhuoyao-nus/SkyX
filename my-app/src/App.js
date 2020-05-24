@@ -5,30 +5,20 @@ import styles from './index.css';
 import Chart from './components/Chart';
 import Logo from './components/Logo'; 
 import Navbar from './components/Navbar';
-
-
+import Cards from './components/Cards'; 
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <Logo />   
+      <Logo /> 
 
-      <h1>Welcome to SkyX</h1>
-      <input id="form" placeholder="Your name here"></input>
-
-
-      <Chart /> 
-
-
-
-
-
-
-
-
-
+      <Cards />
+      <Chart />
       
+
+      {/* <Chart className ="chart" />  */}
+
     </div>
   );
 }

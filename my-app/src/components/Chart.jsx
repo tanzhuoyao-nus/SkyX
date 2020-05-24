@@ -21,7 +21,7 @@ const state = {
             lineTension: 0.5,
             backgroundColor: 'rgba(75,192,192,1)',
             borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
+            borderWidth: 5,
             data: price_int_arr
         }
     ]
@@ -33,7 +33,7 @@ class Chart extends React.Component {
       .getDownloadURL().then(x => console.log(x));
         return (
             <div>
-              <Line
+              <Line 
                 data={ state }
                 options={{
                   title:{

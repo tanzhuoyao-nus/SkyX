@@ -1,7 +1,7 @@
 import React from 'react'; 
 import logo from '../images/navbarlogo.png'; 
 import searchIcon from '../images/search.png'; 
-import styles from '../index.css'; 
+import styles from './components.css'; 
 
 function Navbar (){ 
     return (
@@ -17,7 +17,10 @@ function Navbar (){
                 <li className="menu__list-item"><a className="menu__link menu__link--active" href="#">Home</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="#">About</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="#">Price Chart</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="#">Price Maps</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="#">Price Comparison</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="#">Buy Order</a></li>
+                
             </ul>
 
             <button style ={{
