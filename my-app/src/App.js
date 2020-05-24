@@ -12,12 +12,9 @@ function App() {
     <div>
       <Navbar/>
       <Logo /> 
-
       <Cards />
       <Chart />
-      
-
-      {/* <Chart className ="chart" />  */}
+    
 
     </div>
   );
