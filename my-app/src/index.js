@@ -7,6 +7,7 @@ import Chart from './components/Chart';
 
 ReactDOM.render(
   <React.StrictMode>
+    <App />
     <Chart />
     <Chart />
   </React.StrictMode>,
