@@ -9,6 +9,8 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <Chart />
+
+    <Chart />     
     <Chart />
   </React.StrictMode>,
   document.getElementById('root') 
