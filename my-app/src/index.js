@@ -8,6 +8,8 @@ import Chart from './components/Chart';
 ReactDOM.render(
   <React.StrictMode>
     <Chart />
+
+    <Chart />     
     <Chart />
   </React.StrictMode>,
   document.getElementById('root') 
