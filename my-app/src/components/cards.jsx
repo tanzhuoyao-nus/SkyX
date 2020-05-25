@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import styles from './components.css'; 
+import './components.css'; 
 import {Grid} from '@material-ui/core'; 
 
 const useStyles = makeStyles({
@@ -27,7 +27,7 @@ export default function MediaCard() {
       <h1 id="recommendations"> Recommendations </h1>
       <hr id="line"></hr>
     
-    <Grid id ="card" container spacing ={3} justify="center">
+    <Grid id ="card" container spacing={3} justify="center">
       {/* Card 1 */}
       <Card id ="card1" className={classes.root}>
         <CardActionArea>

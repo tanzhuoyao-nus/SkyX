@@ -1,12 +1,10 @@
 import React from 'react'; 
-import styles from './pages.css'; 
+import './pages.css'; 
 import Chart from '../components/chart'; 
 
 //component imports 
 
 import Navbar from '../components/navbar';
-import Cards from '../components/cards'; 
-import Date from '../components/date'; 
 
 function Pricechart () { 
     return ( 

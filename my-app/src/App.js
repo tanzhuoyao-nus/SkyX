@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.css'; 
+import './index.css'; 
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 //pages imports
@@ -12,10 +12,9 @@ import Buyorder from './pages/buyorder';
 function App() {
   return (
     <div>
-      
+  
       {/* Navbar Routing */}
       <Router> 
-        
         <Switch>
           <Route path ="/" exact component={Home} /> 
           <Route path ="/pricecomparison" component={Pricecomparison} />

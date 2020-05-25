@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Grid} from '@material-ui/core'; 
-import Styles from './components.css';
+import './components.css';
 
 const useStyles = makeStyles({
   root: {
@@ -30,9 +30,8 @@ export default function OutlinedCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Grid container spacing ={3} justify="center">
-
-        <Grid className ="featuresGrid" item ={3} xs={2}>
+    <Grid id="feature" container spacing={3} justify="center">
+        <Grid className ="featuresGrid" item ={true} xs={2}>
             <Card className={classes.root} variant="outlined">
             <CardContent className ="features">
                 <Typography className="featTextHeader" variant="h6" component="h1">
@@ -48,7 +47,7 @@ export default function OutlinedCard() {
             </Card>
         </Grid>
 
-        <Grid className ="featuresGrid" item ={3} xs={2}>
+        <Grid className ="featuresGrid" item ={true} xs={2}>
             <Card className={classes.root} variant="outlined">
             <CardContent className ="features">
                 <Typography className="featTextHeader" variant="h6" component="h1">
@@ -64,7 +63,7 @@ export default function OutlinedCard() {
             </Card>
         </Grid>
 
-        <Grid className ="featuresGrid" item ={3} xs={2} >
+        <Grid className ="featuresGrid" item ={true} xs={2} >
             <Card className={classes.root} variant="outlined">
             <CardContent className ="features">
                 <Typography className="featTextHeader" variant="h6" component="h1">
@@ -80,7 +79,7 @@ export default function OutlinedCard() {
             </Card>
         </Grid>
 
-        <Grid className ="featuresGrid" item ={3} xs={2} >
+        <Grid className ="featuresGrid" item ={true} xs={2} >
             <Card className={classes.root} variant="outlined">
             <CardContent className ="features">
                 <Typography className="featTextHeader" variant="h6" component="h1">

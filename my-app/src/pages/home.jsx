@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../index.css'; 
+import '../index.css'; 
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 //component imports 
@@ -14,7 +14,7 @@ function Home() {
     <div>
 
     {/* Navbar */}
-    <Navbar/>
+    <Navbar />
 
     {/* Logo */}
     <Logo /> 
