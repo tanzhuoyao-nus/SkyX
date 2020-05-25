@@ -169,8 +169,8 @@ body {
     margin-bottom: 30px;  
 }
 
-#card2 { 
-    margin: 0 2% !important; 
+#card1, #card2, #card3 { 
+    margin: 1% 1% !important; 
     
 }
 

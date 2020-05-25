@@ -24,104 +24,93 @@ export default function MediaCard() {
 
   return (
     <div>
-    <h1 id="recommendations"> Recommendations </h1>
-    <hr id="line"></hr>
+      <h1 id="recommendations"> Recommendations </h1>
+      <hr id="line"></hr>
     
-    {/* Card 1 */}
-
-    <Grid id ="card1" container spacing ={3} justify="center">
-      
-        <Card className ="card" className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Italy_banner_3_Florence.jpg/2560px-Italy_banner_3_Florence.jpg"
-              title="Contemplative Reptile"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Italy
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+    <Grid id ="card" container spacing ={3} justify="center">
+      {/* Card 1 */}
+      <Card id ="card1" className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Italy_banner_3_Florence.jpg/2560px-Italy_banner_3_Florence.jpg"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Italy
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
               Italy is famous for its delicious cuisine, trendy fashions, luxury sports cars and motorcycles, diverse regional cultures and dialects, as well as for its various landscapes from the seas to the Alps and Apennines. 
-              </Typography>
-            </CardContent>
-          
-          </CardActionArea>
-          <CardActions>
-            <a href="/buyorder"><Button size="small" color="primary">
-              Buy tickets
-            </Button></a>
-            <a href="/pricechart"><Button size="small" color="primary">
-              Price Chart
-            </Button></a>
-          </CardActions>
-        </Card>
+            </Typography>
+          </CardContent>      
+        </CardActionArea> 
+        <CardActions>  
+          <a href="/buyorder"><Button size="small" color="primary">
+            Buy tickets
+          </Button></a>
+          <a href="/pricechart"><Button size="small" color="primary">
+            Price Chart
+          </Button></a>
+        </CardActions>
+      </Card>
      
-
-    {/* Card 2 */}
+      {/* Card 2 */}
+      <Card id ="card2" className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Tokyo, Japan
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
+            </Typography>
+          </CardContent>
+          
+        </CardActionArea>
+        <CardActions>
+          <a href="/buyorder"><Button size="small" color="primary">
+            Buy tickets
+          </Button></a>
+          <a href="/pricechart"><Button size="small" color="primary">
+            Price Chart
+          </Button></a>
+        </CardActions>
+      </Card>
     
-    <Card id ="card2" className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Tokyo, Japan
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
-          </Typography>
-        </CardContent>
-        
-      </CardActionArea>
-      <CardActions>
-        <a href="/buyorder"><Button size="small" color="primary">
-          Buy tickets
-        </Button></a>
-        <a href="/pricechart"><Button size="small" color="primary">
-          Price Chart
-        </Button></a>
-      </CardActions>
-    </Card>
-    
-
-    {/* Card 3 */}
-    
-    <Card id="card3" className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/4/4c/Manhattan_Wikivoyage_Banner.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            New York City 
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          One of the world's greatest cities, New York (known as "The Big Apple", "NYC," and often called "New York City") is a global center for media, entertainment, art, fashion, research, finance, and trade. 
-          </Typography>
-        </CardContent>
-        
-      </CardActionArea>
-      <CardActions>
-        <a href="/buyorder"><Button size="small" color="primary">
-          Buy tickets
-        </Button></a> 
-        <a href="/pricechart"><Button size="small" color="primary">
-          Price Chart 
-        </Button></a>
-      </CardActions>
-    </Card>
-    
-
-  </Grid>
-  </div>
-
-    
+      {/* Card 3 */}
+      <Card id="card3" className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://upload.wikimedia.org/wikipedia/commons/4/4c/Manhattan_Wikivoyage_Banner.jpg"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              New York City 
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+            One of the world's greatest cities, New York (known as "The Big Apple", "NYC," and often called "New York City") is a global center for media, entertainment, art, fashion, research, finance, and trade. 
+            </Typography>
+          </CardContent>
+          
+        </CardActionArea>
+        <CardActions>
+          <a href="/buyorder"><Button size="small" color="primary">
+            Buy tickets
+          </Button></a> 
+          <a href="/pricechart"><Button size="small" color="primary">
+            Price Chart 
+          </Button></a>
+        </CardActions>
+      </Card>  
+    </Grid>
+    </div>
   );
 }
