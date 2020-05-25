@@ -1,10 +1,12 @@
 import React from 'react'; 
 import styles from './pages.css'; 
+import Navbar from '../components/navbar';
 
 function Pricemap () { 
     return ( 
         <div> 
-            <h1> Price Mapping Page </h1>
+            <Navbar /> 
+            <h1> Price Maps </h1>
         </div>
     ); 
 }

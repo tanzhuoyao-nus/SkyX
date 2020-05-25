@@ -3,7 +3,6 @@ import styles from '../index.css';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 //component imports 
-import Chart from '../components/chart';
 import Logo from '../components/logo'; 
 import Navbar from '../components/navbar';
 import Cards from '../components/cards'; 
@@ -12,6 +11,13 @@ import Date from '../components/date';
 function Home() {
   return (
     <div>
+
+    {/* Navbar */}
+    <Navbar/>
+
+    {/* Logo */}
+    <Logo /> 
+
     {/* Cards */}
     <Cards />
 

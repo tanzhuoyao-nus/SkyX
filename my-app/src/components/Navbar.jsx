@@ -3,9 +3,12 @@ import logo from '../images/navbarlogo.png';
 import searchIcon from '../images/search.png'; 
 import styles from './components.css'; 
 import { Link } from 'react-router-dom'; 
+
+
 function Navbar (){ 
     return (
     <div className="container center">
+
     <nav className="menu">
         <h1 style ={{
             backgroundImage: 'url(' + logo + ')'
@@ -19,7 +22,6 @@ function Navbar (){
                 <li className="menu__list-item"><a className="menu__link" href="/pricemap">Price Maps</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="/pricecomparison">Price Comparison</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="/buyorder">Buy Order</a></li>
-                
             </ul>
 
             <button style ={{

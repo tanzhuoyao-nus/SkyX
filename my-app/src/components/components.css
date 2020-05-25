@@ -8,6 +8,7 @@
 html, body {
     margin: 0px;
     padding: 0px;
+    color: black; 
 }
 
 body {
@@ -80,13 +81,20 @@ body {
 
 .menu__link:hover {
     color: #0d0d5e;
+    border-bottom: 4px solid #0d0d5e; 
+    font-weight: bold 70%; 
+    transition: 100ms; 
 }
 
-.menu__link--active {
+.menu__link:hover span{
+    font-weight:bold;
+}
+
+/* .menu__link--active {
     color: #0d0d5e;
     border-top: 4px solid #0d0d5e;
     font-weight: 700;
-}
+} */
 
 .menu__logo {
     text-indent: -9999999px;

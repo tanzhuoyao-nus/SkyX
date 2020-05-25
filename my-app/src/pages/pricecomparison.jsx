@@ -1,10 +1,12 @@
 import React from 'react'; 
 import styles from './pages.css'; 
+import Navbar from '../components/navbar';
 
 function Pricecomparison () { 
     return ( 
         <div> 
-            <h1> Price Comparison Page </h1>
+            <Navbar /> 
+            <h1> Price Comparison </h1>
         </div>
     ); 
 }
