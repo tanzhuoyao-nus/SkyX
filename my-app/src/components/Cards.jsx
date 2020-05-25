@@ -49,12 +49,12 @@ export default function MediaCard() {
           
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <a href="/buyorder"><Button size="small" color="primary">
               Buy tickets
-            </Button>
-            <Button size="small" color="primary">
+            </Button></a>
+            <a href="/pricechart"><Button size="small" color="primary">
               Price Chart
-            </Button>
+            </Button></a>
           </CardActions>
         </Card>
      
@@ -79,12 +79,12 @@ export default function MediaCard() {
         
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <a href="/buyorder"><Button size="small" color="primary">
           Buy tickets
-        </Button>
-        <Button size="small" color="primary">
+        </Button></a>
+        <a href="/pricechart"><Button size="small" color="primary">
           Price Chart
-        </Button>
+        </Button></a>
       </CardActions>
     </Card>
     
@@ -109,12 +109,12 @@ export default function MediaCard() {
         
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <a href="/buyorder"><Button size="small" color="primary">
           Buy tickets
-        </Button>
-        <Button size="small" color="primary">
+        </Button></a> 
+        <a href="/pricechart"><Button size="small" color="primary">
           Price Chart 
-        </Button>
+        </Button></a>
       </CardActions>
     </Card>
     

@@ -182,3 +182,7 @@ nav {
     min-heigh: 10vh; 
     background: lightblue; 
 }
+
+a {
+    text-decoration: none;
+}
