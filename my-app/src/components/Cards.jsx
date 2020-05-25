@@ -73,7 +73,7 @@ export default function MediaCard() {
             Tokyo, Japan
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Tōkyō is the capital of Japan. With over 13 million people within the city limits alone, Tokyo is the core of the most populated urban area in the world, Tokyo Metropolis (which has a population of over 37 million people).
+          As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
           </Typography>
         </CardContent>
         

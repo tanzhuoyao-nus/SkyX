@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../images/navbarlogo.png'; 
 import searchIcon from '../images/search.png'; 
 import styles from './components.css'; 
-
+import { Link } from 'react-router-dom'; 
 function Navbar (){ 
     return (
     <div className="container center">
@@ -14,11 +14,11 @@ function Navbar (){
 
         <div className="menu__right">
             <ul className="menu__list">
-                <li className="menu__list-item"><a className="menu__link menu__link--active" href="#">Home</a></li>
-                <li className="menu__list-item"><a className="menu__link" href="#">Price Chart</a></li>
-                <li className="menu__list-item"><a className="menu__link" href="#">Price Maps</a></li>
-                <li className="menu__list-item"><a className="menu__link" href="#">Price Comparison</a></li>
-                <li className="menu__list-item"><a className="menu__link" href="#">Buy Order</a></li>
+                <li className="menu__list-item"><a className="menu__link menu__link--active" href="/">Home</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="/pricechart">Price Chart</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="/pricemap">Price Maps</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="/pricecomparison">Price Comparison</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="/buyorder">Buy Order</a></li>
                 
             </ul>
 
@@ -40,4 +40,3 @@ function Navbar (){
   
 
 export default Navbar; 
-
