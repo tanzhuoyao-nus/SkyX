@@ -19,7 +19,6 @@ body {
     width: 100%;
     margin-bottom: 50px auto;
     padding-bottom: 50px;
-    
 }
 
 .center {
@@ -80,8 +79,8 @@ body {
 }
 
 .menu__link:hover {
-    color: #0d0d5e;
-    border-bottom: 4px solid #0d0d5e; 
+    color: #141B45;
+    border-bottom: 4px solid #141B45; 
     font-weight: bold 70%; 
     transition: 100ms; 
 }
@@ -175,14 +174,31 @@ body {
     
 }
 
-nav { 
-    display: flex; 
-    justify-content: space-around; 
-    align-items: center; 
-    min-heigh: 10vh; 
-    background: lightblue; 
-}
-
 a {
     text-decoration: none;
+    text-color: #141B45 !important; 
+}
+
+.featureButtons { 
+    position: center !important; 
+    color: #141B45 !important; 
+    align-self: center;
+}
+
+.features { 
+    background-color: #141B45;
+}
+
+.featText { 
+    color: white !important; 
+}
+
+.featTextHeader { 
+    font-weight: bold; 
+    color: white; 
+    padding-bottom: 15px; 
+}
+
+.featuresGrid { 
+    margin: 30px !important; 
 }
