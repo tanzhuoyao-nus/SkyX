@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../images/navbarlogo.png'; 
 import searchIcon from '../images/search.png'; 
 import './components.css'; 
-import { Link } from 'react-router-dom'; 
 
 
 function Navbar (){ 

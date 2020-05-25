@@ -27,7 +27,6 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Grid id="feature" container spacing={3} justify="center">

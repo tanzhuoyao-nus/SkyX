@@ -16,9 +16,11 @@ const firebaseConfig = {
 
   const storage = firebase.storage();
   var storageRef = storage.ref();
-  var db = firebase.firestore();
+  export const db = firebase.firestore();
 
   // Formatted as [Destination] >> [Flight Date] >> [Scrape Date] >> get()
+  // Commented out for debugging
+  /*
   db.collection('flight_price_KUL').doc("2020-06-21")
   .collection('2020-05-22').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -26,6 +28,7 @@ const firebaseConfig = {
       console.log(`${doc.id} => ${doc.get("Price")}`);
     });
   });
+  */
 
 
 
