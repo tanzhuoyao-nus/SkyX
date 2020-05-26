@@ -1,15 +1,8 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import flight_data from '../datasets/2020-06-17-TYO.json';
+import 'react-chartjs-2';
 import { db } from './firebase';
 import '../pages/pricechart'
-
-var date_arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-// var price_arr = [];
-// var date_ = getNextMonth();
-var price_int_arr = [123,453,123,233,123,231,453,123,234,234,342,134,234,234];
-
-// var price_int_arr = price_arr.map(x =>parseInt(x.slice(1)));
 
 function cityPicker(city) {
   if (city === "Tokyo") {
@@ -54,48 +47,55 @@ function incrementDay(dateStr) {
   return outputStr;
 }
 
-async function getFirebaseData(date_, city, date_arr, price_arr) {
-  var index = 0;
+async function getFirebaseData(date_, city, date_arr) {
+  var price_arr = [];
   for (var x = 0; x < 14; x++) {
     date_arr[x] = date_;
-    db.collection('flight_price_' + city).doc(date_)
-    .collection('2020-05-25').get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-         // Gets the name of the document and the price of the flight
-        price_arr[index] = `${doc.get("Price")}`;
-        index++;
-      });
-    });
+    const document = await db.collection('flight_price_' + city).doc(date_)
+    .collection('2020-05-26').doc('Data').get();
+    const price = await document.get("Price");
+    price_arr[x] = parseInt(price.slice(1));
     date_ = incrementDay(date_);
   }
+  console.log(price_arr);
+  return price_arr;
 }
 
 class Chart extends React.Component {
-    render() { 
-        const city = cityPicker(this.props.name);
-        var date_arr = [];
-        var price_arr = [];
-        var date_ = getNextMonth();
-        getFirebaseData(date_, city, date_arr, price_arr);
-        const state = { 
-          labels: date_arr,
-          datasets: [
-              {
-                  label: '$SGD',
-                  fill: false,
-                  lineTension: 0,
-                  backgroundColor: 'rgba(75,192,192,1)',
-                  borderColor: 'rgba(0,0,0,1)',
-                  borderWidth: 5,
-                  data: price_arr
-              }
-          ]
+    constructor() {
+      super();
+      this.state = { 
+        labels: [],
+        datasets: [
+            {
+                label: '$SGD',
+                fill: false,
+                lineTension: 0,
+                backgroundColor: 'rgba(75,192,192,1)',
+                borderColor: 'rgba(0,0,0,1)',
+                borderWidth: 5,
+                data : []
+            }
+        ]
       };
+    }
+
+    async componentDidMount() {
+      const city = cityPicker(this.props.name);
+      var date_arr = [];
+      var date_ = getNextMonth();       
+      var final_prices = await getFirebaseData(date_, city, date_arr).catch(err => console.log("Oops error"));
+      this.state.labels = date_arr;
+      this.state.datasets[0].data = final_prices;
       
+    }
+
+    render() {    
+      console.log(this.state.datasets[0].data);
       return (
         <div>
           <Line 
-            data={ state }
+            data={ this.state }
             options={{
               title:{
                 display:true,
