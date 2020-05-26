@@ -14,7 +14,11 @@ class Pricechart extends React.Component {
                 <h1> Price Chart Page </h1>
                 {/* Chart */}
                 <hr></hr>
-                <Chart name={"Tokyo"}/>
+                <Chart name={"Tokyo"} />
+                <Chart name={"Denpasar"} />
+                <Chart name={"London"} />
+                <Chart name={"Hong Kong"} />
+                <Chart name={"Kuala Lumpur"} />
             </div>
         ); 
     }
