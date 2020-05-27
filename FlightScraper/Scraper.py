@@ -21,6 +21,10 @@ def close_popup_secondary():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
     driver.find_elements_by_xpath(xp_popup_close)[9].click()
 
+def close_popup_tertiary():
+    xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
+    driver.find_elements_by_xpath(xp_popup_close)[7].click()
+
 
 # Load more results to maximize the scraping
 def load_more():
@@ -63,6 +67,10 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
         pass
     try:
         close_popup_secondary()
+    except:
+        pass
+    try:
+        close_popup_tertiary()
     except:
         pass
     sleep(randint(10, 20))
@@ -180,8 +188,8 @@ chromedriver_path = '/Users/tanzhuoyao/GitHub/SkyX/FlightScraper/chromedriver'
 
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
-search_city_one_way('DPS')
-sleep(30)
+#search_city_one_way('DPS')
+#sleep(30)
 search_city_one_way('KUL')
 sleep(30)
 search_city_one_way('HKG')
