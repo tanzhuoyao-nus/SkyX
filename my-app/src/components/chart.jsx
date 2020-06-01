@@ -120,11 +120,11 @@ class Chart extends React.Component {
           [
             {
                 label: '$SGD',
-                fill: true,
+                fill: false,
                 lineTension: 0,
                 backgroundColor: 'rgba(75,192,192,1)',
                 borderColor: 'rgba(0,0,0,1)',
-                borderWidth: 3,
+                borderWidth: 2,
                 data : final_prices
             }
           ]
