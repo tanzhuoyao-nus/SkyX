@@ -40,6 +40,7 @@ function today() {
   var month = dateArr[1];
   var day = dateArr[0];
   var dateStr = year + "-" + month + "-" + day;
+  console.log(dateStr);
   return dateStr;
 }
 
@@ -81,6 +82,7 @@ async function getFirebaseData(date_, city, date_arr) {
     date_arr[x] = date_;
     const document = await db.collection('flight_price_' + city).doc(date_)
     .collection(dayBefore(today())).doc('Data').get();
+    console.log(dayBefore(today()));
     const price = await document.get("Price");
     price_arr[x] = parseInt(price.slice(1));
     date_ = incrementDay(date_);
