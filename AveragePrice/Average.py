@@ -7,10 +7,24 @@ cred = credentials.Certificate('firebase-sdk.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
+# def findNewAverage(current_avg, new_price, num):
+#     if num == 13:
+#         # new value
+#         return new_price
+#     else:
+#         units = 13 - num
+#         total = current_avg * units + new_price
+#         return total / (units + 1)
+
+# for 2 June
 def findNewAverage(current_avg, new_price, num):
     if num == 13:
         # new value
         return new_price
+    elif num == 0 or num == 1:
+        units = 11
+        total = current_avg * units + new_price
+        return total / (units + 1)
     else:
         units = 13 - num
         total = current_avg * units + new_price
@@ -117,8 +131,10 @@ def updateLowest(city, scrape_start):
     low_ref.set(dataset, merge = True)
 
 
-# remove the -1 soon
-current_date = datetime.date.today() - datetime.timedelta(1)
+
+current_date = datetime.date.today()
 scrape_start = current_date + datetime.timedelta(30)
 
-updateHighest("KUL", scrape_start)
+updateAverage("TYO", scrape_start)
+updateHighest("TYO", scrape_start)
+updateLowest("TYO", scrape_start)
