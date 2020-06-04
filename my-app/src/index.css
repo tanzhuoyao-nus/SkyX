@@ -19,3 +19,7 @@ code {
   text-align: left;
   margin-left: 30px; 
 }
+
+.chart-js-render-monitor {
+  margin: 10px;
+}

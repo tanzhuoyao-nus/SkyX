@@ -7,24 +7,10 @@ cred = credentials.Certificate('firebase-sdk.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# def findNewAverage(current_avg, new_price, num):
-#     if num == 13:
-#         # new value
-#         return new_price
-#     else:
-#         units = 13 - num
-#         total = current_avg * units + new_price
-#         return total / (units + 1)
-
-# for 2 June
 def findNewAverage(current_avg, new_price, num):
     if num == 13:
         # new value
         return new_price
-    elif num == 0 or num == 1:
-        units = 11
-        total = current_avg * units + new_price
-        return total / (units + 1)
     else:
         units = 13 - num
         total = current_avg * units + new_price

@@ -17,7 +17,7 @@ class Pricechart extends React.Component {
                 <Chart name={"Tokyo"} />
                 <Chart name={"Denpasar"} />
                 <Chart name={"London"} />
-                <Chart name={"Hong Kong"} />
+                <Chart name={"Hong Kong"} />  
                 <Chart name={"Kuala Lumpur"} />
             </div>
         ); 
