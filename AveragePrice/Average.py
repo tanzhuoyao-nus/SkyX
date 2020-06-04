@@ -121,6 +121,22 @@ def updateLowest(city, scrape_start):
 current_date = datetime.date.today()
 scrape_start = current_date + datetime.timedelta(30)
 
+updateAverage("DPS", scrape_start)
+updateHighest("DPS", scrape_start)
+updateLowest("DPS", scrape_start)
+
+updateAverage("HKG", scrape_start)
+updateHighest("HKG", scrape_start)
+updateLowest("HKG", scrape_start)
+
+updateAverage("KUL", scrape_start)
+updateHighest("KUL", scrape_start)
+updateLowest("KUL", scrape_start)
+
+updateAverage("LON", scrape_start)
+updateHighest("LON", scrape_start)
+updateLowest("LON", scrape_start)
+
 updateAverage("TYO", scrape_start)
 updateHighest("TYO", scrape_start)
 updateLowest("TYO", scrape_start)
