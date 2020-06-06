@@ -31,7 +31,7 @@ function getNextMonth() {
   return dateStr;
 }
 
-function today() {
+function getToday() {
   var date = new Date();
   var today = date.getDate();
   date.setDate(today);
@@ -75,31 +75,18 @@ function dayBefore(dateStr) {
   return outputStr;
 }
 
-async function getFirebaseData(date_, city, date_arr) {
+async function getFirebaseData(city, date_arr) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const prices = await document.get("Average Prices"); 
-  const price_arr = Object.values(prices); 
-  console.log(prices);
-
-  for (var x = 0; x < price_arr.length; x++) { 
-    date_arr[x] = date_;
-    date_ = incrementDay(date_);
+  const size = Object.values(prices).length; 
+  var price_arr = []
+  var date = "2020-06-21";
+  for (var x= 0; x < size; x++) { 
+    date_arr[x] = date;
+    price_arr[x] = prices[date];
+    date = incrementDay(date);
   }
-  
   return price_arr; 
-
-  // old code 
-  // return price_arr; 
-  // var price_arr =[]; 
-  // for (var x = 0; x < 14; x++) {
-  //   date_arr[x] = date_;
-  //   const document = await db.collection('flight_price_' + city).doc(date_)
-  //   .collection(dayBefore(today())).doc('Data').get();
-  //   const price = await document.get("Price");
-  //   price_arr[x] = parseInt(price.slice(1));
-  //   date_ = incrementDay(date_);
-  // }
-  // return price_arr;
 }
 
 class Chart extends React.Component {
@@ -124,9 +111,7 @@ class Chart extends React.Component {
     async componentDidMount() {
       const city = cityPicker(this.props.name);
       var date_arr = [];
-      var date_ = getNextMonth();       
-      console.log(city);
-      var final_prices = await getFirebaseData(date_, city, date_arr).catch(err => console.log("Oops error"));
+      var final_prices = await getFirebaseData(city, date_arr).catch(err => console.log("Oops error"));
       if (this.state.labels !== date_arr) {
         this.setState({ labels: date_arr });
       }
@@ -148,7 +133,6 @@ class Chart extends React.Component {
     }
 
     render() {    
-      console.log(this.state.datasets[0].data);
       return (
         <div>
           <Line 
