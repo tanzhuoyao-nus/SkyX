@@ -10,7 +10,7 @@ function HongKong () {
         <div> 
                 {/* Navbar */}
                 <Navbar/>
-                <h1> Denpasar </h1>
+                <h1> Hong Kong </h1>
                 {/* Chart */}
                 <hr></hr>
                 <Chart name={"Hong Kong"} />
