@@ -33,15 +33,15 @@ export default function MediaCard() {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Italy_banner_3_Florence.jpg/2560px-Italy_banner_3_Florence.jpg"
+            image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Denpasar_banner.jpg/1280px-Denpasar_banner.jpg"
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Italy
+              Denpasar
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Italy is famous for its delicious cuisine, trendy fashions, luxury sports cars and motorcycles, diverse regional cultures and dialects, as well as for its various landscapes from the seas to the Alps and Apennines. 
+            Denpasar is a vibrant, bustling, multi-cultural city and although it can seem a little intimidating the first time you visit, just do not believe those travel guides which say it has nothing to offer as see for yourself.
             </Typography>
           </CardContent>      
         </CardActionArea> 
@@ -49,7 +49,7 @@ export default function MediaCard() {
           <a href="/buyorder"><Button size="small" color="primary">
             Buy tickets
           </Button></a>
-          <a href="/pricechart"><Button size="small" color="primary">
+          <a href="/pricechart/denpasar"><Button size="small" color="primary">
             Price Chart
           </Button></a>
         </CardActions>
@@ -65,7 +65,7 @@ export default function MediaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Tokyo, Japan
+              Tokyo
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
             As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
@@ -77,7 +77,7 @@ export default function MediaCard() {
           <a href="/buyorder"><Button size="small" color="primary">
             Buy tickets
           </Button></a>
-          <a href="/pricechart"><Button size="small" color="primary">
+          <a href="/pricechart/tokyo"><Button size="small" color="primary">
             Price Chart
           </Button></a>
         </CardActions>
@@ -88,15 +88,15 @@ export default function MediaCard() {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://upload.wikimedia.org/wikipedia/commons/4/4c/Manhattan_Wikivoyage_Banner.jpg"
+            image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              New York City 
+              London
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            One of the world's greatest cities, New York (known as "The Big Apple", "NYC," and often called "New York City") is a global center for media, entertainment, art, fashion, research, finance, and trade. 
+            Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
             </Typography>
           </CardContent>
           
@@ -105,7 +105,7 @@ export default function MediaCard() {
           <a href="/buyorder"><Button size="small" color="primary">
             Buy tickets
           </Button></a> 
-          <a href="/pricechart"><Button size="small" color="primary">
+          <a href="/pricechart/london"><Button size="small" color="primary">
             Price Chart 
           </Button></a>
         </CardActions>
