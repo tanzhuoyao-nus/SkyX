@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
 
+// initialise firebase 
 const firebaseConfig = {
     apiKey: "AIzaSyCXszezP_a4hYHnCkmvKY-_NgTTwwJNXko",
     authDomain: "skyx-abc03.firebaseapp.com",

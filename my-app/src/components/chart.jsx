@@ -76,16 +76,29 @@ function dayBefore(dateStr) {
 }
 
 async function getFirebaseData(date_, city, date_arr) {
-  var price_arr = [];
-  for (var x = 0; x < 14; x++) {
+  const document = await db.collection('flight_price_' + city).doc("Prices").get();
+  const prices = await document.get("Average Prices"); 
+  const price_arr = Object.values(prices); 
+
+  for (var x = 0; x < price_arr.length; x++) { 
     date_arr[x] = date_;
-    const document = await db.collection('flight_price_' + city).doc(date_)
-    .collection(dayBefore(today())).doc('Data').get();
-    const price = await document.get("Price");
-    price_arr[x] = parseInt(price.slice(1));
     date_ = incrementDay(date_);
   }
-  return price_arr;
+  
+  return price_arr; 
+
+  // old code 
+  // return price_arr; 
+  // var price_arr =[]; 
+  // for (var x = 0; x < 14; x++) {
+  //   date_arr[x] = date_;
+  //   const document = await db.collection('flight_price_' + city).doc(date_)
+  //   .collection(dayBefore(today())).doc('Data').get();
+  //   const price = await document.get("Price");
+  //   price_arr[x] = parseInt(price.slice(1));
+  //   date_ = incrementDay(date_);
+  // }
+  // return price_arr;
 }
 
 class Chart extends React.Component {
