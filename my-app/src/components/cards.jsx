@@ -38,10 +38,10 @@ export default function MediaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Denpasar
+              Bali
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            Denpasar is a vibrant, bustling, multi-cultural city and although it can seem a little intimidating the first time you visit, just do not believe those travel guides which say it has nothing to offer as see for yourself.
+            With world-class diving and surfing, a range of natural, cultural and historical attractions, and plentiful accommodation options, it is one of the most popular island destinations in the world. Bali offers something to almost every visitor.
             </Typography>
           </CardContent>      
         </CardActionArea> 
