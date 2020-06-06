@@ -14,7 +14,7 @@ function Denpasar () {
                 {/* Chart */}
                 <hr></hr>
                 <Chart name={"Denpasar"} />
-        </div>
+            </div>
     ); 
 }
 

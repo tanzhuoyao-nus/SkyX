@@ -5,12 +5,12 @@ import Chart from '../components/chart';
 //component imports 
 import Navbar from '../components/navbar';
 
-function Hongkong () { 
+function HongKong () { 
     return ( 
         <div> 
                 {/* Navbar */}
                 <Navbar/>
-                <h1> Hong Kong </h1>
+                <h1> Denpasar </h1>
                 {/* Chart */}
                 <hr></hr>
                 <Chart name={"Hong Kong"} />
@@ -18,4 +18,4 @@ function Hongkong () {
     ); 
 }
 
-export default Hongkong; 
+export default HongKong; 

@@ -5,29 +5,29 @@ import Chart from '../components/chart';
 //component imports 
 import Navbar from '../components/navbar';
 
+//react-router 
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom"; 
+
+//pages 
+import Hongkong from './Hongkong'; 
+import London from './London'; 
+import Tokyo from './Tokyo'; 
+import KualaLumpur from './KL'; 
+import Denpasar from './Denpasar'; 
+import Pricecharthome from './pricecharthome'; 
 
 class Pricechart extends React.Component { 
-    render() {
-        return ( 
-            <div> 
-                {/* Navbar */}
-                <Navbar/>
-                <h1> Price Chart Page </h1>
-                {/* Chart */}
-                <hr></hr>
-                <a href="https://google.com">Denpasar</a><br/> 
-                <a href="./Hongkong.jsx">Hongkong</a><br/>
-                <a href="./KL">KL</a><br/>
-                <a href="./London">London</a><br/>
-                <a href="./Tokyo">Tokyo</a>
-
-                <Chart name={"Tokyo"} />
-                <Chart name={"Denpasar"} />
-                <Chart name={"London"} />
-                <Chart name={"Hong Kong"} />  
-                <Chart name={"Kuala Lumpur"} />
-            </div>
-        ); 
+    render() { 
+        return <Router>
+            <Switch>
+            <Route exact path = "/pricechart" component ={Pricecharthome}/>
+            <Route exact path = "/pricechart/hongkong" component={Hongkong} /> 
+            <Route exact path = "/pricechart/london" component={London} /> 
+            <Route exact path = "/pricechart/kl" component={KualaLumpur} /> 
+            <Route exact path = "/pricechart/tokyo" component={Tokyo} /> 
+            <Route exact path = "/pricechart/denpasar" component={Denpasar} /> 
+            </Switch>
+        </Router>
     }
 }
 
