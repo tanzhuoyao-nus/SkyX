@@ -13,7 +13,7 @@ import Hongkong from './Hongkong';
 import London from './London'; 
 import Tokyo from './Tokyo'; 
 import KualaLumpur from './KL'; 
-import Denpasar from './Denpasar'; 
+import Bali from './Bali'; 
 import Pricecharthome from './pricecharthome'; 
 
 class Pricechart extends React.Component { 
@@ -25,7 +25,7 @@ class Pricechart extends React.Component {
             <Route exact path = "/pricechart/london" component={London} /> 
             <Route exact path = "/pricechart/kl" component={KualaLumpur} /> 
             <Route exact path = "/pricechart/tokyo" component={Tokyo} /> 
-            <Route exact path = "/pricechart/denpasar" component={Denpasar} /> 
+            <Route exact path = "/pricechart/denpasar" component={Bali} /> 
             </Switch>
         </Router>
     }

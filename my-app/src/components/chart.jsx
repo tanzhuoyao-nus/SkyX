@@ -79,6 +79,7 @@ async function getFirebaseData(date_, city, date_arr) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const prices = await document.get("Average Prices"); 
   const price_arr = Object.values(prices); 
+  console.log(prices);
 
   for (var x = 0; x < price_arr.length; x++) { 
     date_arr[x] = date_;
@@ -124,6 +125,7 @@ class Chart extends React.Component {
       const city = cityPicker(this.props.name);
       var date_arr = [];
       var date_ = getNextMonth();       
+      console.log(city);
       var final_prices = await getFirebaseData(date_, city, date_arr).catch(err => console.log("Oops error"));
       if (this.state.labels !== date_arr) {
         this.setState({ labels: date_arr });

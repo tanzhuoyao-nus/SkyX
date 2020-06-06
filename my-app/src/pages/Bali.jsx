@@ -5,18 +5,18 @@ import Chart from '../components/chart';
 //component imports 
 import Navbar from '../components/navbar';
 
-function Denpasar () { 
+function Bali () { 
     return ( 
         <div> 
                 {/* Navbar */}
                 <Navbar/>
-                <h1> Denpasar </h1>
+                <h1> Bali </h1>
                 {/* Chart */}
                 <hr></hr>
-                <Chart name={"Denpasar"} />
+                <Chart name={"Bali"} />
             </div>
     ); 
 }
 
-export default Denpasar; 
+export default Bali; 
 
