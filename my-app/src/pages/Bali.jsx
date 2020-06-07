@@ -14,6 +14,7 @@ function Bali () {
                 {/* Chart */}
                 <hr></hr>
                 <Chart name={"Bali"} />
+                
             </div>
     ); 
 }

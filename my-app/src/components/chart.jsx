@@ -75,6 +75,14 @@ function dayBefore(dateStr) {
   return outputStr;
 }
 
+function convert2dp(arr){
+  var newArr = [];
+  for(let i=0; i<arr.length; i++){
+      newArr.push(arr[i].toFixed(2));
+  }
+  return newArr;
+}
+
 async function getFirebaseData(city, date_arr) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const prices = await document.get("Average Prices"); 
@@ -86,7 +94,7 @@ async function getFirebaseData(city, date_arr) {
     price_arr[x] = prices[date];
     date = incrementDay(date);
   }
-  return price_arr; 
+  return convert2dp(price_arr); 
 }
 
 class Chart extends React.Component {
@@ -136,6 +144,8 @@ class Chart extends React.Component {
       return (
         <div>
           <Line 
+            height={200}   
+            width={600}
             data={ this.state }
             options={{
               title:{

@@ -15,8 +15,8 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
-    width:700, 
+    height: 145,
+    width: 700, 
   },
 });
 
@@ -24,14 +24,11 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
-    <div>
-      <h1 id="recommendations"> Recommendations </h1>
-      <hr id="line"></hr>
-    
+    <div>    
     <Grid id ="card" container spacing={3} justify="center">
       {/* Card 1 */}
       <Card id ="card1" className={classes.root}>
-        <CardActionArea>
+        <a href="/pricechart/denpasar"><CardActionArea>
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bali_banner_Rice_terraces.jpg/1280px-Bali_banner_Rice_terraces.jpg"
@@ -39,17 +36,12 @@ export default function MediaCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Bali
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            With world-class diving and surfing, a range of natural, cultural and historical attractions, and plentiful accommodation options, it is one of the most popular island destinations in the world. Bali offers something to almost every visitor.
+               Bali
             </Typography>
           </CardContent>      
-        </CardActionArea> 
-        <CardActions>  
-          <a href="/buyorder"><Button size="small" color="primary">
-            Buy tickets
-          </Button></a>
+        </CardActionArea> </a>
+        <CardActions>
+          
           <a href="/pricechart/denpasar"><Button size="small" color="primary">
             Price Chart
           </Button></a>
@@ -58,7 +50,7 @@ export default function MediaCard() {
      
       {/* Card 2 */}
       <Card id ="card2" className={classes.root}>
-        <CardActionArea>
+        <a href="/pricechart/tokyo"><CardActionArea>
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
@@ -68,16 +60,11 @@ export default function MediaCard() {
             <Typography gutterBottom variant="h5" component="h2">
               Tokyo
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
-            </Typography>
           </CardContent>
           
-        </CardActionArea>
+        </CardActionArea></a>
         <CardActions>
-          <a href="/buyorder"><Button size="small" color="primary">
-            Buy tickets
-          </Button></a>
+          
           <a href="/pricechart/tokyo"><Button size="small" color="primary">
             Price Chart
           </Button></a>
@@ -86,7 +73,7 @@ export default function MediaCard() {
     
       {/* Card 3 */}
       <Card id="card3" className={classes.root}>
-        <CardActionArea>
+        <a href="/pricechart/london"><CardActionArea>
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
@@ -96,21 +83,66 @@ export default function MediaCard() {
             <Typography gutterBottom variant="h5" component="h2">
               London
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
-            </Typography>
+            
           </CardContent>
           
-        </CardActionArea>
+        </CardActionArea></a>
         <CardActions>
-          <a href="/buyorder"><Button size="small" color="primary">
-            Buy tickets
-          </Button></a> 
+          
           <a href="/pricechart/london"><Button size="small" color="primary">
             Price Chart 
           </Button></a>
         </CardActions>
       </Card>  
+
+      
+    </Grid>
+
+    <Grid id ="card" container spacing={3} justify="center">
+      {/* Card 4 */}
+      <Card id ="card1" className={classes.root}>
+      <a href="/pricechart/kl"><CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg/1280px-Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg"
+            title="Kuala Lumpur"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Kuala Lumpur 
+            </Typography>
+          </CardContent>      
+        </CardActionArea></a> 
+        <CardActions>  
+          
+          <a href="/pricechart/kl"><Button size="small" color="primary">
+            Price Chart
+          </Button></a>
+        </CardActions>
+      </Card>
+     
+      {/* Card 5 */}
+      <Card id ="card2" className={classes.root}>
+        <a href="/pricechart/hongkong"><CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Hong_Kong_Banner.jpg/1280px-Hong_Kong_Banner.jpg"
+            title="Hong Kong"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Hong Kong 
+            </Typography>
+          </CardContent>
+          
+        </CardActionArea></a>
+        <CardActions>
+          
+          <a href="/pricechart/hongkong"><Button size="small" color="primary">
+            Price Chart
+          </Button></a>
+        </CardActions>
+      </Card>
     </Grid>
     </div>
   );
