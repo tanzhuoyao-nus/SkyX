@@ -3,6 +3,7 @@ import { Line } from 'react-chartjs-2';
 import 'react-chartjs-2';
 import { db } from './firebase';
 import '../pages/pricechart'
+import { setISOWeek } from 'date-fns';
 
 function cityPicker(city) {
   if (city === "Tokyo") {
@@ -85,16 +86,27 @@ function convert2dp(arr){
 
 async function getFirebaseData(city, date_arr) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
-  const prices = await document.get("Average Prices"); 
-  const size = Object.values(prices).length; 
-  var price_arr = []
+  const avg_prices = await document.get("Average Prices"); 
+  const high_prices = await document.get("Highest Prices");
+  const low_prices = await document.get("Lowest Prices");
+  const size = Object.values(avg_prices).length;
+  var price_arr = [];
+  var highest_arr = [];
+  var lowest_arr = [];
   var date = "2020-06-21";
   for (var x= 0; x < size; x++) { 
     date_arr[x] = date;
-    price_arr[x] = prices[date];
+    price_arr[x] = avg_prices[date];
+    highest_arr[x] = high_prices[date];
+    lowest_arr[x] = low_prices[date];
     date = incrementDay(date);
   }
-  return convert2dp(price_arr); 
+  var output_arr = [];
+  output_arr[0] = convert2dp(price_arr);
+  output_arr[1] = highest_arr;
+  output_arr[2] = lowest_arr;
+  console.log(output_arr);
+  return output_arr;
 }
 
 class Chart extends React.Component {
@@ -104,13 +116,31 @@ class Chart extends React.Component {
         labels: [],
         datasets: [
             {
-                label: '$SGD',
-                fill: false,
-                lineTension: 0,
-                backgroundColor: 'rgba(75,192,192,1)',
-                borderColor: 'rgba(0,0,0,1)',
-                borderWidth: 5,
-                data : []
+              label: '$SGD',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: 'rgba(0,0,0,1)',
+              borderWidth: 5,
+              data : []
+            }, 
+            {
+              label: '$SGD',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: 'rgba(0,0,0,1)',
+              borderWidth: 5,
+              data : []
+            }, 
+            {
+              label: '$SGD',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: 'rgba(0,0,0,1)',
+              borderWidth: 5,
+              data : []
             }
         ]
       };
@@ -127,13 +157,31 @@ class Chart extends React.Component {
         this.setState({ datasets: 
           [
             {
-                label: '$SGD',
+                label: 'Average Prices',
                 fill: false,
                 lineTension: 0,
                 backgroundColor: 'rgba(75,192,192,1)',
                 borderColor: 'rgba(0,0,0,1)',
                 borderWidth: 2,
-                data : final_prices
+                data : final_prices[0]
+            },
+            {
+              label: 'Highest Prices',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: '#E1A18E',
+              borderWidth: 2,
+              data : final_prices[1]
+            }, 
+            {
+              label: 'Lowest Prices',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: '#cae7c1',
+              borderWidth: 2,
+              data : final_prices[2]
             }
           ]
         })
