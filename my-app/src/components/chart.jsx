@@ -3,7 +3,6 @@ import { Line } from 'react-chartjs-2';
 import 'react-chartjs-2';
 import { db } from './firebase';
 import '../pages/pricechart'
-import { setISOWeek } from 'date-fns';
 
 function cityPicker(city) {
   if (city === "Tokyo") {
@@ -116,7 +115,7 @@ class Chart extends React.Component {
         labels: [],
         datasets: [
             {
-              label: '$SGD',
+              label: 'Average Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
@@ -125,20 +124,20 @@ class Chart extends React.Component {
               data : []
             }, 
             {
-              label: '$SGD',
+              label: 'Highest Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
+              borderColor: '#E1A18E',
               borderWidth: 5,
               data : []
             }, 
             {
-              label: '$SGD',
+              label: 'Lowest Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
+              borderColor: '#cae7c1',
               borderWidth: 5,
               data : []
             }
