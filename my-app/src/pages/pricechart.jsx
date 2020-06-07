@@ -2,7 +2,7 @@ import React from 'react';
 import './pages.css'; 
 
 //react-router 
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom"; 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 
 //pages 
 import Hongkong from './Hongkong'; 
