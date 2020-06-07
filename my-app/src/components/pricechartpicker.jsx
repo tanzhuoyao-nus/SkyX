@@ -106,7 +106,7 @@ export default function MediaCard() {
 
     <Grid id ="card" container spacing={3} justify="center">
       {/* Card 4 */}
-      <Card id ="card1" className={classes.root}>
+      <Card id ="card4" className={classes.root}>
       <a href="/pricechart/kl"><CardActionArea>
           <CardMedia
             className={classes.media}
@@ -130,7 +130,7 @@ export default function MediaCard() {
       </Card>
      
       {/* Card 5 */}
-      <Card id ="card2" className={classes.root}>
+      <Card id ="card5" className={classes.root}>
         <a href="/pricechart/hongkong"><CardActionArea>
           <CardMedia
             className={classes.media}
