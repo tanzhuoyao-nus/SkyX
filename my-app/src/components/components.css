@@ -169,9 +169,8 @@ body {
     margin-bottom: 30px;  
 }
 
-#card1, #card2, #card3 { 
+#card1, #card2, #card3, #card4, #card5 { 
     margin: 1% 1% !important; 
-    
 }
 
 a {
@@ -203,6 +202,6 @@ a {
     margin: 30px !important; 
 }
 
-.chartbuttons {
-    margin: 2px;  
+.MuiGrid-spacing-xs-3 {
+    margin: 0px !important;
 }

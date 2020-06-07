@@ -5,7 +5,6 @@ import '../index.css';
 import Logo from '../components/logo'; 
 import Navbar from '../components/navbar';
 import Cards from '../components/cards'; 
-import Date from '../components/date'; 
 import Features from '../components/features'; 
 
 function Home() {

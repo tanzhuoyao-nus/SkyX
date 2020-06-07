@@ -3,7 +3,6 @@ import { Line } from 'react-chartjs-2';
 import 'react-chartjs-2';
 import { db } from './firebase';
 import '../pages/pricechart'
-import { setISOWeek } from 'date-fns';
 
 function cityPicker(city) {
   if (city === "Tokyo") {
@@ -19,31 +18,6 @@ function cityPicker(city) {
   }
 }
 
-function getNextMonth() {
-  var date = new Date();
-  //TO LEAVE IT AS 29
-  var nextMonth = date.getDate() + 29;
-  date.setDate(nextMonth);
-  var dateArr = date.toLocaleDateString().split("/");
-  var year = dateArr[2];
-  var month = dateArr[1];
-  var day = dateArr[0];
-  var dateStr = year + "-" + month + "-" + day;
-  return dateStr;
-}
-
-function getToday() {
-  var date = new Date();
-  var today = date.getDate();
-  date.setDate(today);
-  var dateArr = date.toLocaleDateString().split("/");
-  var year = dateArr[2];
-  var month = dateArr[1];
-  var day = dateArr[0];
-  var dateStr = year + "-" + month + "-" + day;
-  return dateStr;
-}
-
 function incrementDay(dateStr) {
   var dateArr = dateStr.split("-");
   var date = new Date();
@@ -52,22 +26,6 @@ function incrementDay(dateStr) {
   date.setDate(parseInt(dateArr[2]));
   var nextDay = date.getDate() + 1;
   date.setDate(nextDay);
-  var dateArr_ = date.toLocaleDateString().split("/");
-  var year = dateArr_[2];
-  var month = dateArr_[1];
-  var day = dateArr_[0];
-  var outputStr = year + "-" + month + "-" + day;
-  return outputStr;
-}
-
-function dayBefore(dateStr) {
-  var dateArr = dateStr.split("-");
-  var date = new Date();
-  date.setFullYear(parseInt(dateArr[0]));
-  date.setMonth(parseInt(dateArr[1] - 1));
-  date.setDate(parseInt(dateArr[2]));
-  var beforeDay = date.getDate() - 1;
-  date.setDate(beforeDay);
   var dateArr_ = date.toLocaleDateString().split("/");
   var year = dateArr_[2];
   var month = dateArr_[1];
@@ -116,7 +74,7 @@ class Chart extends React.Component {
         labels: [],
         datasets: [
             {
-              label: '$SGD',
+              label: 'Average Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
@@ -125,20 +83,20 @@ class Chart extends React.Component {
               data : []
             }, 
             {
-              label: '$SGD',
+              label: 'Highest Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
+              borderColor: '#E1A18E',
               borderWidth: 5,
               data : []
             }, 
             {
-              label: '$SGD',
+              label: 'Lowest Prices',
               fill: false,
               lineTension: 0,
               backgroundColor: 'rgba(75,192,192,1)',
-              borderColor: 'rgba(0,0,0,1)',
+              borderColor: '#cae7c1',
               borderWidth: 5,
               data : []
             }

@@ -11,6 +11,7 @@ cred = credentials.Certificate('firebase-sdk.json')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
+
 # Closing the popup
 def close_popup():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
@@ -21,9 +22,15 @@ def close_popup_secondary():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
     driver.find_elements_by_xpath(xp_popup_close)[9].click()
 
+
 def close_popup_tertiary():
     xp_popup_close = '//button[contains(@id,"dialog-close") and contains(@class,"Button-No-Standard-Style close ")]'
     driver.find_elements_by_xpath(xp_popup_close)[7].click()
+
+
+def close_popup_covid():
+    xp_popup_close = '//button[contains(@id,"covid-loading-dialog-close")]'
+    driver.find_elements_by_xpath(xp_popup_close)[0].click()
 
 
 # Load more results to maximize the scraping
@@ -60,7 +67,7 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
                       arrival_time_list, flight_duration_list, url_list):
     kayak = 'https://www.kayak.com/flights/SIN-' + destination + '/' + date + '?sort=price_a'
     driver.get(kayak)
-    sleep(randint(10, 20))
+    sleep(30)
     try:
         close_popup()
     except:
@@ -73,7 +80,11 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
         close_popup_tertiary()
     except:
         pass
-    sleep(randint(10, 20))
+    try:
+        close_popup_covid()
+    except:
+        pass
+    sleep(30)
     scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list, url_list)
 
 

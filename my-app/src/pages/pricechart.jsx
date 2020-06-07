@@ -1,12 +1,8 @@
 import React from 'react'; 
 import './pages.css'; 
-import Chart from '../components/chart'; 
-
-//component imports 
-import Navbar from '../components/navbar';
 
 //react-router 
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom"; 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 
 //pages 
 import Hongkong from './Hongkong'; 
