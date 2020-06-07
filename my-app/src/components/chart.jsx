@@ -157,13 +157,13 @@ class Chart extends React.Component {
         this.setState({ datasets: 
           [
             {
-                label: 'Average Prices',
-                fill: false,
-                lineTension: 0,
-                backgroundColor: 'rgba(75,192,192,1)',
-                borderColor: 'rgba(0,0,0,1)',
-                borderWidth: 2,
-                data : final_prices[0]
+              label: 'Average Prices',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: 'rgba(75,192,192,1)',
+              borderColor: 'rgba(0,0,0,1)',
+              borderWidth: 2,
+              data : final_prices[0]
             },
             {
               label: 'Highest Prices',
@@ -207,9 +207,16 @@ class Chart extends React.Component {
               }
             }}
           />
+          <br/>
+          <button className="chartbuttons" onclick="">1W</button>
+          <button className="chartbuttons" onclick="">2W</button>
+          <button className="chartbuttons" onclick="">1M</button>
+          <button className="chartbuttons" onclick="">2M</button>
         </div>
+        
       );
     }
+
 }
  
 export default Chart;
