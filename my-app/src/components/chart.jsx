@@ -144,8 +144,8 @@ class Chart extends React.Component {
       return (
         <div>
           <Line 
-            height={200}   
-            width={600}
+  
+            width={500}
             data={ this.state }
             options={{
               title:{

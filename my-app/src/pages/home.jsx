@@ -22,19 +22,6 @@ function Home() {
     {/* Recommendations */}
     <Cards />
 
-    {/* User Information */}
-    <h1 className="sections"> User Input </h1>
-    <hr></hr>
-        
-    <div>
-        <p>Departure </p>
-        <Date /> 
-    </div>
-    <div>
-        <p>Arrival </p>
-        <Date /> 
-    </div>   
-
     <h1 className="sections"> Features</h1>
     <hr></hr>
     <Features /> 

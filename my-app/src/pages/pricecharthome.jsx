@@ -11,7 +11,7 @@ class Pricecharthome extends React.Component {
                 <div> 
                     
                     <Navbar/>
-                    <h1> Price Chart Page </h1>
+                    <h1> Price Chart  </h1>
                     <hr></hr>
 
                     <PriceChartPicker/>

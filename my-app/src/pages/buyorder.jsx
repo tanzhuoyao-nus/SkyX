@@ -7,12 +7,13 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import Date from '../components/date'; 
 
 //styling 
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
-        margin: theme.spacing(2),
+        margin: theme.spacing(1),
         width: '25ch',
       },
     },
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         minWidth: '25ch',
     },
     selectEmpty: {
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(1),
     },
   }));
 
@@ -39,26 +40,23 @@ const useStyles = makeStyles((theme) => ({
           <Navbar/>
           <h1> Price Alert  </h1>
           <hr></hr>
+          
       
       <form className={classes.root} noValidate autoComplete="off">
-        
-        <div>
+      <h3> Personal Particulars </h3>
             <TextField
                 required
                 id="outlined-required"
                 label="First Name"
                 variant="outlined"
             />
-        </div>
-        <div>
             <TextField
                 required
                 id="outlined-required"
                 label="Last Name"
                 variant="outlined"
             />
-        </div>
-        <div>
+
             <TextField
                 required
                 id="outlined-required"
@@ -66,8 +64,7 @@ const useStyles = makeStyles((theme) => ({
                 placeholder="Your Email"
                 variant="outlined"
             />
-        </div>
-        <div>
+        <h3> Buy Order </h3>
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel id="demo-simple-select-outlined-label">Country</InputLabel>
                 <Select
@@ -85,8 +82,7 @@ const useStyles = makeStyles((theme) => ({
                 <MenuItem value={"Bali"}>Bali</MenuItem>
                 </Select>
             </FormControl>
-        </div>
-        <div>
+
             <TextField
                 required
                 id="outlined-required"
@@ -94,7 +90,10 @@ const useStyles = makeStyles((theme) => ({
                 placeholder="Alert Price"
                 variant="outlined"
             />
-        </div>
+            <br/>
+            <h6 id="notif"> * You will be notified when flight prices drop below your alert price. </h6>
+        <h3> Date </h3>
+        <Date />
 
       </form>
       </div>  

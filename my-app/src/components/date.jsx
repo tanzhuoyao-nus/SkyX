@@ -14,7 +14,7 @@ export default function DateInput() {
     <MuiPickersUtilsProvider className = "dates" utils={DateFnsUtils}>
     
       <DatePicker value={selectedDate} onChange={handleDateChange} />
-      <TimePicker value={selectedDate} onChange={handleDateChange} />
+      
     </MuiPickersUtilsProvider>
   </div>
   );

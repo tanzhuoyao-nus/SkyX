@@ -32,7 +32,6 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bali_banner_Rice_terraces.jpg/1280px-Bali_banner_Rice_terraces.jpg"
-            title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -45,6 +44,9 @@ export default function MediaCard() {
           <a href="/pricechart/denpasar"><Button size="small" color="primary">
             Price Chart
           </Button></a>
+          <a href="https://www.lonelyplanet.com/indonesia/bali"><Button size="small" color="primary">
+            Travel Guide
+          </Button></a>
         </CardActions>
       </Card>
      
@@ -54,7 +56,6 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
-            title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -68,6 +69,9 @@ export default function MediaCard() {
           <a href="/pricechart/tokyo"><Button size="small" color="primary">
             Price Chart
           </Button></a>
+          <a href="https://www.lonelyplanet.com/japan/tokyo"><Button size="small" color="primary">
+            Travel Guide
+          </Button></a>
         </CardActions>
       </Card>
     
@@ -77,7 +81,6 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
-            title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -92,6 +95,9 @@ export default function MediaCard() {
           <a href="/pricechart/london"><Button size="small" color="primary">
             Price Chart 
           </Button></a>
+          <a href="https://www.lonelyplanet.com/england/london"><Button size="small" color="primary">
+            Travel Guide
+          </Button></a>
         </CardActions>
       </Card>  
 
@@ -105,7 +111,6 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg/1280px-Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg"
-            title="Kuala Lumpur"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -118,6 +123,9 @@ export default function MediaCard() {
           <a href="/pricechart/kl"><Button size="small" color="primary">
             Price Chart
           </Button></a>
+          <a href="https://www.lonelyplanet.com/malaysia/kuala-lumpur"><Button size="small" color="primary">
+            Travel Guide
+          </Button></a>
         </CardActions>
       </Card>
      
@@ -127,7 +135,6 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Hong_Kong_Banner.jpg/1280px-Hong_Kong_Banner.jpg"
-            title="Hong Kong"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -140,6 +147,9 @@ export default function MediaCard() {
           
           <a href="/pricechart/hongkong"><Button size="small" color="primary">
             Price Chart
+          </Button></a>
+          <a href="https://www.lonelyplanet.com/china/hong-kong"><Button size="small" color="primary">
+            Travel Guide
           </Button></a>
         </CardActions>
       </Card>
