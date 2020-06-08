@@ -205,3 +205,15 @@ a {
 .MuiGrid-spacing-xs-3 {
     margin: 0px !important;
 }
+
+#ChartData { 
+    height:450px; 
+    width: 95%; 
+    text-align: left; 
+    background-color: #fff !important; 
+    color: #151b46; 
+}
+
+#center{ 
+    text-align: center !important ; 
+}
