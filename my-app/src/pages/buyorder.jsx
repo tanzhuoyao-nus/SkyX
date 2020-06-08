@@ -8,6 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Date from '../components/date'; 
+import { Container } from '@material-ui/core'
 
 //styling 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
           <Navbar/>
           <h1> Price Alert  </h1>
           <hr></hr>
-          
+          <Container className="featuresExplainer">Buy Order is a function where users can place a specified price. Once the tracking engine determines that the target price has been hit, it will automate the ticket purchase process. 
+          </Container>
       
       <form className={classes.root} noValidate autoComplete="off">
       <h3> Personal Particulars </h3>

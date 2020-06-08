@@ -6,3 +6,7 @@ color: rgba(0,0,0,0.5);
     height: 50%; 
     width: 100%; 
 }
+
+.featuresExplainer { 
+    padding: 30px !important; 
+}
