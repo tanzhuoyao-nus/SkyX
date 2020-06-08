@@ -23,20 +23,16 @@ export default function SimplePaper() {
       
       <Paper id="ChartData" elevation={5}> 
           <Container> 
-            <h1 id="center"> Chart Data </h1>
-            <Container> 
-            <div> Historical Average: </div><hr/>
-            <div> Monthly Average: </div><hr/>
-            <div> Monthly High: </div><hr/>
-            <div> Monthly Low:</div><hr/>
-            <div> Weekly Average: </div> <hr/>
-            </Container>
-            <Container>
-            <div> Weekly High: </div><hr/>
-            <div> Weekly Low: </div><hr/>
-            <div> Monthly Price Range:  </div><hr/>
+            <h1 id="heading"> Chart Data </h1>
+            <div> Historical Average: </div><hr className = "chartDataLine" />
+            <div> Monthly Average: </div><hr className = "chartDataLine" />
+            <div> Monthly High: </div><hr className = "chartDataLine" />
+            <div> Monthly Low:</div><hr className = "chartDataLine" />
+            <div> Weekly Average: </div><hr className = "chartDataLine" />
+            <div> Weekly High: </div><hr className = "chartDataLine" />
+            <div> Weekly Low: </div><hr className = "chartDataLine" />
+            <div> Monthly Price Range:  </div><hr className = "chartDataLine" />
             <div> Weekly Price Range: </div>
-            </Container>
           </Container>
       </Paper>
       
