@@ -69,6 +69,11 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
     driver.get(kayak)
     sleep(30)
     try:
+        close_popup_covid()
+    except:
+        pass
+    sleep(10)
+    try:
         close_popup()
     except:
         pass
@@ -80,10 +85,7 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
         close_popup_tertiary()
     except:
         pass
-    try:
-        close_popup_covid()
-    except:
-        pass
+
     sleep(30)
     scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list, url_list)
 
