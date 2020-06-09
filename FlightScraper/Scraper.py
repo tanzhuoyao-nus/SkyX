@@ -67,7 +67,7 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
                       arrival_time_list, flight_duration_list, url_list):
     kayak = 'https://www.kayak.com/flights/SIN-' + destination + '/' + date + '?sort=price_a'
     driver.get(kayak)
-    sleep(30)
+    sleep(20)
     try:
         close_popup_covid()
     except:
@@ -86,7 +86,7 @@ def run_kayak_one_way(destination, date, price_list, departure_time_list,
     except:
         pass
 
-    sleep(30)
+    sleep(20)
     scrape_one_way(price_list, departure_time_list, arrival_time_list, flight_duration_list, url_list)
 
 
@@ -201,14 +201,14 @@ chromedriver_path = '/Users/tanzhuoyao/GitHub/SkyX/FlightScraper/chromedriver'
 
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
-search_city_one_way('DPS')
-sleep(30)
-search_city_one_way('KUL')
-sleep(30)
-search_city_one_way('HKG')
-sleep(30)
-search_city_one_way('LON')
-sleep(30)
+# search_city_one_way('DPS')
+# sleep(30)
+# search_city_one_way('KUL')
+# sleep(30)
+# search_city_one_way('HKG')
+# sleep(30)
+# search_city_one_way('LON')
+# sleep(30)
 search_city_one_way('TYO')
 sleep(30)
 
