@@ -166,10 +166,6 @@ class Chart extends React.Component {
             }}
           />
           <br/>
-          <button className="chartbuttons" onclick="">1W</button>
-          <button className="chartbuttons" onclick="">2W</button>
-          <button className="chartbuttons" onclick="">1M</button>
-          <button className="chartbuttons" onclick="">2M</button>
         </div>
         
       );

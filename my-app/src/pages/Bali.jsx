@@ -4,7 +4,7 @@ import Chart from '../components/chart';
 
 //component imports 
 import Navbar from '../components/navbar';
-
+import Chartdescription from '../components/chartdescription'
 function Bali () { 
     return ( 
         <div> 
@@ -14,7 +14,7 @@ function Bali () {
                 {/* Chart */}
                 <hr></hr>
                 <Chart name={"Bali"} />
-                
+                <Chartdescription /> 
             </div>
     ); 
 }
