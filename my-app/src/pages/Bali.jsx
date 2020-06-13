@@ -16,7 +16,7 @@ function Bali () {
                 <hr></hr>
                 <Chart name={"Bali"} />
                 <br/> 
-                <Chartdatacards/>
+                <Chartdatacards name={"Bali"} />
                 <br/> 
                 <Chartdescription /> 
             </div>

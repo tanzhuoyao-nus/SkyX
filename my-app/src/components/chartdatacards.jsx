@@ -20,7 +20,7 @@ function cityPicker(city) {
     }
   }
 
-function convert2dp(arr){
+async function convert2dp(arr){
   var newArr = [];
   for(let i=0; i<arr.length; i++){
       newArr.push(arr[i].toFixed(2));
@@ -31,13 +31,18 @@ function convert2dp(arr){
 async function getFirebaseData(city) {
     const document = await db.collection('flight_price_' + city).doc("Prices").get();
     const all_time_average = await document.get("All Time Average"); 
+    const all_time_average1 = await convert2dp(all_time_average); 
+    console.log(all_time_average1); 
     const all_time_high = await document.get("All Time High");
+    console.log(all_time_high); 
     const all_time_low = await document.get("All Time Low");
     var output_arr = [];
-    output_arr[0]= convert2dp(all_time_average); 
-    output_arr[1]= convert2dp(all_time_high); 
-    output_arr[2]= convert2dp(all_time_low); 
+    output_arr[0]= await convert2dp(all_time_average); 
+    output_arr[1]= all_time_high; 
+    output_arr[2]= all_time_low; 
+    console.log(output_arr); 
     return output_arr;
+    
 }
 
  class OutlinedCard extends React.Component {
@@ -45,25 +50,21 @@ async function getFirebaseData(city) {
     constructor() { 
         super(); 
         this.state={ 
-            data: [], 
+            all_time_average:0, 
+            all_time_high: 0, 
+            all_time_low: 0  
         }; 
     }
   
   async componentDidMount() { 
     const city = cityPicker(this.props.name);
-    var final_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
-    this.setState({ datasets: 
-        [
-          {
-            data : final_prices[0]
-          },
-          {
-            data : final_prices[1]
-          }, 
-          {
-            data : final_prices[2]
-          }
-        ]
+    var all_time_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
+    console.log(all_time_prices); 
+    this.setState({ //update of state 
+        // all_time_average: all_time_prices[0], 
+        all_time_high: all_time_prices[1], 
+        all_time_low: all_time_prices[2], 
+        
       })
   }
 
@@ -76,7 +77,7 @@ async function getFirebaseData(city) {
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Average Price: {this.state[0]} 
+                    Average Price: { this.state.all_time_average }
                     </Typography>
                 </CardContent>
 
@@ -85,7 +86,7 @@ async function getFirebaseData(city) {
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Highest Price: {this.state[1]} 
+                    Highest Price: { this.state.all_time_high }
                     </Typography>
                 </CardContent>
 
@@ -94,7 +95,7 @@ async function getFirebaseData(city) {
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Lowest Price: {this.state[2]} 
+                    Lowest Price: { this.state.all_time_low }
                     </Typography>
                 </CardContent>
 

@@ -17,7 +17,7 @@ function Tokyo () {
                 <hr/>
                 <Chart name={"Tokyo"} />
                 <hr/>
-                <Chartdatacards/> 
+                <Chartdatacards name={"Tokyo"} /> 
                 <br/> 
                 <Chartdescription /> 
             </div>

@@ -16,7 +16,7 @@ function KL () {
                 <hr></hr>
                 <Chart name={"Kuala Lumpur"} />
                 <br/> 
-                <Chartdatacards/> 
+                <Chartdatacards name={"Kuala Lumpur"}/> 
                 <br/> 
                 <Chartdescription /> 
             </div>
