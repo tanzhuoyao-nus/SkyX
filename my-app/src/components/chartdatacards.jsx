@@ -50,8 +50,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default class OutlinedCard extends React.Component {
-    const classes = useStyles();
+ class OutlinedCard extends React.Component {
 
     constructor()
     { 
@@ -82,7 +81,10 @@ export default class OutlinedCard extends React.Component {
   }
 
   render(){
+    const classes = useStyles();
+    
     return (
+        
         <Grid id ="card" container spacing={3} justify="center">
             <Card className={classes.root} variant="outlined">
                 
@@ -115,3 +117,5 @@ export default class OutlinedCard extends React.Component {
         );
     } 
 }
+
+export default OutlinedCard; 
