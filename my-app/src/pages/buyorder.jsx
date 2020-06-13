@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
                 variant="outlined"
             />
             <br/>
-            <h6 id="notif"> * You will be notified when flight prices drop below your alert price. </h6>
+            <h6 id="notif"> You will be notified when flight prices drop below your alert price. </h6>
         <h3> Date </h3>
         <Date />
 
