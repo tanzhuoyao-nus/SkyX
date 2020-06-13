@@ -40,22 +40,10 @@ async function getFirebaseData(city) {
     return output_arr;
 }
 
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 140,
-      width:700, 
-    },
-});
-
  class OutlinedCard extends React.Component {
 
-    constructor()
-    { 
+    constructor() { 
         super(); 
-        console.warn("constructor"); 
         this.state={ 
             data: [], 
         }; 
@@ -63,7 +51,6 @@ const useStyles = makeStyles({
   
   async componentDidMount() { 
     const city = cityPicker(this.props.name);
-    var date_arr = [];
     var final_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
     this.setState({ datasets: 
         [
@@ -81,34 +68,33 @@ const useStyles = makeStyles({
   }
 
   render(){
-    const classes = useStyles();
     
     return (
         
         <Grid id ="card" container spacing={3} justify="center">
-            <Card className={classes.root} variant="outlined">
+            <Card  variant="outlined">
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Average Price: {this.state} 
+                    Average Price: {this.state[0]} 
                     </Typography>
                 </CardContent>
 
             </Card>
-            <Card className={classes.root} variant="outlined">
+            <Card  variant="outlined">
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Highest Price: {this.state} 
+                    Highest Price: {this.state[1]} 
                     </Typography>
                 </CardContent>
 
             </Card>
-            <Card className={classes.root} variant="outlined">
+            <Card  variant="outlined">
                 
                 <CardContent>
                     <Typography variant="h5" component="h2">
-                    Lowest Price: {this.state} 
+                    Lowest Price: {this.state[2]} 
                     </Typography>
                 </CardContent>
 
