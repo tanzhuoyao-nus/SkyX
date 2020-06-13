@@ -10,17 +10,14 @@ import Chartdatacards from "../components/chartdatacards";
 function Tokyo () { 
     return ( 
         <div> 
-                {/* Navbar */}
-                <Navbar/>
-                <h1> Tokyo </h1>
-                {/* Chart */}
-                <hr/>
-                <Chart name={"Tokyo"} />
-                <hr/>
-                <Chartdatacards name={"Tokyo"} /> 
-                <br/> 
-                <Chartdescription /> 
-            </div>
+            {/* Navbar */}
+            <Navbar/>
+            <h1> Tokyo </h1>
+            {/* Chart */}
+            <Chart name={"Tokyo"} />
+            <Chartdatacards name={"Tokyo"} /> 
+            <Chartdescription /> 
+        </div>
     ); 
 }
 

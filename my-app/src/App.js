@@ -12,7 +12,6 @@ import Buyorder from './pages/buyorder';
 function App() {
   return (
     <div>
-  
       {/* Navbar Routing */}
       <Router> 
         <Switch>

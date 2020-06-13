@@ -9,17 +9,14 @@ import Chartdatacards from "../components/chartdatacards";
 function Bali () { 
     return ( 
         <div> 
-                {/* Navbar */}
-                <Navbar/>
-                <h1> Bali </h1>
-                {/* Chart */}
-                <hr></hr>
-                <Chart name={"Bali"} />
-                <br/> 
-                <Chartdatacards name={"Bali"} />
-                <br/> 
-                <Chartdescription /> 
-            </div>
+            {/* Navbar */}
+            <Navbar/>
+            <h1> Bali </h1>
+            {/* Chart */}
+            <Chart name={"Bali"} />
+            <Chartdatacards name={"Bali"} />
+            <Chartdescription /> 
+        </div>
     ); 
 }
 

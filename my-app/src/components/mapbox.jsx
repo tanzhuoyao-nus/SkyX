@@ -1,9 +1,8 @@
-import React, {useState} from 'react'; 
+import React from 'react'; 
 import {Component} from 'react';
 import ReactMapGL from 'react-map-gl';
 
 class Map extends Component {
-
     state = {
       viewport: {
         width: "100vw",

@@ -63,7 +63,6 @@ async function getFirebaseData(city, date_arr) {
   output_arr[0] = convert2dp(price_arr);
   output_arr[1] = highest_arr;
   output_arr[2] = lowest_arr;
-  console.log(output_arr);
   return output_arr;
 }
 

@@ -9,11 +9,11 @@ class Pricecharthome extends React.Component {
         render() {
             return ( 
                 <div> 
-                    
                     <Navbar/>
                     <h1> Price Chart  </h1>
                     <hr></hr>
-                    <Container className="featuresExplainer">Price Charts on SkyX serves as the tracking engine for users to automatically track flight prices. Besides historical data, it also has future flight prices for any destination. 
+                    <Container className="featuresExplainer">
+                        Price Charts on SkyX serves as the tracking engine for users to automatically track flight prices. Besides historical data, it also has future flight prices for any destination. 
                     </Container>
                     <PriceChartPicker/>
                 </div>
