@@ -79,7 +79,7 @@ def updateHighest(city, scrape_start):
     dataset = {
         u'Highest Prices': updated_high_dict
     }
-    # upload updated averages onto Firebase
+    # upload updated highest onto Firebase
     high_ref.set(dataset, merge = True)
 
 def updateLowest(city, scrape_start):
@@ -113,9 +113,43 @@ def updateLowest(city, scrape_start):
     dataset = {
         u'Lowest Prices': updated_low_dict
     }
-    # upload updated averages onto Firebase
+    # upload updated lowest onto Firebase
     low_ref.set(dataset, merge = True)
 
+def updateAllTimeAverage(city):
+    docs = db.collection('flight_price_' + city)
+    avg_ref = db.collection('flight_price_' + city).document('Prices')
+    avg_dict = avg_ref.get().to_dict().get('Average Prices')   
+    all_time_avg = sum(avg_dict.values()) / len(avg_dict)
+    dataset = {
+        u'All Time Average': all_time_avg
+    }
+    # upload updated all time average onto Firebase
+    avg_ref.set(dataset, merge = True)
+
+def updateAllTimeHigh(city):
+    docs = db.collection('flight_price_' + city)
+    high_ref = db.collection('flight_price_' + city).document('Prices')
+    high_dict = high_ref.get().to_dict().get('Highest Prices')
+    all_time_high = max(high_dict.values())
+    print(all_time_high)
+    dataset = {
+        u'All Time High': all_time_high
+    }
+    # upload updated all time average onto Firebase
+    high_ref.set(dataset, merge = True)
+
+def updateAllTimeLow(city):
+    docs = db.collection('flight_price_' + city)
+    low_ref = db.collection('flight_price_' + city).document('Prices')
+    low_dict = low_ref.get().to_dict().get('Lowest Prices')
+    all_time_low = min(low_dict.values())
+    print(all_time_low)
+    dataset = {
+        u'All Time Low': all_time_low
+    }
+    # upload updated all time average onto Firebase
+    low_ref.set(dataset, merge = True)
 
 
 current_date = datetime.date.today()
@@ -124,19 +158,34 @@ scrape_start = current_date + datetime.timedelta(30)
 updateAverage("DPS", scrape_start)
 updateHighest("DPS", scrape_start)
 updateLowest("DPS", scrape_start)
+updateAllTimeAverage("DPS")
+updateAllTimeHigh("DPS")
+updateAllTimeLow("DPS")
 
 updateAverage("HKG", scrape_start)
 updateHighest("HKG", scrape_start)
 updateLowest("HKG", scrape_start)
+updateAllTimeAverage("HKG")
+updateAllTimeHigh("HKG")
+updateAllTimeLow("HKG")
 
 updateAverage("KUL", scrape_start)
 updateHighest("KUL", scrape_start)
 updateLowest("KUL", scrape_start)
+updateAllTimeAverage("KUL")
+updateAllTimeHigh("KUL")
+updateAllTimeLow("KUL")
 
 updateAverage("LON", scrape_start)
 updateHighest("LON", scrape_start)
 updateLowest("LON", scrape_start)
+updateAllTimeAverage("LON")
+updateAllTimeHigh("LON")
+updateAllTimeLow("LON")
 
-updateAverage("TYO", scrape_start)
-updateHighest("TYO", scrape_start)
-updateLowest("TYO", scrape_start)
+# updateAverage("TYO", scrape_start)
+# updateHighest("TYO", scrape_start)
+# updateLowest("TYO", scrape_start)
+# updateAllTimeAverage("TYO")
+# updateAllTimeHigh("TYO")
+# updateAllTimeLow("TYO")
