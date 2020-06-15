@@ -201,8 +201,8 @@ chromedriver_path = '/Users/tanzhuoyao/GitHub/SkyX/FlightScraper/chromedriver'
 
 driver = webdriver.Chrome(executable_path=chromedriver_path)
 sleep(2)
-search_city_one_way('DPS')
-sleep(30)
+# search_city_one_way('DPS')
+# sleep(30)
 search_city_one_way('KUL')
 sleep(30)
 search_city_one_way('HKG')
