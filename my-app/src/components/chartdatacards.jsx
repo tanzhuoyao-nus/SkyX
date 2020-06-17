@@ -35,7 +35,7 @@ async function getFirebaseData(city) {
     
 }
 
- class OutlinedCard extends React.Component {
+ class ChartDataCards extends React.Component {
     constructor() { 
         super(); 
         this.state={ 
@@ -94,4 +94,4 @@ async function getFirebaseData(city) {
     } 
 }
 
-export default OutlinedCard; 
+export default ChartDataCards; 

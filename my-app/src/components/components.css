@@ -281,3 +281,36 @@ a {
     cursor: pointer;
     text-align: center;
 }
+
+#country-input {
+    text-align: left;
+    margin: 1% 0 0 0;
+}
+
+#continue-button {
+    margin: 5% 0 5% 0;
+}
+
+.MuiPaper-root {
+    margin-top: 5% !important;
+    margin-left: 0% !important;
+}
+
+#country-select {
+    text-align: left;
+    margin-top: 1%;
+}
+
+#continue-button {
+    margin: 5%;
+    background-color: #141B45;
+}
+
+#confirm-button {
+    margin: 1%;
+    background-color: #141B45;
+}
+
+#back-button {
+    margin: 1%;
+}

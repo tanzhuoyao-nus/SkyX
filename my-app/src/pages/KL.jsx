@@ -4,8 +4,8 @@ import Chart from '../components/chart';
 
 //component imports 
 import Navbar from '../components/navbar';
-import Chartdescription from '../components/chartdescription'; 
-import Chartdatacards from "../components/chartdatacards"; 
+import ChartDescription from '../components/chartdescription'; 
+import ChartDataCards from "../components/chartdatacards"; 
 
 function KL () { 
     return ( 
@@ -15,8 +15,10 @@ function KL () {
             <h1> Kuala Lumpur </h1>
             {/* Chart */}
             <Chart name={"Kuala Lumpur"} />
-            <Chartdatacards name={"Kuala Lumpur"}/> 
-            <Chartdescription /> 
+            <br/>
+            <hr/>
+            <ChartDataCards name={"Kuala Lumpur"}/> 
+            <ChartDescription /> 
         </div>
     ); 
 }

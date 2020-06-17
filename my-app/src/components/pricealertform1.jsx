@@ -2,29 +2,18 @@ import React, { Component } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Container } from '@material-ui/core'; 
+import { Container, InputLabel } from '@material-ui/core'; 
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
+
 export class FormUserDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
   };
 
-  
   render() {
     const { values, handleChange } = this.props;
-    const {useStyles} = makeStyles((theme) => ({
-        formControl: {
-          margin: theme.spacing(1),
-          minWidth: 120,
-        },
-        selectEmpty: {
-          marginTop: theme.spacing(2),
-        },
-      }));
 
     return (
       <MuiThemeProvider>
@@ -56,10 +45,12 @@ export class FormUserDetails extends Component {
               margin="normal"
               fullWidth
             />
+            <br />
+            <InputLabel id="country-input">Country</InputLabel>
             <Select
                 placeholder="Select country"
                 label="Country"
-                id="demo-simple-select"
+                id="country-select"
                 defaultValue={values.country}
                 onChange={handleChange('country')}
                 margin="normal"
@@ -71,7 +62,7 @@ export class FormUserDetails extends Component {
                 <MenuItem value={"Bali"}>Bali</MenuItem>
                 <MenuItem value={"Tokyo"}>Tokyo</MenuItem>
             </Select>
-            
+            <br />
             <TextField
               placeholder="Enter Your Alert Price ($SGD)"
               label="Alert Price"
@@ -90,6 +81,7 @@ export class FormUserDetails extends Component {
             />
             <br />
             <Button
+              id="continue-button"
               color="primary"
               variant="contained"
               onClick={this.continue}

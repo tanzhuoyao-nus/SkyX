@@ -52,13 +52,13 @@ export class Confirm extends Component {
               color="secondary"
               variant="contained"
               onClick={this.back}
-              id="button1"
+              id="back-button"
             >Back</Button>
             <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
-              id="button2"
+              id="confirm-button"
             >Confirm</Button>
             <h6> Please ensure all fields are filled in before submitting. </h6>
           </Container>

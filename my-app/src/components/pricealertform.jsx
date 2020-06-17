@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import FormUserDetails from './pricealertform1';
 import Confirm from './pricealertform2';
 import Success from './pricealertform3';
 
-export class UserForm extends React.Component {
+export class UserForm extends Component {
   state = {
     step: 1,
     firstName: '',
