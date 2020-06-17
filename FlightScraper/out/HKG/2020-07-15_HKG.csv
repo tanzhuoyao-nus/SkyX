@@ -1,0 +1,15 @@
+,Date,Origin,Destination,Price,Departure Time,Arrival Time,Flight duration,URL
+0,2020-07-15,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCFiHVJJxJ.3trpTcyJlBVFj024N3_sTg.13988.eadcc582750f08373a971039ea4369e4&h=3cd82b06e98c&sub=E-1c51e2eae46
+1,2020-07-16,SIN,HKG,$149,2:15,6:20,4h 05m,https://www.kayak.com/book/flight?code=GCFCMpE6us.6We7wBYoN-cNUvH8T-y68A.14836.cecb548de7055344df8c0b44e9054cd3&h=5865cb590830&sub=E-139119fa0bd
+2,2020-07-17,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCHCNIz4GC.3trpTcyJlBVFj024N3_sTg.13988.ce829b18ced24cae1aff1a8c1b4d45c5&h=0a3336eb1e63&sub=E-1c51e2eae46
+3,2020-07-18,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCGiGrGKGS.3trpTcyJlBVFj024N3_sTg.13988.f8f53df7f9e21ee493ee73af2d648664&h=fde3673c1aa3&sub=E-1c51e2eae46
+4,2020-07-19,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCEiTU_gyx.3trpTcyJlBVFj024N3_sTg.13988.dbedce73b8267b49e01f4f940e4cea2e&h=9752b3a28101&sub=E-1c51e2eae46
+5,2020-07-20,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCFCNleBO6.3trpTcyJlBVFj024N3_sTg.13988.de7d60fe44c532073dfb5f367c94751c&h=be13abc114ad&sub=E-1c51e2eae46
+6,2020-07-21,SIN,HKG,$149,6:00,10:05,4h 05m,https://www.kayak.com/book/flight?code=GCGCEEq_BN.6We7wBYoN-cNUvH8T-y68A.14836.e193bbadd1e3faf9b7506a2ffbaf0285&h=c2c9a8333663&sub=E-139119fa0bd
+7,2020-07-22,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GCGCIscd1c.3trpTcyJlBVFj024N3_sTg.13988.7245c70e63c5f7d88c96170da81f8d34&h=f97ccef2fa34&sub=E-1c51e2eae46
+8,2020-07-23,SIN,HKG,$155,2:15,6:20,4h 05m,https://www.kayak.com/book/flight?code=GDGiKAvZY2.6Ky586fB8Xouqge7lldQQw.15445.c34fa1c2caf0c7cc99bebc9f773eb09a&h=6a8af164a498&sub=E-1f08093e2f1
+9,2020-07-24,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GDGCEIsNao.3trpTcyJlBVFj024N3_sTg.13988.d418dcbd24490bbb4405c0632e75e8da&h=5f85d37cdbe1&sub=E-1c51e2eae46
+10,2020-07-25,SIN,HKG,$155,2:15,6:20,4h 05m,https://www.kayak.com/book/flight?code=GDFiIAgXv7.6Ky586fB8Xouqge7lldQQw.15445.55a9ef6f512bae3fb907340a8ae2787a&h=b8c6b7ab5158&sub=E-1f08093e2f1
+11,2020-07-26,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GDHCHtAZST.3trpTcyJlBVFj024N3_sTg.13988.44cb9e2bdb6da6920d2f34f8dd5d8740&h=0c520dc68573&sub=E-1c51e2eae46
+12,2020-07-27,SIN,HKG,$140,6:00,9:45,3h 45m,https://www.kayak.com/book/flight?code=GDEiNqJ5Od.3trpTcyJlBVFj024N3_sTg.13988.afcd66faca0498ab507d15393750275f&h=6c05ef428bc5&sub=E-1c51e2eae46
+13,2020-07-28,SIN,HKG,$155,6:00,10:05,4h 05m,https://www.kayak.com/book/flight?code=GDFiFHkTnW.6Ky586fB8Xouqge7lldQQw.15445.3d808a10d18ae684cebcfa4cab200d4c&h=2f0d07cbc1ac&sub=E-1f08093e2f1
