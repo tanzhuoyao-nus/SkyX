@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core'; 
 import { db } from './firebase';
+import ChartDescription from './chartdescription'
 
 function cityPicker(city) {
     if (city === "Tokyo") {
@@ -58,38 +59,42 @@ async function getFirebaseData(city) {
 
   render(){
     return (
-        <Grid id="card" container spacing={3} justify="center">
-            <Card variant="outlined" >
-                <CardContent id="alltimeavg">
-                    <Typography variant="h4" component="h1">
-                      Average Price:
-                    </Typography>
-                </CardContent>
-                <CardActions id="alltimebody">
-                    <h2>${ this.state.all_time_average }</h2>
-                </CardActions>
-            </Card>
-            <Card variant="outlined">
-                <CardContent id="alltimehigh">
-                    <Typography variant="h4" component="h1">
-                      Highest Price:
-                    </Typography>
-                </CardContent>
-                <CardActions id="alltimebody">
-                    <h2>${ this.state.all_time_high }</h2>
-                </CardActions>
-            </Card>
-            <Card variant="outlined">
-                <CardContent id="alltimelow">
-                    <Typography variant="h4" component="h1">
-                      Lowest Price:
-                    </Typography>
-                </CardContent>
-                <CardActions id="alltimebody">
-                    <h2>${ this.state.all_time_low }</h2>
-                </CardActions>
-            </Card>
-        </Grid>
+        <div>
+          <Grid id="card" container spacing={3} justify="center">
+              <Card variant="outlined" >
+                  <CardContent id="alltimeavg">
+                      <Typography variant="h4" component="h1">
+                        Average Price:
+                      </Typography>
+                  </CardContent>
+                  <CardActions id="alltimebody">
+                      <h2>${ this.state.all_time_average }</h2>
+                  </CardActions>
+              </Card>
+              <Card variant="outlined">
+                  <CardContent id="alltimehigh">
+                      <Typography variant="h4" component="h1">
+                        Highest Price:
+                      </Typography>
+                  </CardContent>
+                  <CardActions id="alltimebody">
+                      <h2>${ this.state.all_time_high }</h2>
+                  </CardActions>
+              </Card>
+              <Card variant="outlined">
+                  <CardContent id="alltimelow">
+                      <Typography variant="h4" component="h1">
+                        Lowest Price:
+                      </Typography>
+                  </CardContent>
+                  <CardActions id="alltimebody">
+                      <h2>${ this.state.all_time_low }</h2>
+                  </CardActions>
+              </Card>
+          </Grid>
+          <ChartDescription all_time_average={ this.state.all_time_average } 
+            all_time_low={ this.state.all_time_low } all_time_high={ this.state.all_time_high }/>
+        </div>
         );
     } 
 }
