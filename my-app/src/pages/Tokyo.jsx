@@ -4,7 +4,6 @@ import Chart from '../components/chart';
 
 //component imports 
 import Navbar from '../components/navbar';
-import ChartDescription from '../components/chartdescription'; 
 import ChartDataCards from "../components/chartdatacards"; 
 
 function Tokyo () { 
@@ -18,7 +17,6 @@ function Tokyo () {
             <br/>
             <hr/>
             <ChartDataCards name={"Tokyo"} /> 
-            <ChartDescription /> 
         </div>
     ); 
 }
