@@ -22,7 +22,6 @@ def updateAverage(city, scrape_start):
     docs = db.collection('flight_price_' + city)
     avg_ref = db.collection('flight_price_' + city).document('Prices')
     avg_dict = avg_ref.get().to_dict().get('Average Prices')   
-
     # writing average price data onto firebase taking into acccount the 14 days scraped
     for i in range(14):
         # reference to the price location for latest scrape
@@ -54,7 +53,6 @@ def updateHighest(city, scrape_start):
     docs = db.collection('flight_price_' + city)
     high_ref = db.collection('flight_price_' + city).document('Prices')
     high_dict = high_ref.get().to_dict().get('Highest Prices')  
-
     # writing highest price data onto firebase taking into acccount the 14 days scraped
     for i in range(14):
         # reference to the price location for latest scrape
@@ -88,7 +86,6 @@ def updateLowest(city, scrape_start):
     docs = db.collection('flight_price_' + city)
     low_ref = db.collection('flight_price_' + city).document('Prices')
     low_dict = low_ref.get().to_dict().get('Lowest Prices')  
-
     # writing highest price data onto firebase taking into acccount the 14 days scraped
     for i in range(14):
         # reference to the price location for latest scrape
@@ -151,6 +148,62 @@ def updateAllTimeLow(city):
     # upload updated all time average onto Firebase
     low_ref.set(dataset, merge = True)
 
+def updateMonthlyAvg(city):
+    docs = db.collection('flight_price_' + city)
+    avg_ref = db.collection('flight_price_' + city).document('Prices')
+    avg_dict = avg_ref.get().to_dict().get('Average Prices')
+    if (datetime.date.today().month < 10):
+        this_month = str(datetime.date.today().year) + "-0" + str(datetime.date.today().month)
+    else:
+        this_month = str(datetime.date.today().year) + "-" + str(datetime.date.today().month)
+    filtered_dict = {}
+    for key in avg_dict.keys():
+        if this_month in key:
+            filtered_dict[key] = avg_dict[key]
+    monthly_avg = sum(filtered_dict.values()) / len(filtered_dict)
+    dataset = {
+        u'Monthly Average': monthly_avg
+    }
+    # upload updated all time average onto Firebase
+    avg_ref.set(dataset, merge = True)
+
+def updateMonthlyHigh(city):
+    docs = db.collection('flight_price_' + city)
+    high_ref = db.collection('flight_price_' + city).document('Prices')
+    high_dict = high_ref.get().to_dict().get('Highest Prices')
+    if (datetime.date.today().month < 10):
+        this_month = str(datetime.date.today().year) + "-0" + str(datetime.date.today().month)
+    else:
+        this_month = str(datetime.date.today().year) + "-" + str(datetime.date.today().month)
+    filtered_dict = {}
+    for key in high_dict.keys():
+        if this_month in key:
+            filtered_dict[key] = high_dict[key]
+    monthly_high = max(filtered_dict.values())
+    dataset = {
+        u'Monthly High': monthly_high
+    }
+    # upload updated all time average onto Firebase
+    high_ref.set(dataset, merge = True)
+
+def updateMonthlyLow(city):
+    docs = db.collection('flight_price_' + city)
+    low_ref = db.collection('flight_price_' + city).document('Prices')
+    low_dict = low_ref.get().to_dict().get('Lowest Prices')
+    if (datetime.date.today().month < 10):
+        this_month = str(datetime.date.today().year) + "-0" + str(datetime.date.today().month)
+    else:
+        this_month = str(datetime.date.today().year) + "-" + str(datetime.date.today().month)
+    filtered_dict = {}
+    for key in low_dict.keys():
+        if this_month in key:
+            filtered_dict[key] = low_dict[key]
+    monthly_low = min(filtered_dict.values())
+    dataset = {
+        u'Monthly Low': monthly_low
+    }
+    # upload updated all time average onto Firebase
+    low_ref.set(dataset, merge = True)
 
 current_date = datetime.date.today()
 scrape_start = current_date + datetime.timedelta(30)
@@ -189,3 +242,21 @@ updateLowest("TYO", scrape_start)
 updateAllTimeAverage("TYO")
 updateAllTimeHigh("TYO")
 updateAllTimeLow("TYO")
+
+#Update monthly high at the start of the month
+if(current_date.day == 1):
+    updateMonthlyAvg("DPS")
+    updateMonthlyHigh("DPS")
+    updateMonthlyLow("DPS")
+    updateMonthlyAvg("HKG")
+    updateMonthlyHigh("HKG")
+    updateMonthlyLow("HKG")
+    updateMonthlyAvg("KUL")
+    updateMonthlyHigh("KUL")
+    updateMonthlyLow("KUL")
+    updateMonthlyAvg("LON")
+    updateMonthlyHigh("LON")
+    updateMonthlyLow("LON")
+    updateMonthlyAvg("TYO")
+    updateMonthlyHigh("TYO")
+    updateMonthlyLow("TYO")
