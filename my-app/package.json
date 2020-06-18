@@ -12,6 +12,8 @@
     "chart.js": "^2.9.3",
     "date-fns": "^2.14.0",
     "firebase": "^7.14.4",
+    "highcharts": "^8.1.2",
+    "highcharts-react-official": "^3.0.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",

@@ -1,20 +1,19 @@
 import React from 'react'; 
 import './pages.css'; 
-import Chart from '../components/chart'; 
-
-//component imports 
 import Navbar from '../components/navbar';
 import ChartDataCards from "../components/chartdatacards"; 
+import HighChart from "../components/highchart"
 
 function KL () { 
     return ( 
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> Kuala Lumpur </h1>
+            <h1> Flight Prices to Kuala Lumpur </h1>
             {/* Chart */}
-            <Chart name={"Kuala Lumpur"} />
+            <HighChart name={"Kuala Lumpur"} />
             <br/>
+            <br />
             <hr/>
             <ChartDataCards name={"Kuala Lumpur"}/> 
         </div>
