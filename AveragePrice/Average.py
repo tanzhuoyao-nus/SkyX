@@ -245,6 +245,7 @@ updateAllTimeLow("TYO")
 
 #Update monthly high at the start of the month
 if(current_date.day == 1):
+    print("Updating monthly...")
     updateMonthlyAvg("DPS")
     updateMonthlyHigh("DPS")
     updateMonthlyLow("DPS")
