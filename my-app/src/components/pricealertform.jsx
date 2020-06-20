@@ -6,6 +6,11 @@ const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
+// checks if input has number -- for firstName & lastName 
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
+
 // check if form fields are all filled up 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -83,11 +88,11 @@ class App extends Component {
     switch (name) {
       case "firstName":
         formErrors.firstName =
-          value.length < 3 ? "minimum 3 characaters required" : "";
+          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
         break;
       case "lastName":
         formErrors.lastName =
-          value.length < 3 ? "minimum 3 characaters required" : "";
+          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
         break;
       case "email":
         formErrors.email = emailRegex.test(value)
