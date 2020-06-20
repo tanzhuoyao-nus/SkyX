@@ -43,26 +43,6 @@ def load_more():
     except:
         pass
 
-
-def run_kayak_return(origin, destination, start_date, end_date):
-    kayak = 'https://www.kayak.com/flights/' + origin + '-' + destination + \
-            '/' + start_date + '/' + end_date + '?sort=price_a'
-    driver.get(kayak)
-    sleep(randint(10, 20))
-    try:
-        close_popup()
-    except:
-        pass
-    sleep(randint(10, 20))
-    xp_price = '//span[contains(@id,"price-text") and contains(@class,"price-text")]'
-    price_arr = driver.find_elements_by_xpath(xp_price)
-    for price in price_arr:
-        if price.text == '':
-            continue
-        else:
-            print("Price to " + destination + " is " + price.text)
-
-
 def run_kayak_one_way(destination, date, price_list, departure_time_list,
                       arrival_time_list, flight_duration_list, url_list):
     kayak = 'https://www.kayak.com/flights/SIN-' + destination + '/' + date + '?sort=price_a'
