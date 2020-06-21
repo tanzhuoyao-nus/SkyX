@@ -191,6 +191,5 @@ search_city_one_way('LON')
 sleep(30)
 search_city_one_way('TYO')
 sleep(30)
-
 driver.close()
 
