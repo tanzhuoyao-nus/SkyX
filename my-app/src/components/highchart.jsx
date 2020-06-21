@@ -139,9 +139,3 @@ function cityPicker(city) {
   }
    
 export default HighChart;
-  
-
-
-        
-
-

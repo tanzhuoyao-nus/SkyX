@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./components.css";
+import { db } from './firebase';
+
+//-------------------------------------------------DEPENDENCY FUNCTIONS --------------------------------------------
 
 //check for valid email input 
 const emailRegex = RegExp(
@@ -36,7 +39,12 @@ function getNextMonth() {
   return dateStr;
 }
 
-//component 
+// check if string contains numbers 
+function hasNumber(myString) {
+  return /\d/.test(myString);
+}
+
+//-----------------------------------------------COMPONENT ---------------------------------------------------------
 class App extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +65,7 @@ class App extends Component {
     };
   }
 
+  // Submit Form Function
   handleSubmit = e => {
     e.preventDefault();
 
@@ -70,8 +79,38 @@ class App extends Component {
         Date: ${this.state.date}
         Alert Price: ${this.state.alertPrice}
       `);
+      
+      alert("You have submitted your price alert order!")
+     
+      //  Firebase data submission
+      var firstName = this.state.firstName;
+      var lastName = this.state.lastName;
+      var email = this.state.email;
+      var country = this.state.country;
+      var date = this.state.date;
+      var alertPrice = this.state.alertPrice;
+
+      db.collection("Price Alerts").doc("Price Alert Submissions").add({
+        FirstName: {firstName},
+        LastName: {lastName},
+        Email: {email}, 
+        Country: {country}, 
+        Date: {date}, 
+        AlertPrice: {alertPrice}, 
+      })
+      .then(function() {
+          console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+    
+      // Clear form
+      document.getElementById('priceAlertForm').reset();
+
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+      alert("Please fill in all fields before submitting.")
     }
   };
 
@@ -84,11 +123,11 @@ class App extends Component {
       // checks for valid name 
       case "firstName":
         formErrors.firstName =
-          value.length < 3 || typeof(value) !== String ? "please input valid name" : "";
+          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
         break;
       case "lastName":
         formErrors.lastName =
-          value.length < 3 || typeof(value) !== String ? "please input valid name" : "";
+          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
         break;
       // checks for valid email 
       case "email":
@@ -110,7 +149,7 @@ class App extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Price Alert</h1>
-          <form onSubmit={this.handleSubmit} noValidate>
+          <form id="priceAlertForm" onSubmit={this.handleSubmit} noValidate>
             
             {/* first name */}
             <div className="firstName">
@@ -122,6 +161,7 @@ class App extends Component {
                 name="firstName"
                 noValidate
                 onChange={this.handleChange}
+                id="firstName"
               />
               {formErrors.firstName.length > 0 && (
                 <span className="errorMessage">{formErrors.firstName}</span>
@@ -138,6 +178,7 @@ class App extends Component {
                 name="lastName"
                 noValidate
                 onChange={this.handleChange}
+                id="lastName"
               />
               {formErrors.lastName.length > 0 && (
                 <span className="errorMessage">{formErrors.lastName}</span>
@@ -154,6 +195,7 @@ class App extends Component {
                 name="email"
                 noValidate
                 onChange={this.handleChange}
+                id="email"
               />
               {formErrors.email.length > 0 && (
                 <span className="errorMessage">{formErrors.email}</span>
@@ -168,6 +210,8 @@ class App extends Component {
                 name="country"
                 noValidate
                 onChange={this.handleChange}
+                id="country"
+                defaultValue
               >
                 <option value="Hong Kong">Hong Kong</option>
                 <option value="London">London</option>
@@ -188,6 +232,7 @@ class App extends Component {
                 noValidate
                 onChange={this.handleChange}
                 min={getNextMonth()}
+                id="date"
               />
             </div>
 
@@ -201,6 +246,7 @@ class App extends Component {
                 type="number"
                 name="alertPrice"
                 onChange={this.handleChange}
+                id="alertPrice"
               />
               {formErrors.alertPrice.length > 0 && (
                 <span className="errorMessage">{formErrors.alertPrice}</span>
@@ -216,5 +262,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
