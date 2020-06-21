@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./components.css";
 import { db } from './firebase';
+import 'firebase/storage';
+import 'firebase/firestore';
 
 //-------------------------------------------------DEPENDENCY FUNCTIONS --------------------------------------------
 
@@ -90,20 +92,14 @@ class App extends Component {
       var date = this.state.date;
       var alertPrice = this.state.alertPrice;
 
-      db.collection("Price Alerts").doc("Price Alert Submissions").add({
-        FirstName: {firstName},
-        LastName: {lastName},
-        Email: {email}, 
-        Country: {country}, 
-        Date: {date}, 
-        AlertPrice: {alertPrice}, 
-      })
-      .then(function() {
-          console.log("Document successfully written!");
-      })
-      .catch(function(error) {
-          console.error("Error writing document: ", error);
-      });
+      db.collection("Price Alerts").doc(country).set({
+        [date]: { 
+          [email]: { 
+            AlertPrice: parseInt(alertPrice), 
+            FirstName: firstName,
+            LastName: lastName,
+          }
+        }}, { merge: true }); 
     
       // Clear form
       document.getElementById('priceAlertForm').reset();
@@ -211,13 +207,13 @@ class App extends Component {
                 noValidate
                 onChange={this.handleChange}
                 id="country"
-                defaultValue
+                defaultValue="Hong Kong"
               >
-                <option value="Hong Kong">Hong Kong</option>
-                <option value="London">London</option>
-                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                <option value="Tokyo">Tokyo</option>
-                <option value="Bali">Bali</option>
+                <option value="HKG">Hong Kong</option>
+                <option value="LON">London</option>
+                <option value="KUL">Kuala Lumpur</option>
+                <option value="TYO">Tokyo</option>
+                <option value="DPS">Bali</option>
               </select>
               </div>
             </div>
