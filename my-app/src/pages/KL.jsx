@@ -9,7 +9,9 @@ function KL () {
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> Flight Prices to Kuala Lumpur </h1>
+            <div id="chartHeader">
+                <h1 id="chartHeader2"> Flight Prices to Kuala Lumpur </h1>
+            </div>
             {/* Chart */}
             <HighChart name={"Kuala Lumpur"} />
             <br/>

@@ -9,7 +9,9 @@ function HongKong () {
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> Flight Prices to Hong Kong </h1>
+            <div id="chartHeader">
+                <h1 id="chartHeader2"> Flight Prices to Hong Kong </h1>
+            </div>
             {/* Chart */}
             <HighChart name={"Hong Kong"} />
             <br/>

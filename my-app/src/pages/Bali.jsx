@@ -9,7 +9,9 @@ function Bali () {
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> Flight Prices to Bali </h1>
+            <div id="chartHeader">
+                <h1 id="chartHeader2"> Flight Prices to Bali </h1>
+            </div>
             {/* Chart */}
             <HighChart name={"Bali"}/>
             <br/>
