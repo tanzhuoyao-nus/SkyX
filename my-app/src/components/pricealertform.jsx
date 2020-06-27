@@ -17,12 +17,12 @@ const formValid = ({ formErrors, ...rest }) => {
 
   // validate form errors being empty
   Object.values(formErrors).forEach(val => {
-    val.length >= 0 && (valid = false);
+    val.length > 0 && (valid = false);
   });
 
   // validate the form was filled out
   Object.values(rest).forEach(val => {
-    val === null && (valid = false);
+    val = 0  && (valid = false);
   });
 
   return valid;
@@ -72,7 +72,15 @@ class App extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    if (formValid(this.state)) {
+    if (this.state.firstName.length === 0 || 
+        this.state.lastName.length === 0 || 
+        this.state.email.length === 0 ||
+        this.state.country.length === 0 ||
+        this.state.date.length === 0 ||
+        this.state.alertPrice.length === 0) { 
+      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+      alert("Please fill in all fields before submitting."); 
+    } else if (formValid(this.state)) {
       console.log(`
         --SUBMITTING--
         First Name: ${this.state.firstName}
@@ -137,7 +145,7 @@ class App extends Component {
         var inputDate = new Date(formErrors.date).setHours(0,0,0,0); 
         var minDate = new Date(getNextMonth).setHours(0,0,0,0); 
         var maxDate = new Date("2021-01-01").setHours(0,0,0,0); 
-        if (new Date(inputDate) < new Date(minDate) || new Date(inputDate) > new Date(maxDate)) { 
+        if (Date(inputDate) < Date(minDate) || Date(inputDate) > Date(maxDate)) { 
           return "invalid date"; 
         } else {}
         break;
@@ -154,6 +162,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="form-wrapper">
+          <h1>Price Alert</h1>
           <form id="priceAlertForm" onSubmit={this.handleSubmit} noValidate>
             
             {/* first name */}
@@ -216,8 +225,9 @@ class App extends Component {
                 noValidate
                 onChange={this.handleChange}
                 id="country"
-                defaultValue="Hong Kong"
+                value="Hong Kong"
               >
+                <option value="">Select Country</option>
                 <option value="HKG">Hong Kong</option>
                 <option value="LON">London</option>
                 <option value="KUL">Kuala Lumpur</option>
