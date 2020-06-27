@@ -113,22 +113,8 @@ class App extends Component {
     
       // Clear form
       document.getElementById('priceAlertForm').reset();
-      
-      document.getElementById('priceAlertForm').setState = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        alertPrice: "", 
-        country: "", 
-        date: "", 
-        formErrors: {
-          firstName: "",
-          lastName: "",
-          email: "",
-          alertPrice: "", 
-          date: "", 
-        }
-      };
+      // Refresh page 
+      window.location.reload(true); 
 
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
