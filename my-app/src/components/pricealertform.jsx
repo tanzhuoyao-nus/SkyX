@@ -17,7 +17,7 @@ const formValid = ({ formErrors, ...rest }) => {
 
   // validate form errors being empty
   Object.values(formErrors).forEach(val => {
-    val.length > 0 && (valid = false);
+    val.length >= 0 && (valid = false);
   });
 
   // validate the form was filled out
@@ -63,6 +63,7 @@ class App extends Component {
         lastName: "",
         email: "",
         alertPrice: "", 
+        date: "", 
       }
     };
   }
@@ -130,6 +131,15 @@ class App extends Component {
         formErrors.email = emailRegex.test(value)
           ? ""
           : "invalid email address";
+        break; 
+      // checks for valid date 
+      case "date": 
+        var inputDate = new Date(formErrors.date).setHours(0,0,0,0); 
+        var minDate = new Date(getNextMonth).setHours(0,0,0,0); 
+        var maxDate = new Date("2021-01-01").setHours(0,0,0,0); 
+        if (new Date(inputDate) < new Date(minDate) || new Date(inputDate) > new Date(maxDate)) { 
+          return "invalid date"; 
+        } else {}
         break;
       default:
         break;
@@ -176,7 +186,7 @@ class App extends Component {
                 onChange={this.handleChange}
                 id="lastName"
               />
-              {formErrors.lastName.length > 0 && (
+              {formErrors.lastName.length >= 0 && (
                 <span className="errorMessage">{formErrors.lastName}</span>
               )}
             </div>
@@ -226,10 +236,15 @@ class App extends Component {
                 type="date"
                 name="date"
                 noValidate
+                className={formErrors.date.length > 0 ? "error" : null}
                 onChange={this.handleChange}
                 min={getNextMonth()}
+                max="2021-01-01"
                 id="date"
               />
+              {formErrors.date.length > 0 && (
+                <span className="errorMessage">{formErrors.date}</span>
+              )}
             </div>
 
             {/* Alert Price */}
