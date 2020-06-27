@@ -16,6 +16,62 @@ export class Confirm extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
+  validate = () => {
+    let isError = false;
+    const errors = {
+      firstNameError: "",
+      lastNameError: "",
+      usernameError: "",
+      emailError: "",
+      passwordError: ""
+    };
+
+    if (this.state.email.indexOf("@") === -1) {
+      isError = true;
+      errors.emailError = "Requires valid email";
+    }
+
+    if (isNaN(this.state.alertPrice)) { 
+      isError = true; 
+      errors.alertProceError = "Requires valid price input";
+    }
+
+    this.setState({
+      ...this.state,
+      ...errors
+    });
+
+    return isError;
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    // this.props.onSubmit(this.state);
+    const err = this.validate();
+    if (!err) {
+      // clear form
+      this.setState({
+        firstName: '',
+        firstNameError: '', 
+        lastName: '',
+        lastNameError: '', 
+        email: '',
+        emailError: '', 
+        country: '',
+        alertPrice: '',
+        alertPriceError: '', 
+        date: ''
+      });
+      this.props.onChange({
+        firstName: "",
+        lastName: "",
+        email: "",
+        country: "",
+        alertPrice: "", 
+        date: ""
+      });
+    }
+  };
 
   render() {
     const {
@@ -40,7 +96,7 @@ export class Confirm extends Component {
                 <ListItemText primary="Country" secondary={country} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="Alert Price" secondary={alertPrice} />
+                <ListItemText primary="Alert Price" secondary={alertPrice}  />
               </ListItem>
               <ListItem>
                 <ListItemText primary="Date" secondary={date} />
@@ -59,7 +115,7 @@ export class Confirm extends Component {
               variant="contained"
               onClick={this.continue}
               id="confirm-button"
-            >Confirm</Button>
+            >Submit</Button>
             <h6> Please ensure all fields are filled in before submitting. </h6>
           </Container>
         </>

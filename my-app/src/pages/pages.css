@@ -10,3 +10,12 @@ color: rgba(0,0,0,0.5);
 .featuresExplainer { 
     padding: 30px !important; 
 }
+
+#chartHeader {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#chartHeader2 {
+    color:  #141B45;
+}

@@ -1,18 +1,20 @@
 import React from 'react'; 
 import './pages.css'; 
-import Chart from '../components/chart'; 
-
-//component imports 
 import Navbar from '../components/navbar';
 import ChartDataCards from "../components/chartdatacards"; 
+import HighChart from "../components/highchart"
+
 function Bali () { 
     return ( 
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> Bali </h1>
+            <div id="chartHeader">
+                <h1 id="chartHeader2"> Flight Prices to Bali </h1>
+            </div>
             {/* Chart */}
-            <Chart name={"Bali"} />
+            <HighChart name={"Bali"}/>
+            <br/>
             <br/>
             <hr/>
             <ChartDataCards name={"Bali"} />
