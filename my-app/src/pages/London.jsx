@@ -1,8 +1,6 @@
 import React from 'react'; 
 import './pages.css'; 
-import Chart from '../components/chart'; 
-
-//component imports 
+import HighChart from "../components/highchart"
 import Navbar from '../components/navbar';
 import ChartDataCards from "../components/chartdatacards"; 
 
@@ -11,10 +9,13 @@ function London () {
         <div> 
             {/* Navbar */}
             <Navbar/>
-            <h1> London </h1>
+            <div id="chartHeader">
+                <h1 id="chartHeader2"> Flight Prices to London </h1>
+            </div>
             {/* Chart */}
-            <Chart name={"London"} />
+            <HighChart name={"London"} />
             <br/>
+            <br />
             <hr/>
             <ChartDataCards name={"London"} /> 
         </div>

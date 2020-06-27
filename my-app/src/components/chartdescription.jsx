@@ -18,7 +18,6 @@ const useStyles = theme => ({
 class ChartDescription extends React.Component {  
   render() {
     const { classes } = this.props; 
-    console.log(this.props.all_time_average);
     return(
       <div className={ classes.root }>
         <Paper id="ChartData" elevation={5}> 
@@ -26,12 +25,12 @@ class ChartDescription extends React.Component {
               <h1 id="heading"> Chart Data </h1>
               <div> All Time Average: ${ this.props.all_time_average }</div><hr className = "chartDataLine" />
               <div> All Time High: ${ this.props.all_time_high }</div><hr className = "chartDataLine" />
-              <div> All TIme Low: ${ this.props.all_time_low }</div><hr className = "chartDataLine" />
-              <div> Monthly Average:</div><hr className = "chartDataLine" />
-              <div> Monthly High: </div><hr className = "chartDataLine" />
-              <div> Monthly Low: </div><hr className = "chartDataLine" />
+              <div> All Time Low: ${ this.props.all_time_low }</div><hr className = "chartDataLine" />
               <div> All Time Price Range: ${ this.props.all_time_low } - ${ this.props.all_time_high } </div><hr className = "chartDataLine" />
-              <div> Monthly Price Range: </div>
+              <div> This Month's Average: ${ this.props.monthly_average }</div><hr className = "chartDataLine" />
+              <div> This Month's High: ${ this.props.monthly_high }</div><hr className = "chartDataLine" />
+              <div> This Month's Low: ${ this.props.monthly_low }</div><hr className = "chartDataLine" />
+              <div> This Month's Price Range: ${ this.props.monthly_low } - ${ this.props.monthly_high }</div>
             </Container>
         </Paper> 
       </div>

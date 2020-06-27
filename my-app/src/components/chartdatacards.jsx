@@ -28,12 +28,17 @@ async function getFirebaseData(city) {
     const all_time_high = await document.get("All Time High");
     // console.log(all_time_high); 
     const all_time_low = await document.get("All Time Low");
+    const monthly_average = await document.get("Monthly Average");
+    const monthly_high = await document.get("Monthly High");
+    const monthly_low = await document.get("Monthly Low");
     var output_arr = [];
     output_arr[0] = all_time_average.toFixed(2);
     output_arr[1] = all_time_high; 
     output_arr[2] = all_time_low; 
+    output_arr[3] = monthly_average.toFixed(2);
+    output_arr[4] = monthly_high;
+    output_arr[5] = monthly_low;
     return output_arr;
-    
 }
 
  class ChartDataCards extends React.Component {
@@ -42,7 +47,10 @@ async function getFirebaseData(city) {
         this.state={ 
             all_time_average: '', 
             all_time_high: '', 
-            all_time_low: ''  
+            all_time_low: '',
+            monthly_average: '',
+            monthly_high: '',
+            monthly_low: ''
         }; 
     }
   
@@ -52,8 +60,10 @@ async function getFirebaseData(city) {
     this.setState({ 
         all_time_average: all_time_prices[0], 
         all_time_high: all_time_prices[1], 
-        all_time_low: all_time_prices[2]
-        
+        all_time_low: all_time_prices[2],
+        monthly_average: all_time_prices[3],
+        monthly_high: all_time_prices[4],
+        monthly_low: all_time_prices[5]
       })
   }
 
@@ -92,8 +102,14 @@ async function getFirebaseData(city) {
                   </CardActions>
               </Card>
           </Grid>
-          <ChartDescription all_time_average={ this.state.all_time_average } 
-            all_time_low={ this.state.all_time_low } all_time_high={ this.state.all_time_high }/>
+          <ChartDescription 
+            all_time_average={ this.state.all_time_average } 
+            all_time_low={ this.state.all_time_low } 
+            all_time_high={ this.state.all_time_high }
+            monthly_average={ this.state.monthly_average }
+            monthly_high={ this.state.monthly_high }
+            monthly_low={ this.state.monthly_low }
+            />
         </div>
         );
     } 
