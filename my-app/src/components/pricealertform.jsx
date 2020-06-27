@@ -50,7 +50,6 @@ function hasNumber(myString) {
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       firstName: "",
       lastName: "",
@@ -131,17 +130,17 @@ class App extends Component {
       // checks for valid name 
       case "firstName":
         formErrors.firstName =
-          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
+          value.length < 3 || hasNumber(value) ? "Please input valid name" : "";
         break;
       case "lastName":
         formErrors.lastName =
-          value.length < 3 || hasNumber(value) ? "please input valid name" : "";
+          value.length < 3 || hasNumber(value) ? "Please input valid name" : "";
         break;
       // checks for valid email 
       case "email":
         formErrors.email = emailRegex.test(value)
           ? ""
-          : "invalid email address";
+          : "Invalid email address";
         break; 
       // checks for valid date 
       case "date": 
@@ -149,11 +148,11 @@ class App extends Component {
         var minDate = new Date(getNextMonth).setHours(0,0,0,0); 
         var maxDate = new Date("2021-01-01").setHours(0,0,0,0); 
         if (Date(inputDate) < Date(minDate) || Date(inputDate) > Date(maxDate)) { 
-          return "invalid date"; 
+          return "Invalid date"; 
         } else {}
         break;
       case "alertPrice": 
-        formErrors.alertPrice = value < 0 ? "please input valid price" : "";
+        formErrors.alertPrice = value < 0 ? "Please input valid price" : "";
       break;
       default:
         break;
@@ -166,9 +165,7 @@ class App extends Component {
     const { formErrors } = this.state;
 
     return (
-      <div className="wrapper">
-        <div className="form-wrapper">
-          <h1>Price Alert</h1>
+        <div className="form-wrapper" id="formWindow">
           <form id="priceAlertForm" onSubmit={this.handleSubmit} noValidate>
             
             {/* first name */}
@@ -283,7 +280,6 @@ class App extends Component {
             </div>
           </form>
         </div>
-      </div>
     );
   }
 }

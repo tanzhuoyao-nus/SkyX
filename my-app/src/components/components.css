@@ -459,3 +459,8 @@ a {
       margin-left: 10%;
       color: #141B45;
   }
+
+  #formWindow {
+      margin: auto;
+      margin-bottom: 5%;
+  }
