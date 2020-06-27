@@ -144,7 +144,6 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="form-wrapper">
-          <h1>Price Alert</h1>
           <form id="priceAlertForm" onSubmit={this.handleSubmit} noValidate>
             
             {/* first name */}

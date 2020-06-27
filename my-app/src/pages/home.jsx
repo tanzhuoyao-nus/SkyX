@@ -16,12 +16,11 @@ function Home() {
 
     {/* Logo */}
     <Logo /> 
-    
-    <h2 text-align="center"> Welcome to SkyX</h2>
+
     {/* Recommendations */}
     <Cards />
 
-    <h1 className="sections"> Features</h1>
+    <h1 className="sections" id="featuresHeader"> Features</h1>
     <hr></hr>
     <Features /> 
     

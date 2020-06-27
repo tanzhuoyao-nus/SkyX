@@ -25,7 +25,7 @@ class ChartDescription extends React.Component {
               <h1 id="heading"> Chart Data </h1>
               <div> All Time Average: ${ this.props.all_time_average }</div><hr className = "chartDataLine" />
               <div> All Time High: ${ this.props.all_time_high }</div><hr className = "chartDataLine" />
-              <div> All TIme Low: ${ this.props.all_time_low }</div><hr className = "chartDataLine" />
+              <div> All Time Low: ${ this.props.all_time_low }</div><hr className = "chartDataLine" />
               <div> All Time Price Range: ${ this.props.all_time_low } - ${ this.props.all_time_high } </div><hr className = "chartDataLine" />
               <div> This Month's Average: ${ this.props.monthly_average }</div><hr className = "chartDataLine" />
               <div> This Month's High: ${ this.props.monthly_high }</div><hr className = "chartDataLine" />
