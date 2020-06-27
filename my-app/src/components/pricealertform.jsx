@@ -80,6 +80,7 @@ class App extends Component {
         this.state.alertPrice.length === 0) { 
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
       alert("Please fill in all fields before submitting."); 
+
     } else if (formValid(this.state)) {
       console.log(`
         --SUBMITTING--
@@ -112,6 +113,22 @@ class App extends Component {
     
       // Clear form
       document.getElementById('priceAlertForm').reset();
+      
+      document.getElementById('priceAlertForm').setState = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        alertPrice: "", 
+        country: "", 
+        date: "", 
+        formErrors: {
+          firstName: "",
+          lastName: "",
+          email: "",
+          alertPrice: "", 
+          date: "", 
+        }
+      };
 
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -149,6 +166,9 @@ class App extends Component {
           return "invalid date"; 
         } else {}
         break;
+      case "alertPrice": 
+        formErrors.alertPrice = value < 0 ? "please input valid price" : "";
+      break;
       default:
         break;
     }
@@ -225,7 +245,6 @@ class App extends Component {
                 noValidate
                 onChange={this.handleChange}
                 id="country"
-                value="Hong Kong"
               >
                 <option value="">Select Country</option>
                 <option value="HKG">Hong Kong</option>
@@ -238,7 +257,7 @@ class App extends Component {
             </div>
             
             
-          {/* Date */}
+          {/* date */}
             <div className="email">
               <label>Date</label>
               <input
