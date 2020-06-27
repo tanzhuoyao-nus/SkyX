@@ -25,7 +25,7 @@ export default function MediaCard() {
 
   return (
     <div>
-      <h1 id="recommendations"> Recommendations </h1>
+      <h1 id="recommendationsText"> Recommendations </h1>
       <hr id="line"></hr>
     
     <Grid id ="card" container spacing={3} justify="center">

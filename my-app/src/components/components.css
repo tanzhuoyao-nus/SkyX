@@ -160,9 +160,11 @@ body {
     border-spacing: 10px; 
 }
 
-#recommendations {
+#recommendationsText {
     text-align: left;
-    margin-left: 30px;
+    font-weight: 500;
+    margin-left: 10%;
+    color: #141B45;
 }
 
 #line { 
@@ -450,4 +452,10 @@ a {
   .createAccount small {
     color: #999;
     font-weight: lighter;
+  }
+
+  #featuresHeader {
+      font-weight: 500;
+      margin-left: 10%;
+      color: #141B45;
   }
