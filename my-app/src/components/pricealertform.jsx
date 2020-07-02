@@ -113,8 +113,7 @@ class PriceAlertForm extends Component {
       // Clear form
       document.getElementById('priceAlertForm').reset();
       // Refresh page 
-      window.location.reload(true); 
-
+      setTimeout(() => {window.location.reload(true);}, 2000) 
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
       alert("Please fill in all fields before submitting.")
