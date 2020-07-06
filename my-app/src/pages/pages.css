@@ -19,3 +19,12 @@ color: rgba(0,0,0,0.5);
 #chartHeader2 {
     color:  #141B45;
 }
+
+.comparison {
+    width: 30%;
+    display: table-cell;
+}
+
+#comparisonTable {
+    display: inline-block;
+}

@@ -19,17 +19,43 @@ class Destinationcomparison extends React.Component {
                 <Navbar /> 
                 <h1> Destination Comparison </h1>
                 <hr/>
-                {this.renderCardSelection()}
-                {this.renderSelectedCard(this.state.firstSelected)}
+                <div id="comparisonTable">
+                    <div className="comparison">
+                        {this.renderFirstCardSelection()}
+                        {this.renderSelectedCard(this.state.firstSelected)}
+                    </div>
+                    <div className="comparison">
+                        <h1>VS</h1>
+                    </div>
+                    <div className="comparison">
+                        {this.renderSecondCardSelection()}
+                        {this.renderSelectedCard(this.state.secondSelected)}
+                    </div>
+                </div>
             </div>
         );
     }
 
-    renderCardSelection() {
+    renderFirstCardSelection() {
         return(
             <div className="form-group top-margin-small">
                 <label className="card-selector-label">Select Destination</label>
                 <select className="card-selector form-control" onChange={(e) => {this.setState({firstSelected: e.target.value})}}>
+                    <option>Bali</option>
+                    <option>Hong Kong</option>
+                    <option>Kuala Lumpur</option>
+                    <option>London</option>
+                    <option>Tokyo</option>
+                </select>
+            </div>
+        );
+    }
+
+    renderSecondCardSelection() {
+        return(
+            <div className="form-group top-margin-small">
+                <label className="card-selector-label">Select Destination</label>
+                <select className="card-selector form-control" onChange={(e) => {this.setState({secondSelected: e.target.value})}}>
                     <option>Bali</option>
                     <option>Hong Kong</option>
                     <option>Kuala Lumpur</option>
