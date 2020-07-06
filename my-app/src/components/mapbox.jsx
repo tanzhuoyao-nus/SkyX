@@ -1,6 +1,7 @@
 import React from 'react'; 
 import {Component} from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker } from 'react-map-gl';
+
 
 class Map extends Component {
     state = {
@@ -22,11 +23,38 @@ class Map extends Component {
           onViewportChange={(viewport) => this.setState({viewport})}
         >
             {/* Marker */}
-            {/* <Marker lattitude={51.5074} longitude={0.1278}> 
-                <button>
-                    <img src="https://www.pngguru.com/free-transparent-background-png-clipart-yfuav" />
+            {/* Tokyo */}
+            <Marker latitude={35.6894} longitude={139.6917}> 
+                <button className="marker-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker"/>
                 </button>
-            </Marker> */}
+            </Marker>
+            {/* Hong Kong */}
+            <Marker latitude={22.3193} longitude={114.1694}> 
+                <button className="marker-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker"/>
+                </button>
+            </Marker>
+            {/* Bali */}
+            <Marker latitude={-8.3405} longitude={115.0920}> 
+                <button className="marker-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker"/>
+                </button>
+            </Marker>
+            
+            {/* KL */}
+            <Marker latitude={3.1390} longitude={101.6869}> 
+                <button className="marker-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker"/>
+                </button>
+            </Marker>
+
+            {/*  */}
+            <Marker latitude={51.5074} longitude={0.1278}> 
+                <button className="marker-btn">
+                    <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker"/>
+                </button>
+            </Marker>
             
 
 
