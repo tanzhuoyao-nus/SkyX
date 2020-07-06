@@ -7,6 +7,8 @@ import KualaLumpur from '../destinations/KualaLumpur';
 import Bali from '../destinations/Bali';
 import HongKong from '../destinations/HongKong';
 import { db } from '../components/firebase';
+import comparisonTable from './comparisontable';
+import ComparisonTable from './comparisontable';
 
 function cityPicker(city) {
     if (city === "Tokyo") {
@@ -82,8 +84,12 @@ class Destinationcomparison extends React.Component {
                         {this.renderSecondCardSelection()}
                         {this.renderSelectedCard(this.state.secondSelected)}
                     </div>
-                    <div><h1>COMPARISON CHART GOES HERE</h1></div>
                 </div>
+                <ComparisonTable 
+                    firstSelected={this.state.firstSelected}
+                    secondSelected={this.state.secondSelected}
+                    firstCity={this.state.firstCity}
+                    secondCity={this.state.secondCity}/>
             </div>
         );
     }
@@ -102,7 +108,7 @@ class Destinationcomparison extends React.Component {
                 monthly_low: all_time_prices[5]
             }
         })
-        console.log(all_time_prices);
+        // console.log(all_time_prices);
     }
 
     async updateSecondSelected(e) {
@@ -119,7 +125,7 @@ class Destinationcomparison extends React.Component {
                 monthly_low: all_time_prices[5]
             }
         })
-        console.log(all_time_prices);
+        // console.log(all_time_prices);
     }
 
     renderFirstCardSelection() {

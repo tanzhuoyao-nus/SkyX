@@ -28,3 +28,20 @@ color: rgba(0,0,0,0.5);
 #comparisonTable {
     display: inline-block;
 }
+
+.comparisonRow {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.comparisonLeft {
+    margin-right: 100%;
+}
+
+.comparisonRight {
+    margin-left: 100%;
+}
+
+.comparisonCentre {
+    width: 100%;
+}
