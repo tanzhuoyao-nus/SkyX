@@ -4,7 +4,7 @@ class HongKong extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hong Kong</h1>
+                <h1>HONG KONG</h1>
             </div>
         )
     }

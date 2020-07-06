@@ -1,4 +1,24 @@
 import React from 'react';
+import {Grid, withStyles} from '@material-ui/core'; 
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = theme => ({
+    container: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gridGap: theme.spacing(3),
+    },
+    paper: {
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      whiteSpace: 'nowrap',
+      marginBottom: theme.spacing(1),
+    },
+    divider: {
+      margin: theme.spacing(2, 0),
+    },
+  });
 
 class ComparisonTable extends React.Component {
     invisibleDefault(data) {
@@ -9,35 +29,48 @@ class ComparisonTable extends React.Component {
         }
     }
     render() {
+        const { classes } = this.props
         return(
             <div>
-              <h1 id="heading"> Chart Data </h1>
               <div className="comparisonRow">
-                  <div className="comparisonLeft">{this.invisibleDefault(this.props.firstCity.all_time_average)}</div>
+                  <div id="comparisonLeft1">{this.invisibleDefault(this.props.firstCity.all_time_average)}</div>
                   <div className="comparisonCentre">All Time Average</div>
-                  <div className="comparisonRight">{this.invisibleDefault(this.props.secondCity.all_time_average)}</div>
+                  <div id="comparisonRight1">{this.invisibleDefault(this.props.secondCity.all_time_average)}</div>
               </div>
               <hr className = "chartDataLine" />
               <div className="comparisonRow">
-                  <div className="comparisonLeft">{this.invisibleDefault(this.props.firstCity.all_time_high)}</div>
+                  <div id="comparisonLeft2">{this.invisibleDefault(this.props.firstCity.all_time_high)}</div>
                   <div className="comparisonCentre">All Time High</div>
-                  <div className="comparisonRight">{this.invisibleDefault(this.props.secondCity.all_time_high)}</div>
+                  <div id="comparisonRight2">{this.invisibleDefault(this.props.secondCity.all_time_high)}</div>
               </div>
               <hr className = "chartDataLine" />
               <div className="comparisonRow">
-                  <div className="comparisonLeft">{this.invisibleDefault(this.props.firstCity.all_time_low)}</div>
+                  <div id="comparisonLeft3">{this.invisibleDefault(this.props.firstCity.all_time_low)}</div>
                   <div className="comparisonCentre">All Time Low</div>
-                  <div className="comparisonRight">{this.invisibleDefault(this.props.secondCity.all_time_low)}</div>
+                  <div id="comparisonRight3">{this.invisibleDefault(this.props.secondCity.all_time_low)}</div>
               </div>
               <hr className = "chartDataLine" />
-              <div> All Time Price Range: ${ this.props.firstCity.all_time_low } - ${ this.props.firstCity.all_time_high } </div><hr className = "chartDataLine" />
-              <div> This Month's Average: ${ this.props.firstCity.monthly_average }</div><hr className = "chartDataLine" />
-              <div> This Month's High: ${ this.props.firstCity.monthly_high }</div><hr className = "chartDataLine" />
-              <div> This Month's Low: ${ this.props.firstCity.monthly_low }</div><hr className = "chartDataLine" />
-              <div> This Month's Price Range: ${ this.props.firstCity.monthly_low } - ${ this.props.firstCity.monthly_high }</div>
+              <div className="comparisonRow">
+                  <div id="comparisonLeft4">{this.invisibleDefault(this.props.firstCity.monthly_average)}</div>
+                  <div className="comparisonCentre">This Month's Average</div>
+                  <div id="comparisonRight4">{this.invisibleDefault(this.props.secondCity.monthly_average)}</div>
+              </div>
+              <hr className = "chartDataLine" />
+              <div className="comparisonRow">
+                  <div id="comparisonLeft5">{this.invisibleDefault(this.props.firstCity.monthly_high)}</div>
+                  <div className="comparisonCentre">This Month's High</div>
+                  <div id="comparisonRight5">{this.invisibleDefault(this.props.secondCity.monthly_high)}</div>
+              </div>
+              <hr className = "chartDataLine" />
+              <div className="comparisonRow">
+                  <div id="comparisonLeft6">{this.invisibleDefault(this.props.firstCity.monthly_low)}</div>
+                  <div className="comparisonCentre">This Month's Low</div>
+                  <div id="comparisonRight6">{this.invisibleDefault(this.props.secondCity.monthly_low)}</div>
+              </div>
+              <hr className = "chartDataLine" />
             </div>
         );
     }
 }
 
-export default ComparisonTable;
+export default withStyles(useStyles)(ComparisonTable);

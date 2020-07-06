@@ -34,14 +34,54 @@ color: rgba(0,0,0,0.5);
     justify-content: center;
 }
 
-.comparisonLeft {
-    margin-right: 100%;
+#comparisonLeft1 {
+    margin-right: 150px;
 }
 
-.comparisonRight {
-    margin-left: 100%;
+#comparisonLeft2 {
+    margin-right: 162px;
+}
+
+#comparisonLeft3 {
+    margin-right: 163px;
+}
+
+#comparisonRight1 {
+    margin-left: 150px;
+}
+
+#comparisonRight2 {
+    margin-left: 162px;
+}
+
+#comparisonRight3 {
+    margin-left: 163px;
 }
 
 .comparisonCentre {
     width: 100%;
+}
+
+#comparisonLeft4 {
+    margin-right: 133px;
+}
+
+#comparisonLeft5 {
+    margin-right: 142px;
+}
+
+#comparisonLeft6 {
+    margin-right: 143px;
+}
+
+#comparisonRight4 {
+    margin-left: 133px;
+}
+
+#comparisonRight5 {
+    margin-left: 142px;
+}
+
+#comparisonRight6 {
+    margin-left: 143px;
 }

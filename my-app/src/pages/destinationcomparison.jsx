@@ -7,7 +7,6 @@ import KualaLumpur from '../destinations/KualaLumpur';
 import Bali from '../destinations/Bali';
 import HongKong from '../destinations/HongKong';
 import { db } from '../components/firebase';
-import comparisonTable from './comparisontable';
 import ComparisonTable from './comparisontable';
 
 function cityPicker(city) {
