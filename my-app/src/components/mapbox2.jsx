@@ -6,21 +6,34 @@ import { db } from './firebase';
 import 'mapbox-gl/dist/mapbox-gl.css'; 
 import "./components.css"; 
 
-// Get Average Price of City 
+// 1. Dependency Functions
 async function MonthlyAverage(city) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const monthly_average = await document.get("Monthly Average"); 
-  console.log(monthly_average);
   return monthly_average;
 }
 
 async function AllTimeAverage(city) {
     const document = await db.collection('flight_price_' + city).doc("Prices").get();
     const all_time_average = await document.get("All Time Average"); 
-    console.log(all_time_average)
     return all_time_average;
 }
 
+function cityPicker(city) {
+    if (city === "Tokyo") {
+      return "TYO";
+    } else if (city === "Bali") {
+      return "DPS";
+    } else if (city=== "London") {
+      return "LON";
+    } else if (city === "Hong Kong") {
+      return "HKG";
+    } else {
+      return "KUL";
+    }
+  }
+
+// 2. Component
 class Map extends Component {
 
     constructor(props) {
@@ -34,12 +47,21 @@ class Map extends Component {
                 zoom: 10
               }, 
             selectedCountry: null, 
-
+            selectedMonthlyAverage: 0, 
+            selectedAllTimeAverage: 0
         };
     }
 
     // Pop-up Event Listener 
-    componentDidMount () { 
+    async componentDidMount () {
+ 
+        if (this.state.selectedCountry !== null){ 
+            var monthly_average = await MonthlyAverage(cityPicker(this.state.selectedCountry));
+            var all_time_average = await AllTimeAverage(cityPicker(this.state.selectedCountry)); 
+            this.setState({selectedMonthlyAverage: monthly_average});
+            this.setState({selectedAllTimeAverage: all_time_average});
+        }
+
         const listener = e => {
             if (e.key === "Escape") {
                 this.setState({
@@ -54,6 +76,31 @@ class Map extends Component {
             window.removeEventListener("keydown", listener);
         };
     }
+
+    async RunComponentDidMountAgain () {
+ 
+        if (this.state.selectedCountry !== null){ 
+            var monthly_average = await MonthlyAverage(cityPicker(this.state.selectedCountry));
+            var all_time_average = await AllTimeAverage(cityPicker(this.state.selectedCountry)); 
+            this.setState({selectedMonthlyAverage: monthly_average});
+            this.setState({selectedAllTimeAverage: all_time_average});
+        }
+
+        const listener = e => {
+            if (e.key === "Escape") {
+                this.setState({
+                    selectedCountry: null
+                });
+            } 
+        }; 
+
+        window.addEventListener("keydown", listener);
+
+        return () => {
+            window.removeEventListener("keydown", listener);
+        };
+    }
+
 
     render () {
         return (
@@ -75,7 +122,6 @@ class Map extends Component {
             className="marker"
             latitude={country.geometry.coordinates[0]}
             longitude={country.geometry.coordinates[1]}
-            offset={[0, -50/2]}
         >
             <button
             position="absolute"
@@ -85,14 +131,15 @@ class Map extends Component {
                 this.setState ({ 
                     selectedCountry: country
                 })
+                this.RunComponentDidMountAgain(); 
             }}
             >
             {/* Marker Icon Selector */}
             <img src={
-                Math.floor(parseFloat(MonthlyAverage(country))) < Math.floor(parseFloat(AllTimeAverage(country)))
-                ?  Math.floor(parseFloat(AllTimeAverage(country))) - Math.floor(parseFloat(MonthlyAverage(country))) > 0.2 * Math.floor(parseFloat(AllTimeAverage(country)))
-                    ? "https://freesvg.org/img/squat-marker-green.png"
-                    : "https://freesvg.org/img/squat-marker-orange.png"
+                Math.floor(this.state.selectedMonthlyAverage) < Math.floor(this.state.selectedAllTimeAverage)
+                ?  Math.floor(this.state.selectedAllTimeAverage) - Math.floor(this.state.selectedMonthlyAverage) > 0.2 * parseFloat(this.state.selectedAllTimeAverage)
+                    ? "https://freesvg.org/img/squat-marker-orange.png"
+                    : "https://freesvg.org/img/squat-marker-green.png"
                 : "https://freesvg.org/img/squat-marker-red.png"
                 }
                 alt="Map Marker Icon" />
@@ -113,8 +160,7 @@ class Map extends Component {
         >
             <div>
             <h4>{this.state.selectedCountry.properties.NAME}</h4>
-            <h6>"{Math.floor(parseFloat(MonthlyAverage(this.state.selectedCountry.properties.CODE)))}"</h6>
-            {console.log(MonthlyAverage(this.state.selectedCountry.properties.CODE))}
+            <h6>Average Price: {Math.floor(this.state.selectedMonthlyAverage)}</h6>
             </div>
         </Popup>
         ) : null}
