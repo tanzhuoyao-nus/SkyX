@@ -35,7 +35,6 @@ function Map () {
     };
   }, []);
 
-
   return (
     <div>
     <ReactMapGL 
@@ -84,6 +83,6 @@ function Map () {
     </div>
   );
 }
-
+}
 
 export default Map; 

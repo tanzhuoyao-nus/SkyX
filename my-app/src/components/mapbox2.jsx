@@ -10,14 +10,16 @@ import "./components.css";
 async function MonthlyAverage(city) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const monthly_average = await document.get("Monthly Average"); 
+  console.log(monthly_average);
   return monthly_average;
 }
 
 async function AllTimeAverage(city) {
     const document = await db.collection('flight_price_' + city).doc("Prices").get();
     const all_time_average = await document.get("All Time Average"); 
+    console.log(all_time_average)
     return all_time_average;
-  }
+}
 
 class Map extends Component {
 
@@ -69,7 +71,6 @@ class Map extends Component {
 
         {countryMarker.features.map(country => (
         <Marker
-            wait={5000}
             key={country.properties.COUNTRYID}
             className="marker"
             latitude={country.geometry.coordinates[0]}
@@ -86,9 +87,10 @@ class Map extends Component {
                 })
             }}
             >
+            {/* Marker Icon Selector */}
             <img src={
-                parseFloat(MonthlyAverage(country)) < parseFloat(AllTimeAverage(country))
-                ?  parseFloat(AllTimeAverage(country)) - parseFloat(MonthlyAverage(country)) > 0.2 * parseFloat(AllTimeAverage(country))
+                Math.floor(parseFloat(MonthlyAverage(country))) < Math.floor(parseFloat(AllTimeAverage(country)))
+                ?  Math.floor(parseFloat(AllTimeAverage(country))) - Math.floor(parseFloat(MonthlyAverage(country))) > 0.2 * Math.floor(parseFloat(AllTimeAverage(country)))
                     ? "https://freesvg.org/img/squat-marker-green.png"
                     : "https://freesvg.org/img/squat-marker-orange.png"
                 : "https://freesvg.org/img/squat-marker-red.png"
@@ -111,9 +113,8 @@ class Map extends Component {
         >
             <div>
             <h4>{this.state.selectedCountry.properties.NAME}</h4>
-            <h6>"{parseInt(MonthlyAverage(this.state.selectedCountry.properties.CODE))}"</h6>
+            <h6>"{Math.floor(parseFloat(MonthlyAverage(this.state.selectedCountry.properties.CODE)))}"</h6>
             {console.log(MonthlyAverage(this.state.selectedCountry.properties.CODE))}
-            {console.log(AllTimeAverage(this.state.selectedCountry.properties.CODE))}
             </div>
         </Popup>
         ) : null}
