@@ -489,6 +489,6 @@ a {
   }
 
   .popup { 
-      width: 100px !important; 
-      min-height: 100px;
+      max-width: 200px !important; 
+      max-height: 200px;
   }

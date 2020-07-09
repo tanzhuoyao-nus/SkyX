@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as countryMarker from "./countries.json"; 
 import { db } from './firebase'; 
-import 'mapbox-gl/dist/mapbox-gl.css'; 
+// import 'mapbox-gl/dist/mapbox-gl.css'; 
 import "./components.css"; 
 
 // 1. Dependency Functions
@@ -138,9 +138,9 @@ class Map extends Component {
             <img src={
                 Math.floor(this.state.selectedMonthlyAverage) < Math.floor(this.state.selectedAllTimeAverage)
                 ?  Math.floor(this.state.selectedAllTimeAverage) - Math.floor(this.state.selectedMonthlyAverage) > 0.2 * parseFloat(this.state.selectedAllTimeAverage)
-                    ? "https://freesvg.org/img/squat-marker-orange.png"
-                    : "https://freesvg.org/img/squat-marker-green.png"
-                : "https://freesvg.org/img/squat-marker-red.png"
+                    ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
             </button>
