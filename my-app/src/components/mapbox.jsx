@@ -2,21 +2,12 @@ import React, {useState, useEffect} from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as countryMarker from "./countries.json"; 
 import { db } from './firebase'; 
-import './components.css'
+import './components.css'; 
 
-async function getFirebaseData(city) {
+async function getAveragePrice(city) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
   const avg_prices = await document.get("All Time Average"); 
-  const high_prices = await document.get("All Time High");
-  const low_prices = await document.get("All Time Low");
-  var price_arr = [];
-  var highest_arr = [];
-  var lowest_arr = [];
-  var output_arr = [];
-  output_arr[0] = price_arr;
-  output_arr[1] = highest_arr;
-  output_arr[2] = lowest_arr;
-  return output_arr;
+  return avg_prices;
 }
 
 function Map () {
@@ -44,6 +35,7 @@ function Map () {
     };
   }, []);
 
+
   return (
     <div>
     <ReactMapGL 
@@ -57,7 +49,6 @@ function Map () {
 
     {countryMarker.features.map(country => (
       <Marker
-        key={country.properties.PARK_ID}
         latitude={country.geometry.coordinates[0]}
         longitude={country.geometry.coordinates[1]}
       >
@@ -83,8 +74,8 @@ function Map () {
       >
         <div>
           <h4>{selectedCountry.properties.NAME}</h4>
-          <h6>{parseInt(getFirebaseData(selectedCountry.properties.CODE))}</h6>
-          {console.log(getFirebaseData(selectedCountry.properties.CODE))}
+          <h6>{parseInt(getAveragePrice(selectedCountry.properties.CODE))}</h6>
+          {console.log(getAveragePrice(selectedCountry.properties.CODE))}
         </div>
       </Popup>
     ) : null}
@@ -93,5 +84,6 @@ function Map () {
     </div>
   );
 }
+
 
 export default Map; 
