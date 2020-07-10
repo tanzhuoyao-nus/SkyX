@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { db } from './firebase'; 
-
+import "./components.css"
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 // 1. Dependency Functions
 async function MonthlyAverage(city) {
@@ -304,8 +305,11 @@ class Map extends Component {
             }
         >
             <div>
-            <h4>{this.state.selectedCountry}</h4>
-            <h6>Average Price:${this.state.selectedMonthlyAverage}</h6>
+            <span className="header">{this.state.selectedCountry}</span><hr/>
+            <span className="body">Month Average: </span>
+            <span className="value">${this.state.selectedMonthlyAverage}</span><br/>
+            <span className="body">All Time Average: </span>
+            <span className="value">${this.state.selectedAllTimeAverage}</span>
             </div>
         </Popup>
         ) : null}
