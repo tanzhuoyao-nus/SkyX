@@ -18,14 +18,6 @@ async function AllTimeAverage(city) {
     return all_time_average;
 }
 
-function loadStyle(url) {
-    let index  = window.document.getElementsByTagName("link")[0];
-    let link = window.document.createElement("link");
-    link.href = url;
-    link.rel = 'stylesheet';
-    index.parentNode.insertBefore(link, index);
-  }
-
 // 2. Component
 class Map extends Component {
     
@@ -64,6 +56,7 @@ class Map extends Component {
     async componentDidMount () {
         
         this._isMounted = true; 
+
         var tokyo_MAverage = await MonthlyAverage("TYO");
         var tokyo_ATAverage = await AllTimeAverage("TYO"); 
         var hongkong_MAverage = await MonthlyAverage("HKG");
@@ -75,6 +68,7 @@ class Map extends Component {
         var denpasar_MAverage = await MonthlyAverage("DPS");
         var denpasar_ATAverage = await AllTimeAverage("DPS"); 
 
+        if (this._isMounted){ 
         this.setState({
             TYO_MAverage: Math.floor(tokyo_MAverage), 
             TYO_ATAverage: Math.floor(tokyo_ATAverage), 
@@ -87,10 +81,9 @@ class Map extends Component {
             DPS_MAverage: Math.floor(denpasar_MAverage), 
             DPS_ATAverage: Math.floor(denpasar_ATAverage), 
             isLoading: false
-        });
-
-        loadStyle("https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css");
-
+            });
+        } 
+        
         const listener = e => {
             if (e.key === "Escape") {
                 this.setState({
@@ -106,6 +99,10 @@ class Map extends Component {
         };
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+    
     render () {
         return (
         <div>
@@ -147,7 +144,7 @@ class Map extends Component {
                 this.state.TYO_MAverage < this.state.TYO_ATAverage
                 ?  this.state.TYO_ATAverage - this.state.TYO_MAverage > 0.15 * this.state.TYO_ATAverage 
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
@@ -181,7 +178,7 @@ class Map extends Component {
                 this.state.HKG_MAverage < this.state.HKG_ATAverage
                 ?  this.state.HKG_ATAverage - this.state.HKG_MAverage > 0.15 * this.state.HKG_ATAverage 
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
@@ -215,7 +212,7 @@ class Map extends Component {
                 this.state.LON_MAverage < this.state.LON_ATAverage
                 ?  this.state.LON_ATAverage - this.state.LON_MAverage > 0.15 * this.state.LON_ATAverage 
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
@@ -249,7 +246,7 @@ class Map extends Component {
                 this.state.KUL_MAverage < this.state.KUL_ATAverage
                 ?  this.state.KUL_ATAverage - this.state.KUL_MAverage > 0.15 * this.state.KUL_ATAverage 
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
@@ -283,7 +280,7 @@ class Map extends Component {
                 this.state.DPS_MAverage < this.state.DPS_ATAverage
                 ?  this.state.DPS_ATAverage - this.state.DPS_MAverage > 0.15 * this.state.DPS_ATAverage 
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />

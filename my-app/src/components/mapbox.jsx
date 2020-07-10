@@ -139,7 +139,7 @@ class Map extends Component {
                 Math.floor(this.state.selectedMonthlyAverage) < Math.floor(this.state.selectedAllTimeAverage)
                 ?  Math.floor(this.state.selectedAllTimeAverage) - Math.floor(this.state.selectedMonthlyAverage) > 0.2 * parseFloat(this.state.selectedAllTimeAverage)
                     ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
-                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-3.png"
                 : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
                 }
                 alt="Map Marker Icon" />
