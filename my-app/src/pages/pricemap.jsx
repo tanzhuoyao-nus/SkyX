@@ -1,7 +1,7 @@
 import React from 'react'; 
 import'./pages.css'; 
 import Navbar from '../components/navbar';
-import Map from '../components/mapbox2'; 
+import Map from '../components/mapbox1'; 
 function Pricemap () { 
     return ( 
         <div> 

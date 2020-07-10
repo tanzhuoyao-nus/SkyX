@@ -1,88 +1,176 @@
-import React, {useState, useEffect} from 'react'; 
+import React, {Component} from 'react'; 
+import ReactDOM from 'react-dom';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import * as countryMarker from "./countries.json"; 
 import { db } from './firebase'; 
-import './components.css'; 
+import 'mapbox-gl/dist/mapbox-gl.css'; 
+import "./components.css"; 
 
-async function getAveragePrice(city) {
+// 1. Dependency Functions
+async function MonthlyAverage(city) {
   const document = await db.collection('flight_price_' + city).doc("Prices").get();
-  const avg_prices = await document.get("All Time Average"); 
-  return avg_prices;
+  const monthly_average = await document.get("Monthly Average"); 
+  return monthly_average;
 }
 
-function Map () {
+async function AllTimeAverage(city) {
+    const document = await db.collection('flight_price_' + city).doc("Prices").get();
+    const all_time_average = await document.get("All Time Average"); 
+    return all_time_average;
+}
 
-  const [viewport, setViewport] = useState({
-    latitude: 1.3521,
-    longitude: 103.8198,
-    width: "100vw",
-    height: "60vh",
-    zoom: 5
-  });
+function cityPicker(city) {
+    if (city === "Tokyo") {
+      return "TYO";
+    } else if (city === "Bali") {
+      return "DPS";
+    } else if (city=== "London") {
+      return "LON";
+    } else if (city === "Hong Kong") {
+      return "HKG";
+    } else {
+      return "KUL";
+    }
+  }
 
-  const [selectedCountry, setSelectedCountry] = useState(null);
+// 2. Component
+class Map extends Component {
 
-  useEffect(() => {
-    const listener = e => {
-      if (e.key === "Escape") {
-        setSelectedCountry(null);
-      }
-    };
-    window.addEventListener("keydown", listener);
+    constructor(props) {
+        super(props);
+        this.state = {
+            viewport: {
+                latitude: 1.290270,
+                longitude: 103.851959,
+                width: "100vw",
+                height: "60vh",
+                zoom: 5
+              }, 
+            selectedCountry: null, 
+            selectedMonthlyAverage: 0, 
+            selectedAllTimeAverage: 0
+        };
+    }
 
-    return () => {
-      window.removeEventListener("keydown", listener);
-    };
-  }, []);
+    // Pop-up Event Listener 
+    async componentDidMount () {
+ 
+        if (this.state.selectedCountry !== null){ 
+            var monthly_average = await MonthlyAverage(cityPicker(this.state.selectedCountry));
+            var all_time_average = await AllTimeAverage(cityPicker(this.state.selectedCountry)); 
+            this.setState({selectedMonthlyAverage: monthly_average});
+            this.setState({selectedAllTimeAverage: all_time_average});
+        }
 
-  return (
-    <div>
-    <ReactMapGL 
-      {...viewport} 
-      mapboxApiAccessToken={"pk.eyJ1IjoiYW5sZWVlIiwiYSI6ImNrYjM0MmJ1aDBoYWQyeGs2cm43bGlqdzUifQ.QsauNU7FFlsWYn-HbF2D8w"}
-      mapStyle="mapbox://styles/anleee/ckb4n5bon1pct1is727fqbnpl"
-      onViewportChange={viewport => {
-        setViewport(viewport);
-      }}
-    > 
+        const listener = e => {
+            if (e.key === "Escape") {
+                this.setState({
+                    selectedCountry: null
+                });
+            } 
+        }; 
 
-    {countryMarker.features.map(country => (
-      <Marker
-        latitude={country.geometry.coordinates[0]}
-        longitude={country.geometry.coordinates[1]}
-      >
-        <button
-          className="marker-btn"
-          onClick={e => {
-            e.preventDefault();
-            setSelectedCountry(country);
-          }}
-        >
-          <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" alt="Map Marker Icon" />
-        </button>
-      </Marker>
-    ))}
+        window.addEventListener("keydown", listener);
 
-    {selectedCountry ? (
-      <Popup className="popup"
-        latitude={selectedCountry.geometry.coordinates[0]}
-        longitude={selectedCountry.geometry.coordinates[1]}
-        onClose={() => {
-          setSelectedCountry(null);
-        }}
-      >
+        return () => {
+            window.removeEventListener("keydown", listener);
+        };
+    }
+
+    async RunComponentDidMountAgain () {
+ 
+        if (this.state.selectedCountry !== null){ 
+            var monthly_average = await MonthlyAverage(cityPicker(this.state.selectedCountry));
+            var all_time_average = await AllTimeAverage(cityPicker(this.state.selectedCountry)); 
+            this.setState({selectedMonthlyAverage: monthly_average});
+            this.setState({selectedAllTimeAverage: all_time_average});
+        }
+
+        const listener = e => {
+            if (e.key === "Escape") {
+                this.setState({
+                    selectedCountry: null
+                });
+            } 
+        }; 
+
+        window.addEventListener("keydown", listener);
+
+        return () => {
+            window.removeEventListener("keydown", listener);
+        };
+    }
+
+
+    render () {
+        return (
         <div>
-          <h4>{selectedCountry.properties.NAME}</h4>
-          <h6>{parseInt(getAveragePrice(selectedCountry.properties.CODE))}</h6>
-          {console.log(getAveragePrice(selectedCountry.properties.CODE))}
-        </div>
-      </Popup>
-    ) : null}
+        <ReactMapGL 
+        {...this.state.viewport} 
+        mapboxApiAccessToken={"pk.eyJ1IjoiYW5sZWVlIiwiYSI6ImNrYjM0MmJ1aDBoYWQyeGs2cm43bGlqdzUifQ.QsauNU7FFlsWYn-HbF2D8w"}
+        mapStyle="mapbox://styles/anleee/ckb4n5bon1pct1is727fqbnpl"
+        onViewportChange={change => {
+            this.setState({ 
+                viewport: change
+            })
+        }}
+        > 
 
-    </ReactMapGL>
-    </div>
-  );
+        {countryMarker.features.map(country => (
+        <Marker
+            key={country.properties.COUNTRYID}
+            className="marker"
+            latitude={country.geometry.coordinates[0]}
+            longitude={country.geometry.coordinates[1]}
+        >
+            <button
+            position="absolute"
+            className="marker-btn"
+            onClick={e => {
+                e.preventDefault();
+                this.setState ({ 
+                    selectedCountry: country
+                })
+                this.RunComponentDidMountAgain(); 
+            }}
+            >
+            {/* Marker Icon Selector */}
+            <img src={
+                Math.floor(this.state.selectedMonthlyAverage) < Math.floor(this.state.selectedAllTimeAverage)
+                ?  Math.floor(this.state.selectedAllTimeAverage) - Math.floor(this.state.selectedMonthlyAverage) > 0.2 * parseFloat(this.state.selectedAllTimeAverage)
+                    ? "https://ya-webdesign.com/transparent250_/pins-vector-green-5.png"
+                    : "https://ya-webdesign.com/transparent250_/pins-vector-black-6.png"
+                : "https://ya-webdesign.com/transparent250_/pins-vector-red-5.png"
+                }
+                alt="Map Marker Icon" />
+            </button>
+        </Marker>
+        ))}
+
+        {this.state.selectedCountry ? (
+        <Popup className="popup"
+            latitude={this.state.selectedCountry.geometry.coordinates[0]}
+            longitude={this.state.selectedCountry.geometry.coordinates[1]}
+            onClose={() => {
+                this.setState({ 
+                    selectedCountry: null
+                })
+                }
+            }
+        >
+            <div>
+            <h4>{this.state.selectedCountry.properties.NAME}</h4>
+            <h6>Average Price: {Math.floor(this.state.selectedMonthlyAverage)}</h6>
+            </div>
+        </Popup>
+        ) : null}
+
+        </ReactMapGL>
+        </div>
+        );
+    }
 }
-}
+
+ReactDOM.render(<Map />, document.getElementById('root')); 
 
 export default Map; 
