@@ -20,7 +20,7 @@ function Navbar (){
                 <li className="menu__list-item"><a className="menu__link menu__link--active" href="/">Home</a></li>
                 <li className="sub-menu menu__list-item"><a className="menu__link" href="/pricechart">Price Chart</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="/pricemap">Price Maps</a></li>
-                <li className="menu__list-item"><a className="menu__link" href="/pricecomparison">Price Comparison</a></li>
+                <li className="menu__list-item"><a className="menu__link" href="/destinationcomparison">Destination Comparison</a></li>
                 <li className="menu__list-item"><a className="menu__link" href="/buyorder">Price Alert</a></li>
             </ul>
 
