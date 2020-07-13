@@ -502,3 +502,13 @@ font-weight: lighter;
     font-weight: bolder;
     font-size: 12px;
 }
+
+#valueUp {
+    color: red;
+    font-size: large;
+}
+
+#valueDown {
+    color: rgb(27, 211, 27);
+    font-size: large;
+}

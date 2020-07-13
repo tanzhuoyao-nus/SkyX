@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import './components.css'; 
 import {Grid} from '@material-ui/core'; 
-import { db } from './firebase';
 
 const useStyles = makeStyles({
   root: {
@@ -21,32 +20,26 @@ const useStyles = makeStyles({
   },
 });
 
-async function getFirebaseData(city) {
-  const document = await db.collection('flight_price_' + city).doc("Prices").get();
-  const all_time_average = await document.get("All Time Average"); 
-  // console.log(all_time_average); 
-  const monthly_average = await document.get("Monthly Average");
-  return (((all_time_average - monthly_average) / all_time_average) * 100).toFixed(2);
+function RenderValue(props) {
+  if(props.num < 0) {
+    var num_ = props.num * -1;
+    return(<h3>Prices are up <span id="valueUp">{num_ }%</span> this month.</h3>);
+  } else {
+    return(<h3>Prices are down <span id="valueDown">{props.num}%</span> this month!</h3>);
+  }
 }
 
-export default function MediaCard() {
+export default function Cards(props) {
   // storing state of change in prices
-  const state = {
-    DPS : getFirebaseData("DPS"),
-    HKG : getFirebaseData("HKG"),
-    KUL : getFirebaseData("KUL"),
-    LON : getFirebaseData("LON"),
-    TYO : getFirebaseData("TYO")
-  }
+  
   const classes = useStyles();
-
   const CardBali = () =>
     <Card id ="card1" className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bali_banner_Rice_terraces.jpg/1280px-Bali_banner_Rice_terraces.jpg"
-          title="Contemplative Reptile"
+          title="Bali"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -55,6 +48,7 @@ export default function MediaCard() {
           <Typography variant="body2" color="textSecondary" component="p">
           With world-class diving and surfing, a range of natural, cultural and historical attractions, and plentiful accommodation options, it is one of the most popular island destinations in the world. Bali offers something to almost every visitor.
           </Typography>
+          <RenderValue num={props.DPS} />
         </CardContent>      
       </CardActionArea> 
       <CardActions>  
@@ -73,7 +67,7 @@ export default function MediaCard() {
         <CardMedia
           className={classes.media}
           image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
-          title="Contemplative Reptile"
+          title="Tokyo"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -82,7 +76,7 @@ export default function MediaCard() {
           <Typography variant="body2" color="textSecondary" component="p">
           As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
           </Typography>
-          <h1>lol</h1>
+          <RenderValue num={props.TYO} />
         </CardContent>
         
       </CardActionArea>
@@ -102,7 +96,7 @@ export default function MediaCard() {
           <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
-            title="Contemplative Reptile"
+            title="London"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -111,7 +105,7 @@ export default function MediaCard() {
             <Typography variant="body2" color="textSecondary" component="p">
             Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
             </Typography>
-            <h1> - 40% </h1>
+            <RenderValue num={props.LON} />
           </CardContent>
           
         </CardActionArea>
@@ -124,6 +118,35 @@ export default function MediaCard() {
           </Button></a>
         </CardActions>
       </Card>;
+
+      const CardHongKong = () =>
+      <Card id="card3" className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  London
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
+                </Typography>
+                <RenderValue num={props.LON} />
+              </CardContent>
+              
+            </CardActionArea>
+            <CardActions>
+              <a href="/buyorder"><Button size="small" color="primary">
+                Buy tickets
+              </Button></a> 
+              <a href="/pricechart/london"><Button size="small" color="primary">
+                Price Chart 
+              </Button></a>
+            </CardActions>
+          </Card>;
 
   return (
     <div>
