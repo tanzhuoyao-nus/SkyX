@@ -18,7 +18,10 @@ class Recommendations extends React.Component {
             HKG: '',
             KUL: '',
             TYO: '',
-            LON: ''
+            LON: '',
+            first: '',
+            second: '',
+            third: ''
         }
     }
 
@@ -34,7 +37,15 @@ class Recommendations extends React.Component {
             KUL: KUL_,
             TYO: TYO_,
             LON: LON_
-        })
+        });
+        const first = this.findGreatest(this.state);
+        const second = this.findSecond(this.state, first);
+        const third = this.findThird(this.state, first, second);
+        this.setState({
+            first: first,
+            second: second,
+            third: third
+        });
     }
 
     findGreatest(obj) {
@@ -107,15 +118,6 @@ class Recommendations extends React.Component {
     }
 
     render() {
-        var first = this.findGreatest(this.state);
-        var second = this.findSecond(this.state, first);
-        var third = this.findThird(this.state, first, second);
-
-        console.log(first);
-        console.log(second);
-        console.log(third);
-        console.log(this.state);
-        
         return(
             <Cards 
             DPS={this.state.DPS}
@@ -123,9 +125,9 @@ class Recommendations extends React.Component {
             KUL={this.state.KUL}
             LON={this.state.LON}
             TYO={this.state.TYO}
-            first={this.first}
-            second={this.second}
-            third={this.third}/>
+            first={this.state.first}
+            second={this.state.second}
+            third={this.state.third}/>
         )
     };
 }

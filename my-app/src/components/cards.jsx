@@ -29,10 +29,33 @@ function RenderValue(props) {
   }
 }
 
+
 export default function Cards(props) {
   // storing state of change in prices
   
   const classes = useStyles();
+
+  const RenderFirst = (city) => {
+    setTimeout(() => {
+        console.log("hello")
+    }, 5000);
+    if (city === null) {
+      return (<CardHongKong/>);
+    } else if (city === "DPS") {
+      return (<CardBali />);
+    } else if (city === "KUL") {
+      return (<CardKualaLumpur />);
+    } else if (city === "HKG") {
+      return (<CardHongKong />);
+    } else if (city === "TYO") {
+      return (<CardTokyo />);
+    } else if (city === "LON") {
+      return (<CardLondon />);
+    } else {
+      return (<CardLondon />);
+    }
+  };
+
   const CardBali = () =>
     <Card id ="card1" className={classes.root}>
       <CardActionArea>
@@ -90,8 +113,8 @@ export default function Cards(props) {
       </CardActions>
     </Card>;
 
-  const CardLondon = () =>
-  <Card id="card3" className={classes.root}>
+    const CardLondon = () =>
+      <Card id="card3" className={classes.root}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
@@ -103,7 +126,7 @@ export default function Cards(props) {
               London
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
+            Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy. Considered one of the world's leading "global cities", London remains an international capital of culture. 
             </Typography>
             <RenderValue num={props.LON} />
           </CardContent>
@@ -119,22 +142,22 @@ export default function Cards(props) {
         </CardActions>
       </Card>;
 
-      const CardHongKong = () =>
+    const CardHongKong = () =>
       <Card id="card3" className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
-                image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
-                title="Contemplative Reptile"
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Hong_Kong_Banner.jpg/1280px-Hong_Kong_Banner.jpg"
+                title="Hong Kong"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  London
+                  Hong Kong
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy.Considered one of the world's leading "global cities", London remains an international capital of culture. 
+                Hong Kong welcomes with an iconic skyline, a legendary kitchen, and lush, protected nature where rare birds and colourful traditions thrive.
                 </Typography>
-                <RenderValue num={props.LON} />
+                <RenderValue num={props.HKG} />
               </CardContent>
               
             </CardActionArea>
@@ -142,12 +165,41 @@ export default function Cards(props) {
               <a href="/buyorder"><Button size="small" color="primary">
                 Buy tickets
               </Button></a> 
-              <a href="/pricechart/london"><Button size="small" color="primary">
+              <a href="/pricechart/hongkong"><Button size="small" color="primary">
                 Price Chart 
               </Button></a>
             </CardActions>
           </Card>;
 
+    const CardKualaLumpur = () =>
+      <Card id="card3" className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg/1280px-Kuala_Lumpur_Skyline_at_dusk_%28cropped%29.jpg"
+                title="Kuala Lumpur"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Kuala Lumpur
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                A skyline punctuated by minarets, Mogul-style domes and skyscrapers; colourful, food-stall-lined streets shaded by a leafy canopy of banyan trees – this is Kuala Lumpur.
+                </Typography>
+                <RenderValue num={props.KUL} />
+              </CardContent>
+              
+            </CardActionArea>
+            <CardActions>
+              <a href="/buyorder"><Button size="small" color="primary">
+                Buy tickets
+              </Button></a> 
+              <a href="/pricechart/kl"><Button size="small" color="primary">
+                Price Chart 
+              </Button></a>
+            </CardActions>
+          </Card>;
+  console.log(props.first);
   return (
     <div>
       <h1 id="recommendationsText"> Recommendations </h1>
