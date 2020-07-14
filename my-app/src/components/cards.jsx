@@ -57,7 +57,7 @@ export default function Cards(props) {
   };
 
   const CardBali = () =>
-    <Card id ="card1" className={classes.root}>
+    <Card id ="card2" className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -157,9 +157,12 @@ export default function Cards(props) {
                 <Typography variant="body2" color="textSecondary" component="p">
                 Hong Kong welcomes with an iconic skyline, a legendary kitchen, and lush, protected nature where rare birds and colourful traditions thrive.
                 </Typography>
+                <br></br>
+                <br></br>
+                <br></br>
                 <RenderValue num={props.HKG} />
               </CardContent>
-              
+            
             </CardActionArea>
             <CardActions>
               <a href="/buyorder"><Button size="small" color="primary">
@@ -172,7 +175,7 @@ export default function Cards(props) {
           </Card>;
 
     const CardKualaLumpur = () =>
-      <Card id="card3" className={classes.root}>
+      <Card id="card1" className={classes.root}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -186,6 +189,8 @@ export default function Cards(props) {
                 <Typography variant="body2" color="textSecondary" component="p">
                 A skyline punctuated by minarets, Mogul-style domes and skyscrapers; colourful, food-stall-lined streets shaded by a leafy canopy of banyan trees – this is Kuala Lumpur.
                 </Typography>
+                <br></br>
+                <br></br>
                 <RenderValue num={props.KUL} />
               </CardContent>
               
@@ -207,11 +212,11 @@ export default function Cards(props) {
     
     <Grid id ="card" container spacing={3} justify="center">
       {/* Card 1 */}
-      <CardBali />
+      <CardKualaLumpur />
       {/* Card 2 */}
-      <CardTokyo />
+      <CardBali />
       {/* Card 3 */}
-      <CardLondon />
+      <CardHongKong />
     </Grid>
     </div>);
 }
