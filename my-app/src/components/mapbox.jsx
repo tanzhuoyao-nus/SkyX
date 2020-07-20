@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import ReactDOM from 'react-dom';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import { Paper }  from '@material-ui/core'; 
 import { db } from './firebase'; 
 import "./components.css"
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -310,6 +311,12 @@ class Map extends Component {
             </div>
         </Popup>
         ) : null}
+
+            <Paper className="legend" elevation={3} variant="outlined" >
+                <img className="legendPics" height="20px" src="https://ya-webdesign.com/transparent250_/pins-vector-green-5.png" alt="green marker "/> <strong>Cheap</strong>  <br/>
+                <img className="legendPics" height="20px" src="https://ya-webdesign.com/transparent250_/pins-vector-black-3.png" alt="green marker "/> <strong>Average</strong>  <br/>
+                <img className="legendPics" height="20px" src="https://ya-webdesign.com/transparent250_/pins-vector-red-5.png" alt="green marker "/> <strong>Expensive</strong><br/>
+            </Paper>
 
         </ReactMapGL>
         </div>
