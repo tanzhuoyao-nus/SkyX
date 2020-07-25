@@ -69,7 +69,7 @@ export default function OutlinedCard() {
                 Destination Comparison
                 </Typography>
                 <Typography className="featText" color="textSecondary">
-                Destination Comparison provides users with a side-by-side comparison of flight prices to two different destinations. It provides users with a clearer understanding of both airlines.  
+                Destination Comparison provides users with a side-by-side comparison of flight prices to two different destinations. It provides users with a clearer understanding between the two.  
                 </Typography>
             </CardContent>
             <CardActions>
