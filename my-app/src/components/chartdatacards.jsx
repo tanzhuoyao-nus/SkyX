@@ -58,7 +58,7 @@ async function getFirebaseData(city) {
             upward_vol: '',
             downward_vol: ''
         }; 
-    }
+    }m
   
   async componentDidMount() { 
     const city = cityPicker(this.props.name);

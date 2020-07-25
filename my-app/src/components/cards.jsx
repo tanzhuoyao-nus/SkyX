@@ -35,27 +35,6 @@ export default function Cards(props) {
   
   const classes = useStyles();
 
-  const RenderFirst = (city) => {
-    setTimeout(() => {
-        console.log("hello")
-    }, 5000);
-    if (city === null) {
-      return (<CardHongKong/>);
-    } else if (city === "DPS") {
-      return (<CardBali />);
-    } else if (city === "KUL") {
-      return (<CardKualaLumpur />);
-    } else if (city === "HKG") {
-      return (<CardHongKong />);
-    } else if (city === "TYO") {
-      return (<CardTokyo />);
-    } else if (city === "LON") {
-      return (<CardLondon />);
-    } else {
-      return (<CardLondon />);
-    }
-  };
-
   const CardBali = () =>
     <Card id ="card2" className={classes.root}>
       <CardActionArea>
@@ -84,63 +63,63 @@ export default function Cards(props) {
       </CardActions>
     </Card>;
 
-  const CardTokyo = () => 
-    <Card id ="card2" className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
-          title="Tokyo"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Tokyo
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-          As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
-          </Typography>
-          <RenderValue num={props.TYO} />
-        </CardContent>
+  // const CardTokyo = () => 
+  //   <Card id ="card2" className={classes.root}>
+  //     <CardActionArea>
+  //       <CardMedia
+  //         className={classes.media}
+  //         image="https://upload.wikimedia.org/wikipedia/commons/c/c9/Tokyo_banner.jpg"
+  //         title="Tokyo"
+  //       />
+  //       <CardContent>
+  //         <Typography gutterBottom variant="h5" component="h2">
+  //           Tokyo
+  //         </Typography>
+  //         <Typography variant="body2" color="textSecondary" component="p">
+  //         As the most densely populated urban area in the world, Tokyo is a fascinating and dynamic metropolis that mixes foreign influences, consumer culture and global business along with remnants of the capital of old Japan.
+  //         </Typography>
+  //         <RenderValue num={props.TYO} />
+  //       </CardContent>
         
-      </CardActionArea>
-      <CardActions>
-        <a href="/buyorder"><Button size="small" color="primary">
-          Buy tickets
-        </Button></a>
-        <a href="/pricechart/tokyo"><Button size="small" color="primary">
-          Price Chart
-        </Button></a>
-      </CardActions>
-    </Card>;
+  //     </CardActionArea>
+  //     <CardActions>
+  //       <a href="/buyorder"><Button size="small" color="primary">
+  //         Buy tickets
+  //       </Button></a>
+  //       <a href="/pricechart/tokyo"><Button size="small" color="primary">
+  //         Price Chart
+  //       </Button></a>
+  //     </CardActions>
+  //   </Card>;
 
-    const CardLondon = () =>
-      <Card id="card3" className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
-            title="London"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              London
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy. Considered one of the world's leading "global cities", London remains an international capital of culture. 
-            </Typography>
-            <RenderValue num={props.LON} />
-          </CardContent>
+    // const CardLondon = () =>
+    //   <Card id="card3" className={classes.root}>
+    //     <CardActionArea>
+    //       <CardMedia
+    //         className={classes.media}
+    //         image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg/1280px-London_Thames_Sunset_panorama_-_Feb_2008_banner.jpg"
+    //         title="London"
+    //       />
+    //       <CardContent>
+    //         <Typography gutterBottom variant="h5" component="h2">
+    //           London
+    //         </Typography>
+    //         <Typography variant="body2" color="textSecondary" component="p">
+    //         Noisy, vibrant and truly multicultural, London is a megalopolis of people, ideas and frenetic energy. Considered one of the world's leading "global cities", London remains an international capital of culture. 
+    //         </Typography>
+    //         <RenderValue num={props.LON} />
+    //       </CardContent>
           
-        </CardActionArea>
-        <CardActions>
-          <a href="/buyorder"><Button size="small" color="primary">
-            Buy tickets
-          </Button></a> 
-          <a href="/pricechart/london"><Button size="small" color="primary">
-            Price Chart 
-          </Button></a>
-        </CardActions>
-      </Card>;
+    //     </CardActionArea>
+    //     <CardActions>
+    //       <a href="/buyorder"><Button size="small" color="primary">
+    //         Buy tickets
+    //       </Button></a> 
+    //       <a href="/pricechart/london"><Button size="small" color="primary">
+    //         Price Chart 
+    //       </Button></a>
+    //     </CardActions>
+    //   </Card>;
 
     const CardHongKong = () =>
       <Card id="card3" className={classes.root}>
