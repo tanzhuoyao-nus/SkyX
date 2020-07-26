@@ -55,7 +55,7 @@ export default function Cards(props) {
       </CardActionArea> 
       <CardActions>  
         <a href="/buyorder"><Button size="small" color="primary">
-          Price Alert
+          Buy tickets
         </Button></a>
         <a href="/pricechart/denpasar"><Button size="small" color="primary">
           Price Chart
@@ -145,7 +145,7 @@ export default function Cards(props) {
             </CardActionArea>
             <CardActions>
               <a href="/buyorder"><Button size="small" color="primary">
-                Price Alert 
+                Buy tickets
               </Button></a> 
               <a href="/pricechart/hongkong"><Button size="small" color="primary">
                 Price Chart 
@@ -176,7 +176,7 @@ export default function Cards(props) {
             </CardActionArea>
             <CardActions>
               <a href="/buyorder"><Button size="small" color="primary">
-                Price Alert 
+                Buy tickets
               </Button></a> 
               <a href="/pricechart/kl"><Button size="small" color="primary">
                 Price Chart 
