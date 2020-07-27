@@ -18,6 +18,8 @@ function cityPicker(city) {
       return "LON";
     } else if (city === "Hong Kong") {
       return "HKG";
+    } else if (city === "-Select Destination-") {
+      return "NONE";
     } else {
       return "KUL";
     }
@@ -96,34 +98,63 @@ class Destinationcomparison extends React.Component {
     async updateFirstSelected(e) {
         this.setState({firstSelected: e.target.value});
         var city = cityPicker(e.target.value);
-        var all_time_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
-        this.setState({ 
-            firstCity : {
-                all_time_average: all_time_prices[0], 
-                all_time_high: all_time_prices[1], 
-                all_time_low: all_time_prices[2],
-                monthly_average: all_time_prices[3],
-                monthly_high: all_time_prices[4],
-                monthly_low: all_time_prices[5]
-            }
-        })
+        console.log(city);
+        if (city === "NONE") {
+            console.log("hit");
+            this.setState({ 
+                firstCity : {
+                    all_time_average: "", 
+                    all_time_high: "", 
+                    all_time_low: "",
+                    monthly_average: "",
+                    monthly_high: "",
+                    monthly_low: ""
+                }
+            })
+        } else {
+            var all_time_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
+            this.setState({ 
+                firstCity : {
+                    all_time_average: all_time_prices[0], 
+                    all_time_high: all_time_prices[1], 
+                    all_time_low: all_time_prices[2],
+                    monthly_average: all_time_prices[3],
+                    monthly_high: all_time_prices[4],
+                    monthly_low: all_time_prices[5]
+                }
+            })
+        }
+        
         // console.log(all_time_prices);
     }
 
     async updateSecondSelected(e) {
         this.setState({secondSelected: e.target.value});
         var city = cityPicker(e.target.value);
-        var all_time_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
-        this.setState({ 
-            secondCity : {
-                all_time_average: all_time_prices[0], 
-                all_time_high: all_time_prices[1], 
-                all_time_low: all_time_prices[2],
-                monthly_average: all_time_prices[3],
-                monthly_high: all_time_prices[4],
-                monthly_low: all_time_prices[5]
-            }
-        })
+        if (city === "NONE") {
+            this.setState({ 
+                secondCity : {
+                    all_time_average: "", 
+                    all_time_high: "", 
+                    all_time_low: "",
+                    monthly_average: "",
+                    monthly_high: "",
+                    monthly_low: ""
+                }
+            })
+        } else {
+            var all_time_prices = await getFirebaseData(city).catch(err => console.log("Oops error"));
+            this.setState({ 
+                secondCity : {
+                    all_time_average: all_time_prices[0], 
+                    all_time_high: all_time_prices[1], 
+                    all_time_low: all_time_prices[2],
+                    monthly_average: all_time_prices[3],
+                    monthly_high: all_time_prices[4],
+                    monthly_low: all_time_prices[5]
+                }
+            })
+        }
         // console.log(all_time_prices);
     }
 
@@ -132,6 +163,7 @@ class Destinationcomparison extends React.Component {
             <div className="form-group top-margin-small">
                 <label className="card-selector-label">Select Destination</label>
                 <select className="card-selector form-control" onChange={(e) => this.updateFirstSelected(e)}>
+                    <option>-Select Destination-</option>
                     <option>Bali</option>
                     <option>Hong Kong</option>
                     <option>Kuala Lumpur</option>
@@ -147,6 +179,7 @@ class Destinationcomparison extends React.Component {
             <div className="form-group top-margin-small">
                 <label className="card-selector-label">Select Destination</label>
                 <select className="card-selector form-control" onChange={(e) => this.updateSecondSelected(e)}>
+                    <option>-Select Destination-</option>
                     <option>Bali</option>
                     <option>Hong Kong</option>
                     <option>Kuala Lumpur</option>

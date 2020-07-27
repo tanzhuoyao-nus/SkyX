@@ -85,3 +85,11 @@ color: rgba(0,0,0,0.5);
 #comparisonRight6 {
     margin-left: 143px;
 }
+
+html, body {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
