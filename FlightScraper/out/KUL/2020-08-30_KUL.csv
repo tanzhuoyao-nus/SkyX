@@ -1,0 +1,15 @@
+,Date,Origin,Destination,Price,Departure Time,Arrival Time,Flight duration,URL
+0,2020-08-30,SIN,KUL,$51,9:10,10:15,1h 05m,https://www.kayak.com/book/flight?code=JYCiETJPYR.6We7wBYoN-cNUvH8T-y68A.5084.5263c80df0b33d1b06a75e1c567c42f4&h=35bb0ba5a131&sub=E-139119fa0bd
+1,2020-08-31,SIN,KUL,$51,9:20,10:25,1h 05m,https://www.kayak.com/book/flight?code=JYBCIAojEw.6We7wBYoN-cNUvH8T-y68A.5026.5466140939f092d12c9757011b2fcc81&h=fd74d5eef36f&sub=E-139119fa0bd
+2,2020-09-01,SIN,KUL,$63,7:35,8:40,1h 05m,https://www.kayak.com/book/flight?code=JYDiE5A6xN.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6227.7022b8292d5cec4cf9df0c2dfa179d1a&h=1be040ae88f8&_kw_pbranded=true&sub=E0fedb408728
+3,2020-09-02,SIN,KUL,$61,9:35,10:40,1h 05m,https://www.kayak.com/book/flight?code=JYCiIwv3aO.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.488343e33c5bf48bafc03d7f8d3692db&h=fd91135ac1bb&_kw_pbranded=true&sub=E0fedb408728
+4,2020-09-03,SIN,KUL,$61,7:35,8:40,1h 05m,https://www.kayak.com/book/flight?code=JYACOLfUwI.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.8081b9a8e8966b710504b0406d3f123f&h=b5ffbeb0c750&_kw_pbranded=true&sub=E0fedb408728
+5,2020-09-04,SIN,KUL,$61,7:05,8:10,1h 05m,https://www.kayak.com/book/flight?code=JYCiJYy4b_.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.e5564f78f43333f87336a14d1f66ca43&h=392b7cee8e74&_kw_pbranded=true&sub=E0fedb408728
+6,2020-09-05,SIN,KUL,$59,12:20,1:25,1h 05m,https://www.kayak.com/book/flight?code=JYBCPCBMgC.18wgSzIaLAlgpzrTH2pViLaYAeeTFjgE.5822.ba3fe7f11e80b2c33767aca305bbfd92&h=5c9389269866&sub=E-182a03a4389
+7,2020-09-06,SIN,KUL,$61,5:55,7:00,1h 05m,https://www.kayak.com/book/flight?code=JYDiIQe_29.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.1c7cbd41a743cc3bc1486a3cc4c859be&h=29e510ba6cdd&_kw_pbranded=true&sub=E0fedb408728
+8,2020-09-07,SIN,KUL,$61,12:50,1:55,1h 05m,https://www.kayak.com/book/flight?code=JYACMz8C80.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.e87a98102e109c2dafca7c73dca473f2&h=be2ee3b6f471&_kw_pbranded=true&sub=E0fedb408728
+9,2020-09-08,SIN,KUL,$61,7:35,8:40,1h 05m,https://www.kayak.com/book/flight?code=JZCiFAvSn8.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.e33b2b6d7c8dc5989bae8fb367dcf992&h=7008f144af0b&_kw_pbranded=true&sub=E0fedb408728
+10,2020-09-09,SIN,KUL,$59,7:05,8:10,1h 05m,https://www.kayak.com/book/flight?code=JZAiNdkWm2.2UFg3_Lii-UH7S5X9hxNmw.5855.9759eaa4b5d9f025721fe672a4cc918c&h=bfffbb8f62f1&sub=E-1836ce41d9d
+11,2020-09-10,SIN,KUL,$61,7:35,8:40,1h 05m,https://www.kayak.com/book/flight?code=JZCiG_Qemg.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.f23c0356ed9c04ecf41c4cbdd573e6b6&h=57f6f1d92f41&_kw_pbranded=true&sub=E0fedb408728
+12,2020-09-11,SIN,KUL,$61,7:05,8:10,1h 05m,https://www.kayak.com/book/flight?code=JZACHzbq5V.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.85d024bb8761fa4574b01361c17e7abe&h=f5323ed8b71d&_kw_pbranded=true&sub=E0fedb408728
+13,2020-09-12,SIN,KUL,$61,9:35,10:40,1h 05m,https://www.kayak.com/book/flight?code=JZAiKNhOOX.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.6093.12eb02e144d0cd40d80217a0651ab6e9&h=dffbf353a966&_kw_pbranded=true&sub=E0fedb408728
