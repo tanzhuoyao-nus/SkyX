@@ -235,7 +235,7 @@ def updateDownwardVolatility(city):
 
 current_date = datetime.date.today()
 scrape_start = current_date + datetime.timedelta(30)
-
+print(scrape_start)
 updateAverage("DPS", scrape_start)
 updateHighest("DPS", scrape_start)
 updateLowest("DPS", scrape_start)
