@@ -1,0 +1,15 @@
+,Date,Origin,Destination,Price,Departure Time,Arrival Time,Flight duration,URL
+0,2020-09-03,SIN,DPS,$101,5:10,7:50,2h 40m,https://www.kayak.com/book/flight?code=GIFiFNtoKZ.-COZ-Slz34a7ImCnqdurig.10094.2f56fedb321d10605ce9e82d84005132&h=c1c949f15f63&sub=E-1e920e1ecb2
+1,2020-09-04,SIN,DPS,$104,10:00,7:00,9h 00m,https://www.kayak.com/book/flight?code=GJHiFPGkY8.BximiDHCFxuVG46jPA6m1w.10344.b483b592f588809e1f0adb07a7944547&h=b000a446a003&sub=E-1789cae2134
+2,2020-09-05,SIN,DPS,$101,9:05,11:45,2h 40m,https://www.kayak.com/book/flight?code=GJGiBhxgQU.-COZ-Slz34a7ImCnqdurig.10094.e87dcd39ac25c854d5387990bc89094f&h=b49ef95791f9&sub=E-1e920e1ecb2
+3,2020-09-06,SIN,DPS,$101,9:05,11:45,2h 40m,https://www.kayak.com/book/flight?code=GJGiPCRBGn.-COZ-Slz34a7ImCnqdurig.10094.1e6b5fc204d1631bcf02400fdcb4dbe3&h=1238b440a781&sub=E-1e920e1ecb2
+4,2020-09-07,SIN,DPS,$101,9:05,11:45,2h 40m,https://www.kayak.com/book/flight?code=GJGCHOjpPj.-COZ-Slz34a7ImCnqdurig.10094.dbb6eb967c7e8d0927d47655ea219b83&h=3f6f8ff72838&sub=E-1e920e1ecb2
+5,2020-09-08,SIN,DPS,$197,10:00,9:35,11h 35m,https://www.kayak.com/book/flight?code=GJFCJLfUB5.vZik3Z2arcoEdn9PX-8xhQ.19646.de3af7405d66b1a638a4bd65cfbcf38f&h=7cef68079293&sub=E-1b0916b21a1
+6,2020-09-09,SIN,DPS,$201,10:00,9:35,11h 35m,https://www.kayak.com/book/flight?code=GJGiLnu1BZ.6We7wBYoN-cNUvH8T-y68A.20035.49c79f2dcbac9b569035201a5f0f4b8f&h=3addd86246e8&sub=E-139119fa0bd
+7,2020-09-10,SIN,DPS,$103,5:10,7:50,2h 40m,https://www.kayak.com/book/flight?code=GJHiHsT4D6.BximiDHCFxuVG46jPA6m1w.10285.bee430300b323e2a2ad2dc60a26cabea&h=4a794f7a536e&sub=E-1789cae2134
+8,2020-09-11,SIN,DPS,$108,3:50,6:35,2h 45m,https://www.kayak.com/book/flight?code=GJGCNd2CH7.BximiDHCFxuVG46jPA6m1w.10704.43d36d2954cd2650f1b34631ec136d56&h=7ff34995d91a&sub=E-1789cae2134
+9,2020-09-12,SIN,DPS,$114,10:55,1:40,2h 45m,https://www.kayak.com/book/flight?code=GJEiBGFAGk.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.11307.bdf7a83bea2507b78a025827c3070926&h=80affeea0360&_kw_pbranded=true&sub=E0fedb408728
+10,2020-09-13,SIN,DPS,$114,7:50,10:35,2h 45m,https://www.kayak.com/book/flight?code=GJGiG8jYUt.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.11307.e8c6158dff2c8b911d2cb2e133ba7b32&h=b93c40e308d1&_kw_pbranded=true&sub=E0fedb408728
+11,2020-09-14,SIN,DPS,$114,3:50,6:35,2h 45m,https://www.kayak.com/book/flight?code=GJFiQIZOJp.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.11307.065e0500d308b7012068e2253816f088&h=bc8dc6666eb3&_kw_pbranded=true&sub=E0fedb408728
+12,2020-09-15,SIN,DPS,$114,3:50,6:35,2h 45m,https://www.kayak.com/book/flight?code=GJEiKNfGme.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.11307.605580f54e26d5368fd2fb9d4466df4a&h=e72f9069f4f4&_kw_pbranded=true&sub=E0fedb408728
+13,2020-09-16,SIN,DPS,$114,10:55,1:40,2h 45m,https://www.kayak.com/book/flight?code=GJHiGDl4H5.1KIA9CPVmMWK1yWXnCZuC7aYAeeTFjgE.11307.7fbd504245d5f0589f8443bfaf09b91f&h=24d768aa6b1a&_kw_pbranded=true&sub=E0fedb408728
